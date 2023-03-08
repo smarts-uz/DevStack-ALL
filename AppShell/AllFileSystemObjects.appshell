@@ -1,0 +1,3 @@
+AllFileSystemObjects
+\ALL.cmd\Aut2Exe\Aut2exe_x64.exe|Compile with AutoIT|/in "%1" /icon "%Home_DevApp_AutoIT%\IconApp\GUI-2.ico"
+\ALL.cmd\Aut2Exe\Aut2exe_x64.exe|Console with AutoIT|/in "%1" /console /icon "%Home_DevApp_AutoIT%\IconApp\Console.ICO"

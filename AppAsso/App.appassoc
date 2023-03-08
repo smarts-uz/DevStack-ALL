@@ -1,0 +1,2 @@
+\ALL.cmd\AutoIt3_x64.exe|au3
+\ALL.cmd\AutoIt3_x64.exe|a3x|/aaa /in "%1"

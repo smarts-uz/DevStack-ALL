@@ -1,0 +1,36 @@
+
+Set configFolder=%APPDATA%\Wellnomics\WorkPace
+
+Set configFolderDrop=True
+
+Set useFFS=True
+
+Set makeSymlink=True
+
+Set backupFolderName=Backups
+
+Set configFile=
+
+Set configPerUser=c:\AsrorZ\config\{userName}
+
+Set regLocation=HKEY_LOCAL_MACHINE\SOFTWARE\Division-M\Drive Bender
+
+Set addGit=True
+
+Set addZip=True
+
+Set perUser=False
+
+Set regJump=False
+
+REM killProcess=notepad~calc
+Set killProcess=
+
+REM runProcess=\..\Portable\ALL.cmd\PhraseExpander.exe~%ProgramFiles(x86)%\R-Drive Image\Keygen.exe
+Set runProcess=
+
+REM killService=AnyDesk~edgeupdate
+Set killService=
+
+
+

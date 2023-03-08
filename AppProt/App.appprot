@@ -1,0 +1,2 @@
+\ALL.cmd\AutoIt3_x64.exe|autoit
+\ALL.cmd\AutoIt3_x64.exe|asror|/aaa /in "%1"

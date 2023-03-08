@@ -1,0 +1,1 @@
+Create LNK shortcuts for provided list of apps

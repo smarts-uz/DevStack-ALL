@@ -1,0 +1,3 @@
+au3
+\ALL.cmd\AutoIt3_x64.exe|Run With AutoIT
+\ALL.cmd\Aut2Exe\Aut2exe_x64.exe|Compile With AutoIT

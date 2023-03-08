@@ -1,0 +1,3 @@
+NTFS MFT
+ALL.cmd\Everything.exe|Everything Search
+ALL.cmd\Everything.exe|Everything Search|/aaa /in "%1"

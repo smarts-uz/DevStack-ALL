@@ -1,0 +1,1 @@
+Add list of folders to Path environment variable by creating different EnvVars

@@ -1,0 +1,114 @@
+Set ServiceName=Smarts_FileApp_TrueApp
+
+Set LogPath=%cd%\Logging
+Set DataPath=%cd%\Projects
+Set AppPath=%cd%\Portable
+
+Set AppExeName=TrueDev.exe
+
+Set AppExe=%AppPath%\%AppExeName%
+Set AppCmd=""
+Set AppExit=Restart
+Set AppInit=""
+
+Set ObjectName=LocalSystem
+Set ObjectPass=""
+
+
+REM killProcess=notepad~calc
+Set killProcess=notepad~calc
+
+REM killService=AnyDesk~edgeupdate
+Set killService=edgeupdate
+
+REM runProcess=c:\Windows\System32\notepad.exe
+Set runProcess=c:\Windows\System32\notepad.exe
+
+
+
+Set AppAffinity=All
+Set AppNoConsole=0
+
+
+REM REALTIME_PRIORITY_CLASS
+REM HIGH_PRIORITY_CLASS
+REM ABOVE_NORMAL_PRIORITY_CLASS
+REM NORMAL_PRIORITY_CLASS
+REM BELOW_NORMAL_PRIORITY_CLASS
+REM IDLE_PRIORITY_CLASS
+
+Set AppPriority=NORMAL_PRIORITY_CLASS
+
+
+
+Set AppRestartDelay=0
+
+Set AppRotateFiles=1
+Set AppRotateOnline=1
+Set AppRotateBytes=10485760
+
+Set AppStopMethodSkip=0
+Set AppStopMethodConsole=1500
+Set AppStopMethodWindow=1500
+Set AppStopMethodThreads=1500
+
+Set AppThrottle=5000
+
+Set DependOnService=""
+
+
+REM SERVICE_AUTO_START: Automatic startup at boot.
+REM SERVICE_DELAYED_START: Delayed startup at boot.
+REM SERVICE_DEMAND_START: Manual startup.
+REM SERVICE_DISABLED: Service is disabled.
+
+Set Start=SERVICE_AUTO_START
+
+
+
+REM SERVICE_WIN32_OWN_PROCESS: A standalone service. This is the default.
+REM SERVICE_INTERACTIVE_PROCESS: A service which can interact with the desktop.
+
+Set Type=SERVICE_WIN32_OWN_PROCESS
+
+
+
+Set AppRedirectHook=1
+
+REM  NSSM_EXE - Path to NSSM itself.
+REM  NSSM_CONFIGURATION - Build information for the NSSM executable, eg 64-bit debug.
+REM  NSSM_VERSION - Version of the NSSM executable.
+REM  NSSM_BUILD_DATE - Build date of NSSM.
+REM  NSSM_PID - Process ID of the running NSSM executable.
+REM  NSSM_DEADLINE - Deadline number of milliseconds after which NSSM will kill the hook if it is still running.
+REM  NSSM_SERVICE_NAME - Name of the service controlled by NSSM.
+REM  NSSM_SERVICE_DISPLAYNAME - Display name of the service.
+REM  NSSM_COMMAND_LINE - Command line used to launch the application.
+REM  NSSM_APPLICATION_PID - Process ID of the primary application process.  May be blank if the process is not running.
+REM  NSSM_EVENT - Event class triggering the hook.
+REM  NSSM_ACTION - Event action triggering the hook.
+REM  NSSM_TRIGGER - Service control triggering the hook.  May be blank if the hook was not triggered by a service control, eg Exit/Post.
+REM  NSSM_LAST_CONTROL - Last service control handled by NSSM.
+REM  NSSM_START_REQUESTED_COUNT - Number of times the application was requested to start.
+REM  NSSM_START_COUNT - Number of times the application successfully started.
+REM  NSSM_THROTTLE_COUNT - Number of times the application ran for less than the throttle period.  Reset to zero on successful start or when the service is explicitly unpaused.
+REM  NSSM_EXIT_COUNT - Number of times the application exited.
+REM  NSSM_EXITCODE - Exit code of the application.  May be blank if the application is still running or has not started yet.
+REM  NSSM_RUNTIME - Number of milliseconds for which the NSSM executable has been running.
+REM  NSSM_APPLICATION_RUNTIME - Number of milliseconds for which the application has been running since it was last started.  May be blank if the application has not been started yet.
+
+
+Set StartPre=""
+Set StartPost=""
+
+Set StopPre=""
+
+Set ExitPost=""
+
+Set RotatePre=""
+Set RotatePost=""
+
+Set PowerChange=""
+Set PowerResume=""
+
+

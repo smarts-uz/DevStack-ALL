@@ -1,0 +1,7 @@
+au3
+\ALL.cmd\AutoIt3_x64.exe|Run with AutoIT
+\ALL.cmd\AutoIt3.exe|Run with AutoIT X86
+\ALL.cmd\Aut2Exe\Aut2exe_x64.exe|Compile with AutoIT|/in "%1" /icon "\..\IconApp\GUI-2.ico"
+\ALL.cmd\Aut2Exe\Aut2exe.exe|Compile with AutoIT X86|/in "%1" /icon "\..\IconApp\GUI-2.ico"
+\ALL.cmd\Aut2Exe\Aut2exe_x64.exe|Console with AutoIT|/in "%1" /console /icon "\..\IconApp\Console.ICO"
+\ALL.cmd\Aut2Exe\Aut2exe.exe|Console with AutoIT X86|/in "%1" /console /icon "\..\IconApp\Console.ICO"

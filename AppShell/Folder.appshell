@@ -1,0 +1,6 @@
+Directory
+\ALL.cmd\LockHunter64.exe|Analyse using LockHunter64|"%1"
+\ALL.cmd\LockHunter64.exe|Unlock using LockHunter64|/unlock "%1"
+\ALL.cmd\LockHunter64.exe|Unlock Kill using LockHunter64|/unlock /kill "%1"
+\ALL.cmd\LockHunter64.exe|Unlock Delete using LockHunter64|/unlock /delete /delperm "%1"
+\ALL.cmd\LockHunter64.exe|Unlock Kill Delete using LockHunter64|/unlock /kill /delete /delperm "%1"

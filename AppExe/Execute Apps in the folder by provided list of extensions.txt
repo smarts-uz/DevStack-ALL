@@ -1,0 +1,1 @@
+Execute Apps in the folder by provided list of extensions

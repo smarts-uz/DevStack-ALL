@@ -1,0 +1,2 @@
+ffs_batch
+\ALL.cmd\FreeFileSync.exe|Edit with FreeFileSync|-Edit "%1"

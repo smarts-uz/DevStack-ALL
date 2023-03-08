@@ -1,0 +1,32 @@
+
+Set configFolder=%APPDATA%\Wellnomics\WorkPace\
+
+Set configFolderDrop=True
+
+Set makeSymlink=True
+
+Set backupFolderName=Backups
+
+Set configFile=
+
+Set configPerUser=c:\AsrorZ\config\{userName}
+
+Set regLocation=HKEY_LOCAL_MACHINE\SOFTWARE\Division-M\Drive Bender
+
+Set addGit=True
+
+Set perUser=False
+
+Set regJump=False
+
+REM killProcess=notepad~calc
+Set killProcess=
+
+REM runProcess=c:\Windows\System32\notepad.exe
+Set runProcess=
+
+REM killService=AnyDesk~edgeupdate
+Set killService=
+
+
+

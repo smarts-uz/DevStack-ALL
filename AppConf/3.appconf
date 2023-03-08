@@ -1,0 +1,36 @@
+
+Set configFolder=%ProgramFiles(x86)%\R-Drive Image
+
+Set configFolderDrop=False
+
+Set useFFS=True
+
+Set makeSymlink=False
+
+Set backupFolderName=Backups
+
+Set configFile=
+
+Set configPerUser=c:\AsrorZ\config\{userName}
+
+Set regLocation=HKEY_LOCAL_MACHINE\SOFTWARE\Division-M\Drive Bender
+
+Set addGit=True
+
+Set addZip=True
+
+Set perUser=False
+
+Set regJump=False
+
+REM killProcess=notepad~calc
+Set killProcess=
+
+REM runProcess=c:\Windows\System32\notepad.exe
+Set runProcess=%ProgramFiles(x86)%\R-Drive Image\patch-UZ1.exe~%ProgramFiles(x86)%\R-Drive Image\Keygen.exe
+
+REM killService=AnyDesk~edgeupdate
+Set killService=
+
+
+

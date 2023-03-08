@@ -1,0 +1,33 @@
+"-c:D:\Develop\Projects\DevApp\Versions\Araxis Merge\Portable\2023_5848\Compare.exe /wait /3 $files" "-d: " -t:500 "%1" 
+
+"-c:"D:\Develop\Projects\DevApp\Versions\Araxis Merge\Portable\2023_5848\Compare.exe" /wait /3 $files" "%1"
+
+"-c:D:\Develop\Projects\DevApp\Versions\Araxis Merge\Portable\2023_5848\Compare.exe /wait /3 $files" "%1" 
+
+-c:"D:\Develop\Projects\DevApp\Versions\Araxis Merge\Portable\2023_5848\Compare.exe /wait /3 $files" "%1" 
+
+"-c:D:\Develop\Projects\DevApp\Versions\AraxisMerge\Portable\2023_5848\Compare.exe /wait /3 $files" "-d: " -t:500 "%1" 
+
+"-c:Compare.exe /wait /3 $files" "-d: " -t:500 "%1"
+
+"-c:D:\Develop\Projects\DevApp\Versions\AraxisMerge\Portable\2023_5848\Compare.exe /wait /3 $files" "-d: " -t:500 "%1"
+
+
+
+SingleInstanceAccumulator "-c:D:\Develop\Projects\DevApp\Versions\Araxis Merge\Portable\2023_5848\Compare.exe /wait /3 $files" "-d: " -t:500 "d:\Develop\Projects\ALL\AppMany\Singleinstanceaccumulator\Projects.txt"
+
+singleinstance "d:\Develop\Projects\ALL\AppMany\Context-Menu-Launcher\Cmdline\Projects.txt" "D:\Develop\Projects\DevApp\Versions\Araxis Merge\Portable\2023_5848\Compare.exe" /wait /3 $files
+singleinstance "d:\Develop\Projects\ALL\AppMany\Context-Menu-Launcher\Cmdline\Readme.txt" "D:\Develop\Projects\DevApp\Versions\Araxis Merge\Portable\2023_5848\Compare.exe" /wait /3 $files --si-timeout 400
+
+
+Usage: singleinstance.exe "%1" {command} $files [arguments]
+
+Optional arguments for singleinstance (not passed to command):
+
+--si-timeout {time to wait in msecs}
+
+
+@="\"d:\\singleinstance.exe\" \"%1\" \"C:\\Program Files\\Perforce\\p4merge.exe\" $files --si-timeout 400"
+
+ 
+
