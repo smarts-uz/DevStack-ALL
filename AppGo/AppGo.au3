@@ -61,12 +61,12 @@ Func app($filePath, $clean = False)
         If FileExists($aRetArray[1]) Then
             $item = $aRetArray[1]
         Else
-            $item = _ES_SearchFolderPath($aRetArray[2])
+            $item = _ES_Search($aRetArray[2])
         EndIf
 
     Else
         $sFileContent = $aRetArray[1]
-        $item = _ES_SearchFolderPath($sFileContent)
+        $item = _ES_Search($sFileContent)
     EndIf
 
 	_TC_GoTo_Dir($item)
