@@ -210,7 +210,7 @@ EndFunc   ;==>app
 #ce	=========================================================
 Func runs($file, $clean = False)
 
-    executer($parentFolder, '*.' & $ext, True, @SW_SHOWDEFAULT, True, $file)
+    executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file)
     _Log('parentFolder')
 
 EndFunc   ;==>runs

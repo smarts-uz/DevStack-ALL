@@ -143,10 +143,6 @@ Func app($file, $clean = False)
         _Log($ext, 'Executing Ext: ')
         _Log($fullPath, 'fullPath')
         
-        If StringInStr($ext, '.') = 0 Then
-            $ext = "*." & $ext
-        EndIf
-        
         executer($fullPath, $ext, Not $noWait, $window)
 
     Next

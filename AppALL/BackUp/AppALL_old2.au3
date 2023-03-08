@@ -2,6 +2,7 @@
 #include <GUIConstantsEx.au3>
 #include <MyUDFs\ShellOpen.au3>
 #include <MyUDFs\ShellAll.au3>
+#include <MyUDFs\Config.au3>
 #include <MyUDFs\Es2.au3>
 #include <MyUDFs\Log.au3>
 #include <MyUDFs\Env.au3>
@@ -17,7 +18,7 @@
 Global $UDFName = 'AppALL.au3'
 
 $ext = 'appall'
-
+Global $exts
 
 #cs | INDEX | ===============================================
 
@@ -39,6 +40,7 @@ $ext = 'appall'
 
 
 $appFile = 'd:\Develop\Projects\ALL\AppShell\Testing\ALL.appall'
+$appFile = 'd:\Develop\Projects\ALL\FreeFileSync\ALL.appall'
 cmdshell($ext, $appFile, True, False)
 
 
@@ -59,11 +61,55 @@ Func app($file, $clean = False)
 
     If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
 
+	
+	_Log($file, 'file')
+	
+    Local $noWait
+
     $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
-    
-     runsLocal($file, $clean)
+
+    If FileGetSize($file) = 0 Then
+        _Log('FileGetSize($file) = 0')
+        runsLocal($file, $clean)
         Return False
-    
+    EndIf
+
+
+    _FileReadToArray($file, $exts)
+    ; _ArrayDisplay($exts)
+
+
+    _Log($exts, 'exts')
+
+    If Not IsArray($exts) Then
+        Mbox('_FileReadToArray($file, $exts)')
+        Exit
+    EndIf
+
+    _ArrayDelete($exts, 0)
+
+	
+    For $ext In $exts
+
+        _Log($ext, 'Executing Ext: ')
+
+		
+		  $cmd = ''
+    If $clean Then
+        $cmd = '/clean'
+    EndIf
+
+	executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
+        
+    Next
+	
+      
+
+    If Not isParentProcessSelf() And @Compiled Then
+        Sleep($sleepTime)
+    EndIf
+
+
 EndFunc   ;==>app
 
 
@@ -82,26 +128,25 @@ EndFunc   ;==>app
 Func runsLocal($file, $clean = False)
 
     Local $extsStr = 'appshell'
-    Local $extsStr = 'envvars,envpath,envuser,appassoc,appshell,appprot,appexe,apphost,appconf,applnk,autorun'
-
+    Local $extsStr = 'envvarsall,envvars,envpathall,envpath,appassoc,appshell,appmany,appprot,appexe,appserv,apphost,appconf,applnk,autorun'
+    
     Local $exts = StringSplit($extsStr, ',')
     _ArrayDelete($exts, 0)
-    
+
     _Log($exts)
 
     $cmd = ''
     If $clean Then
         $cmd = '/clean'
     EndIf
-    
-    
+
     For $ext In $exts
-        executer($parentFolder, '*.' & $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
+        executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
     Next
 
     _Log('parentFolder')
 
-EndFunc   ;==>runs
+EndFunc   ;==>runsLocal
 
 
 
