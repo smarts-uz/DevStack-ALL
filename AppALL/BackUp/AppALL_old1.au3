@@ -18,7 +18,7 @@
 Global $UDFName = 'AppALL.au3'
 
 $ext = 'appall'
-
+Global $exts
 
 #cs | INDEX | ===============================================
 
@@ -40,8 +40,8 @@ $ext = 'appall'
 
 
 $appFile = 'd:\Develop\Projects\ALL\AppShell\Testing\ALL.appall'
-$appFile = 'd:\Develop\Projects\ALL\FreeFileSync\ALL.appall'
-cmdshell($ext, $appFile, True, False)
+$appFile = 'd:\Develop\Projects\ALL\LockHunter\Portable\ALL.appall'
+cmdshell($ext, $appFile, True, True)
 
 
 
@@ -61,22 +61,23 @@ Func app($file, $clean = False)
 
     If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
 
+    _Log($file, 'file')
+    _Log($clean, 'clean')
+
     Local $noWait
 
     $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
 
- If FileGetSize($file) = 0 Then
+    If FileGetSize($file) = 0 Then
         _Log('FileGetSize($file) = 0')
         runsLocal($file, $clean)
         Return False
     EndIf
 
-
- _FileReadToArray($file, $exts)
+    _FileReadToArray($file, $exts)
     ; _ArrayDisplay($exts)
 
-
-    _Log('exts')
+    _Log($exts, 'exts')
 
     If Not IsArray($exts) Then
         Mbox('_FileReadToArray($file, $exts)')
@@ -85,21 +86,22 @@ Func app($file, $clean = False)
 
     _ArrayDelete($exts, 0)
 
-    $fullPath = pathTitle($exts[0], $parentFolder)
-    _Log('fullPath: ' & $fullPath)
+     $cmd = ''
+        If $clean Then
+            $cmd = '/clean'
+        EndIf
 
-    _ArrayDelete($exts, 0)
+  If Not executer($parentFolder, 'appall', True, @SW_SHOWDEFAULT, True, $file, $cmd) Then
+        _Log('Appall unsuccessful! Trying to run other Extensions')
+		
+        For $ext In $exts
 
-    For $ext In $exts
+            executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
+        Next
+    Else
+        _Log('Appall unsuccessful! Trying to run other Extensions')
+    EndIf
 
-        _Log($ext, 'Executing Ext: ')
-        _Log($fullPath, 'fullPath')
-        
-
-        
-        executer($fullPath, $ext, Not $noWait, $window)
-
-    Next
 
     If Not isParentProcessSelf() And @Compiled Then
         Sleep($sleepTime)
@@ -124,8 +126,8 @@ EndFunc   ;==>app
 Func runsLocal($file, $clean = False)
 
     Local $extsStr = 'appshell'
-    Local $extsStr = 'envvarsall,envvars,envpathall,envpath,appassoc,appshell,appmany,appprot,appexe,appserv,apphost,appconf,applnk,autorun'
-	
+    Local $extsStr = 'envvarsall,envvars,envpathall,envpath,appassoc,appshell,appshellvar,appmany,appprot,appexe,appserv,apphost,appconf,applnk,autorun'
+
     Local $exts = StringSplit($extsStr, ',')
     _ArrayDelete($exts, 0)
 
@@ -136,14 +138,19 @@ Func runsLocal($file, $clean = False)
         $cmd = '/clean'
     EndIf
 
-
-    For $ext In $exts
-        executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
-    Next
+    If Not executer($parentFolder, 'appall', True, @SW_SHOWDEFAULT, True, $file, $cmd) Then
+        _Log('Appall unsuccessful! Trying to run other Extensions')
+        For $ext In $exts
+            executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
+        Next
+    Else
+        _Log('Appall unsuccessful! Trying to run other Extensions')
+    EndIf
 
     _Log('parentFolder')
 
 EndFunc   ;==>runsLocal
+
 
 
 

@@ -41,7 +41,10 @@ Global $exts
 
 $appFile = 'd:\Develop\Projects\ALL\AppShell\Testing\ALL.appall'
 $appFile = 'd:\Develop\Projects\ALL\LockHunter\Portable\ALL.appall'
-cmdshell($ext, $appFile, True, True)
+$appFile = 'd:\Develop\Projects\ALL\AppALL\Testing\ALL.appall'
+$appFile = 'd:\Develop\Projects\ALL\AppALL\Testing\1\11\111\ALL.appall'
+
+cmdshell($ext, $appFile, True, False)
 
 
 
@@ -60,10 +63,10 @@ cmdshell($ext, $appFile, True, True)
 Func app($file, $clean = False)
 
     If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
-    
+
     _Log($file, 'file')
     _Log($clean, 'clean')
-    
+
     Local $noWait
 
     $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
@@ -73,7 +76,6 @@ Func app($file, $clean = False)
         runsLocal($file, $clean)
         Return False
     EndIf
-
 
     _FileReadToArray($file, $exts)
     ; _ArrayDisplay($exts)
@@ -87,21 +89,17 @@ Func app($file, $clean = False)
 
     _ArrayDelete($exts, 0)
 
+    $cmd = ''
+    If $clean Then
+        $cmd = '/clean'
+    EndIf
+
+	
+    executer($parentFolder, 'appall', True, @SW_SHOWDEFAULT, True, $file, $cmd)
     
     For $ext In $exts
-
-        _Log($ext, 'Executing Ext: ')
-
-        
-        $cmd = ''
-        If $clean Then
-            $cmd = '/clean'
-        EndIf
-
         executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
-
     Next
-    
 
 
     If Not isParentProcessSelf() And @Compiled Then
@@ -127,7 +125,7 @@ EndFunc   ;==>app
 Func runsLocal($file, $clean = False)
 
     Local $extsStr = 'appshell'
-    Local $extsStr = 'envvarsall,envvars,envpathall,envpath,appassoc,appshell,appmany,appprot,appexe,appserv,apphost,appconf,applnk,autorun'
+    Local $extsStr = 'envvarsall,envvars,envpathall,envpath,appassoc,appshell,appshellvar,appmany,appprot,appexe,appserv,apphost,appconf,applnk,autorun'
 
     Local $exts = StringSplit($extsStr, ',')
     _ArrayDelete($exts, 0)
@@ -139,13 +137,17 @@ Func runsLocal($file, $clean = False)
         $cmd = '/clean'
     EndIf
 
+    executer($parentFolder, 'appall', True, @SW_SHOWDEFAULT, True, $file, $cmd)
+    
     For $ext In $exts
         executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
     Next
 
+
     _Log('parentFolder')
 
 EndFunc   ;==>runsLocal
+
 
 
 
