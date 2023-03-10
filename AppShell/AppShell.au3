@@ -44,6 +44,7 @@ $ext = 'appshell'
 
 $appFile = 'd:\Develop\Projects\ALL\AppShell\Testing\App\ALL.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\AutoIT\Portable\au3.appshell'
+$appFile = 'd:\Develop\Projects\DevApp\Execute\Power\Compile\ALL.appshell'
 cmdshell($ext, $appFile, True, True)
 
 

@@ -1,0 +1,1 @@
+-Command '& { ps2exe -inputFile "%1" -iconFile "\..\..\IconApp\6.ico" -x64 -title "Compiled App from Smarts.Uz" -description "The Great Software" -company "Smart Software Uzbekistan" -product "Compiled App from Smarts.Uz" -copyright "Smarts.Uz" -trademark "Smarts.Uz" -version 2.0.0 -supportOS}'  
