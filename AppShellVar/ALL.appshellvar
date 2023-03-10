@@ -1,0 +1,2 @@
+Drive
+\ALL.cmd\r-driveimagecl.exe|R-Drive Image Create FULL|create /a /o -s="%1" -ou -a="[FileSaveDialog('Choose Backup File', '', 'RDI Backups (*.rdr)', 2 + 16, 'Backup')]" -p="[Inbox('Add Password')]" -v="[Inbox('Add Size in MB')]Mb" -c=9 -u -s-xr -s-n
