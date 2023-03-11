@@ -43,6 +43,7 @@ $appFile = 'd:\Develop\Projects\ALL\AppShell\Testing\ALL.appall'
 $appFile = 'd:\Develop\Projects\ALL\LockHunter\Portable\ALL.appall'
 $appFile = 'd:\Develop\Projects\ALL\AppALL\Testing\ALL.appall'
 $appFile = 'd:\Develop\Projects\ALL\AppALL\Testing\1\11\111\ALL.appall'
+$appFile = 'd:\Develop\Projects\DevApp\IDEApp\JB-Rider\ALL.appall'
 
 cmdshell($ext, $appFile, True, False)
 
