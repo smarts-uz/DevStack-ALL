@@ -1,0 +1,142 @@
+<div id="jqxInternetProtSettingsTabs">
+ <ul>
+     <li>Settings</li>
+     <li>Advanced</li>
+     <li>Proxy Settings</li>
+     <li>Security</li>
+ </ul>
+ <div style="margin-left: 10px;">
+     <br/>
+     <!--Settings-->
+     <div>Library</div><div id="jqxLibraryCombo" style="float: left;"></div><br/><br/>
+     <div>URL</div><div><input type="text" id="FTP_url"/></div>
+
+     <table style="width:500px;margin-top:15px">
+     <tr>
+       <td>Port: &nbsp;</td>
+       <td><div id="FTP_port"><input type="text"/><div></div></div></td>
+       <td><div id="cbFTP_passive_mode">Passive Mode</div></td>
+       <td><div id="cbFTP_secure">Secure Transfer</div></td>
+     </tr>
+     </table>
+     <br/>
+     <div>Folder</div><div><input type="text" id="inptInternetFolder"/>
+
+     <button id="FTPBrowseButton">...</button>
+
+     </div>
+     <div>start absolute paths with / (otherwise relative to home dir)</div>
+     <br/>
+     <div>User ID (Login):</div><div><input type="text" id="FTP_login"/></div>
+     <div>Password</div><div><input type="password" id="inptPassword"/></div>
+
+     <br/>
+     <table style="width:400px">
+     <tr>
+       <td><div id="cballow_ipv6">Allow IPV6</div></td>
+     </tr>
+     </table>
+
+     <br/>
+ </div>
+ <div style="margin-left: 10px;">
+     <br/>
+     <!--Advanced-->
+     <div>Character Set:</div><div id ="comboFTP_adv_Charset" style="float: left;"></div><br/><br/>
+     <div id="cbadv_replace_characters">Replace characters...</div>
+     <div id="cbFTP_adv_ascii_transfer_mode">ASCII Transfer mode (profile may contain text files only!)</div>
+     <div id="cbFTP_adv_server_supports_moving">FTP Server Supports Renaming and Moving Folders</div>
+     <br>
+     <div>FTP Listing Command</div><div id ="comboFTP_adv_ListingCommand" style="float: left;"></div><br/><br/>
+     <div id="cbFTP_adv_verify_file">Verify destination file size after transfer</div>
+     <div id="cbFTP_adv_respect_passive_mode">Respect passive mode IP address given by server</div>
+     <br>
+     <div>Timestamps For Uploads:</div><div id ="comboFTP_adv_TimestampsForUploads" style="float: left;"></div><br/><br/>
+
+     <table>
+     <tr>
+       <td style="width:15%"><div>Time Zone:</div></td>
+       <td style="width:10%"><div><div id="cbFTP_autozone"/>Auto</div></td>
+       <td style="width:10%"><div><div id="cbFTP_UTC"/>UTC</div></td>
+       <td style="width:15%"><div>Offsets: List: </div></td>
+       <td style="width:10%"><div id="FTP_adv_list"><input type="text"/><div></div></div></td>
+       <td style="width:13%"><div>&nbsp;&nbsp;&nbsp;Upload:</div></td>
+       <td style="width:10%"><div id="FTP_adv_upload_min"><input type="text"/><div></div></div></td>
+       <td style="width:17%"><div>(Minutes)</div></td>
+     </tr>
+     </table>
+     <br>
+     <table>
+       <tr>
+         <td><div>Timeout: &nbsp;</div></td><td><div id="adv_timeout"><input type="text"/><div></div></div></div></td><td><div>seconds.</div></td>
+       </tr>
+       <tr>
+          <td><div>Retries: &nbsp;</div></td><td><div id="adv_retries"><input type="text"/><div></div></div><td><td></td>
+       </tr>
+     </table>
+
+ </div>
+ <div style="margin-left: 10px;">
+     <br/>
+     <!--Proxy Settings-->
+     <div>Proxy Type</div><div id ="comboproxy_type" style="float: left;"></div><br/><br/>
+     <div>Proxy Host:</div><div><input type="text" id="proxy_host"/></div>
+     <div>Port:</div><div id="proxy_port"><input type="text"/></div>
+     <div>User ID (login):</div><div><input type="text" id="proxy_login"/></div>
+     <div>Password:</div><div><input type="password" id="proxy_password"/></div>
+     <div style="margin-top:10px">For "USER" with no logon, please leave User ID and Password fields blank!</div>
+     <br/>
+     <div id="cbFTP_proxy_send_host_command">Send HOST command</div>
+ </div>
+ <div style="margin-left: 10px;">
+     <br/>
+     <div>Secure Transfer Settings</div>
+     <br/>
+     <div>Security mode:</div>
+
+     <table style="width:350px">
+     <tr>
+       <td><div id="rbFTPSnone">None</div><br/></td>
+       <td><div id="rbFTPSimplicit">Implicit TLS</div><br/></td>
+       <td><div id="rbFTPSexplicit">Explicit TLS</div><br/></td>
+     </tr>
+     </table>
+
+     <div>Auth Cmd:</div>
+
+         <table style="width:350px">
+         <tr>
+           <td><div id="rbFTP_Security_auto">Auto</div>   <br/></td>
+           <td><div id="rbFTP_Security_TLS">TLS</div><br/></td>
+           <td><div id="rbFTP_Security_SSL">SSL</div><br/></td>
+           <td><div id="rbFTP_Security_TLSC">TLSC</div><br/></td>
+           <td><div id="rbFTP_Security_TLSP">TLSP</div><br/></td>
+         </tr>
+         </table>
+
+
+
+     <div>Version:</div>
+
+
+         <table style="width:350px">
+         <tr>
+           <td><div id="ftpTLS11plus">TLS 1.1+</div><br/></td>
+           <td><div id="ftpTLS12plus">TLS 1.2+</div><br/></td>
+           <td><div id="ftpTLS13plus">TLS 1.3+</div><br/></td>
+         </tr>
+         </table>
+
+     <div>Private Key Authentication</div>
+     <div id ="comboFTP_security_Certificate" style="float: left;"></div><br/><br/>
+     <div>Private Key Password:</div><div><input type="password" id="FTP_security_CertificatePassword"/></div>
+
+     <table style="width:400px;margin-top:10px">
+     <tr>
+       <td><div id="cbFTP_security_nopassword">No password needed</div></td>
+     </tr>
+     </table>
+
+ </div>
+</div>
+

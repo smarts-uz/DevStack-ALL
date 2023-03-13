@@ -1,0 +1,90 @@
+               <div id="jqxInternetProtSettingsTabs">
+                <ul>
+                    <li>Settings</li>
+                    <li>Advanced</li>
+                    <li>Proxy Settings</li>          
+                    <li>Security</li> 
+                </ul>
+                <div style="margin-left: 10px;">           
+                    <!--Settings-->                                                        
+                    <br/>                                   
+                    <div>Library</div><div id="jqxLibraryCombo" style="float: left;"></div><br/><br/>                
+                    <div>URL</div><div><input type="text" id="WebDAV_url"/></div><br/>
+                    <div>Authentication</div><div id="jqxWebDAVAuthenticationCombo" style="float: left;"></div><br/><br/>
+                    <div>Folder</div><div><input type="text" id="inptInternetFolder"/>
+                    <button id="WebDAVBrowseButton">...</button></div>
+                    <br/>
+
+                    <div>User ID (Login):</div><div><input type="text" id="WebDAV_login"/></div><br/>
+                    <div>Password</div><div><input type="password" id="inptPassword"/></div><br/>
+
+                                                                                                                                
+                    <table style="width:400px">
+                    <tr>
+                      <td><div id="cballow_ipv6">Allow IPV6</div><br/></td>
+                    </tr>  
+                    </table>
+
+                                                                                                    
+                    <br/><br/>                                          
+                </div>                  
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Advanced-->
+                    <div>Character Set:</div><div id ="comboWebDAV_adv_Charset" style="float: left;"></div><br/><br/>
+                    <div id="cbadv_replace_characters">Replace characters...</div>
+                    
+                    <br/>
+                    <div>WebDAV Strategy:</div><div id ="comboWebDAV_adv_strategyCombo" style="float: left;"></div><br/><br/>
+
+                    <br/>
+                    <div id="cbWebDAV_adv_use_displayname">Use DisplayName from WebDAV( Alias Handling )</div>
+                    <br/>
+                    <div id ="comboWebDAV_adv_use_expect_100_continue" style="float: left;">Use Expect: 100-continue</div><br/><br/>
+                    <div>Timestamps For Uploads:</div><div id ="comboWebDAV_adv_TimestampsForUploads" style="float: left;"></div><br/><br/>
+
+                    <br/>
+                    <table>
+                        <tr>
+                    <td><div>Timeout:</div></td><td><div id="adv_timeout"><input type="text"/></div></td><td><div>seconds.</div></td><td></td>
+                       </tr>
+                       <tr>
+                    <td><div>Retries:</div></td>
+                    <td><div id="adv_retries"><input type="text"/></div></td>
+                       </tr>
+                       <tr>
+                    <td>
+                    <div>HTTP Authentication Retries: &nbsp;</div><div id="WebDAV_adv_http_retries"><input type="text"/></div>
+                    </td>
+                      </tr>
+                    </table>            
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Proxy Settings-->
+                    <div>Proxy Type</div><div id ="comboproxy_type" style="float: left;"></div><br/><br/>
+                    <div>Proxy Host:</div><div><input type="text" id="proxy_host"/></div>
+                    <div>Port:</div><div id="proxy_port"><input type="text"/></div>
+                    <div>User ID (login):</div><div><input type="text" id="proxy_login"/></div>
+                    <div>Password:</div><div><input type="password" id="proxy_password"/></div>
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <div>Secure Transfer Settings</div>
+                    <br/>
+                    <div>Version:</div>     
+
+                    <div id = 'WebDAV_Version_Group'>
+                    <table style="width:350px">
+                    <tr>
+                      <td><div id="ftpTLS11plus">TLS 1.1+</div><br/></td>
+                      <td><div id="ftpTLS12plus">TLS 1.2+</div><br/></td>
+                      <td><div id="ftpTLS13plus">TLS 1.3+</div><br/></td>
+                    </tr>
+                    </table>
+                    </div>
+
+                </div>
+             </div>
+    
+   

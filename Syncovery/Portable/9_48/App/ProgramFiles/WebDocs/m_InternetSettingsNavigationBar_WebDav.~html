@@ -1,0 +1,138 @@
+
+<div id='jqx_internet_settings_navigationbar'>
+
+   <div><div class="inner first"></div></div>    
+   <div>         
+      <div style='margin-left: 5px;'>     
+        <table>
+          <tr>
+            <td><div>Library</div></td>
+            <td><div id="jqxLibraryCombo"></div></td>                
+          </tr>
+          <tr>
+            <td><div>URL</div></td>
+            <td><div><input type="text" id="WebDAV_url"/></div></td>
+          </tr> 
+          <tr>
+            <td><div>Authentication</div></td>
+            <td><div id="jqxWebDAVAuthenticationCombo"></div></td>
+          </tr>
+          <tr>
+            <td><div>Folder</div></td>
+            <td><div><input type="text" id="inptInternetFolder"/></div></td>
+          </tr>
+          <tr>
+            <td><div>User ID (Login):</div></td>
+            <td><div><input type="text" id="WebDAV_login"/></div></td>
+          </tr>
+          <tr>
+             <td><div>Password</div></td>
+             <td><div><input type="password" id="inptPassword"/></div></td>  
+          </tr>
+          <tr>
+            <td><div>Allow IPV6</div></td>
+            <td><div id="cballow_ipv6"></div></td>
+           </tr>  
+         </table>                                                                                                                 
+        
+      </div>
+      
+   </div>
+   <div><br/>Advanced<br/></div>    
+   <div>     
+     <div style='margin-left: 5px;'>     
+      
+        <!--Advanced-->
+        
+        <table>
+          <tr>
+            <td><div>Character Set:</div></td>
+            <td><div id="comboWebDAV_adv_Charset"></div></td>
+          </tr>  
+          <tr>
+            <td><div>Replace Characters...</div></td>
+            <td><div id="cbadv_replace_characters"></div></td>
+          </tr>  
+          <tr>
+            <td><div>WebDAV Strategy:</div></td>
+            <td><div id ="comboWebDAV_adv_strategyCombo"></div></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td><div>Use DisplayName From</br> WebDAV(Alias Handling)</div></td>
+            <td><div id="cbWebDAV_adv_use_displayname"></div></td>
+          </tr> 
+          <tr>
+            <td><div>Use Expect: 100-Continue</div></td>
+            <td><div id ="comboWebDAV_adv_use_expect_100_continue" ></div></td>
+          </tr>   
+         </table> 
+         <table>          
+          <tr>
+            <td><div>Timestamps For Uploads:</div></td>
+            <td><div id ="comboWebDAV_adv_TimestampsForUploads"></div></td>
+          </tr>  
+         </table> 
+         <table>
+          <tr>            
+              <td><div>Timeout(Sec.)</div></td>
+              <td><div><input type="text" id="adv_timeout"/></div></td>
+              <td><div>Retries</div></td>
+              <td><div><input type="text" id="adv_retries"/></div></td>
+          </tr>  
+          <tr>            
+            <td><div>HTTP </br>Auth Retries</div><div></td>
+            <td><input type="text" id="WebDAV_adv_http_retries"/></div></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>          
+                                                                                                                                                                      
+      </div>
+    </div>    
+    <div><br/>Proxy Settings<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+      <!--Proxy Settings-->
+      <table>
+        <tr>
+           <td><div>Proxy Type</div></td>
+           <td><div id ="comboproxy_type"></div></td>
+        </tr>
+        <tr>
+          <td><div>Proxy Host:</div></td>
+          <td><div><input type="text" id="proxy_host"/></div></td>
+        </tr>
+        <tr>
+          <td><div>Port:</div><div></td>
+          <td><input type="text" id="proxy_port"/></div></td>
+        </tr>  
+        <tr>
+          <td><div>User ID (login):</div></td>
+          <td><div><input type="text" id="proxy_login"/></div></td>
+        </tr>  
+        <tr>
+          <td><div>Password:</div></td>
+          <td><div><input type="password" id="proxy_password"/></div></td>
+        </tr>  
+      </table>
+      <div>If A Proxy Login Is Needed, It Must Be Specified Here And Will Be Stored Permamently (Encrypted)</div>
+      </div>
+    </div>
+    <div><br/>Security<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+       <div><b>Secure Transfer Settings</b></div>
+        <div>Version:</div>     
+        <table>
+        <tr>
+         <td><div id="ftpTLS11plus">TLS 1.1+</div></td>
+         <td><div id="ftpTLS12plus">TLS 1.2+</div></td>
+         <td><div id="ftpTLS13plus">TLS 1.3+</div></td>
+        </tr>
+        </table>
+      </div>
+    </div>    
+</div>    
+

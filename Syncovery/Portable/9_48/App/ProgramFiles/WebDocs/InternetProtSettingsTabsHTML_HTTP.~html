@@ -1,0 +1,96 @@
+               <div id="jqxInternetProtSettingsTabs">
+                <ul>
+                    <li>Settings</li>
+                    <li>HTML</li> 
+                    <li>Advanced</li>
+                    <li>Proxy Settings</li>          
+                    <li>Security</li> 
+                </ul>
+                <div style="margin-left: 10px;">  
+                    <br/>         
+                    <!--Settings-->                                                                                                               
+                    <div>URL</div><div><input type="text" id="HTTP_url"/></div>
+                    <br/>
+                    <div>Port</div><div id="HTTP_port"><input type="text"/></div>
+                    <br/>
+                    <div>Folder</div><div><input type="text" id="inptInternetFolder"/></div>
+                    <br/>
+                    <div>User ID (Login):</div><div><input type="text" id="HTTP_login"/></div>
+                    <div>Password</div><div><input type="password" id="inptPassword"/></div>
+
+
+                    <br/>
+                    <table style="width:400px">
+                    <tr>
+                      <td><div id="cballow_ipv6">Allow IPV6</div></td>
+                    </tr>  
+                    </table>
+                    <br/><br/>
+                    
+                </div>                  
+                <div style="margin-left: 10px;">           
+                   <br/>
+                    <!--HTML-->    
+                   <div id="cbHTTP_HTML_download_and_parse">Download And Parse All HTML Files</div>
+                   <div>Parsing Limit Per Profile Run</div><div id="HTTP_HTML_parsing_limit"><input type="text"/></div>
+                    <br/>
+                   <div id="cbHTTP_HTML_enquire_timestamp">Enquire Timestamp And Size For Files</div>
+                   <div id="cbHTTP_HTML_enquire_precise_info">Enquire Precise Info If Index Page Provides Aproximate Data</div>
+                   <div id="cbHTTP_HTML_download_default_pages">Download default (index) pages for all folders</div>
+                   <div id="cbHTTP_HTML_consider_locally_existing_files">Consider Locally Existing Files Current(Don't Check For Changes)</div>
+                   <div id="cbHTTP_HTML_assume_local_files">Assume That Local Files Also Exists On Web Server</div>
+                   <div id="cbHTTP_HTML_avoid_re_downloading">Avoid Re-Downloading Dynamic Web Pages</div>
+                    <br/>
+                   <div>Links Above Initial Folder</div><div id ="jqxLinksAboveCombo" style="float: left;"></div><br/><br/>
+                    <br/>
+                   <div>Links To Other Domains</div><div id ="jqxLinksToOtherDomainsCombo" style="float: left;"></div><br/><br/>
+                   <div>Note: the program will only go into parent folders as long as the root directory on the other (local) side is not reached.</div>                                                                            
+                </div>                  
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Advanced-->
+                    <div>Character Set:</div><div id ="comboHTTP_adv_Charset" style="float: left;"></div><br/><br/>
+                    <div id="cbadv_replace_characters">Replace characters...</div>
+
+                    <br/><br/>
+
+                    <table>
+                    <tr>
+                    <td><div>Timeout:</div></td><td><div id="adv_timeout"><input type="text"/></div></td><td><div>seconds.</div></td><td></td>
+                    </tr>
+                    <tr>
+                    <td><div>Retries:</div></td>
+                    <td><div id="adv_retries"><input type="text"/></div></td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <div>HTTP Authentication Retries: &nbsp;</div></td><td><div id="HTTP_adv_http_retries"><input type="text"/></div>
+                    </td>
+                    </tr>
+                    </table>
+
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Proxy Settings-->
+                    <div>Proxy Type</div><div id ="comboproxy_type" style="float: left;"></div><br/><br/>
+                    <div>Proxy Host:</div><div><input type="text" id="proxy_host"/></div>
+                    <div>Port:</div><div id="proxy_port"><input type="text"/></div>
+                    <div>User ID (login):</div><div><input type="text" id="proxy_login"/></div>
+                    <div>Password:</div><div><input type="password" id="proxy_password"/></div>
+    <div style="margin-top:10px">If a proxy login is needed, it must be specified here and will be stored permamently (encrypted)</div>
+
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!---->
+                    <div>Secure Transfer Settings</div>
+                    <br/>
+                    <div>Version:</div>     
+                    <div id="ftpTLS11plus">TLS 1.1+</div>
+                    <div id="ftpTLS12plus">TLS 1.2+</div>
+                    <div id="ftpTLS13plus">TLS 1.3+</div>
+                </div>
+             </div>
+    
+   

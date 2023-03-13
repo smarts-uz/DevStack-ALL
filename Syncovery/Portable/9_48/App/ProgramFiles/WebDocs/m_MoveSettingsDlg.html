@@ -1,0 +1,49 @@
+<div id='jqxMoveSettingsDlg'>
+<div>Move Settings</div>
+<div> 
+<table id="container">
+<tr>
+<td valign="top">
+
+    <div  style="float: none;">
+       <div style='float: none;'>
+           <button id="MoveDlg_OK_btn">OK</button> 
+            <button id="MoveDlg_Cancel_btn">Cancel</button>               
+        </div>
+    </div>          
+    
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+
+ <div style='background-color:lightgrey;'>These are special settings that apply only to MOVED FILES mode 
+If you choose to have destination files overwritten, you can combine this setting with "Keep multiple backup versions" or
+"Use Recycle Bin" for overwritten files.
+ </div>         
+
+              <div>If you file already exists on destination side:</div>
+               
+               <div>                           
+                  <div id="mmMoveNormal_Mode">Leave the files untouched</div>
+                  <div id="mmOverwriteDest_Mode">Overwrite destination file if identical or older</div>                              
+                  <div id="mmRenameSource_Mode">Rename the source file before moving it</div>
+                  <div id="mmDeleteIdenticalSource_Mode">Delete identical or older files from source</div>                              
+               </div>
+
+   <table>
+    <tr>
+      <td><div id="jqxMove_MoveByCopyingCb"></div></td>         
+      <td><div>Move by Copying, then Deleting Source File</div></td>
+    </tr> 
+   </table>
+ <div>(This helps inheriting the permissions from destination folder).</div>
+
+
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>

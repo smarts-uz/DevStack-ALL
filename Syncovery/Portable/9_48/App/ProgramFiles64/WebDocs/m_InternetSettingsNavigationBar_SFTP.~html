@@ -1,0 +1,150 @@
+
+<div id='jqx_internet_settings_navigationbar'>
+
+   <div><div class="inner first"></div></div>    
+   <div>         
+      <div style='margin-left: 5px;'>     
+      
+        <table>
+          <tr>
+             <td><div>Library</div></td>
+             <td><div id="jqxLibraryCombo"></div></td>
+          </tr>
+        </table>
+        <table>
+          <tr>            
+             <td><div>URL</div></td>
+             <td><div><input type="text" id="SSH_url"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Folder</div></td>
+            <td><div><input type="text" id="inptInternetFolder"/></div></td>        
+          </tr>  
+        </table>
+        <div>Start Absolute Paths With /<br/> (Otherwise Relative To Home Dir)</div>
+        
+                
+        <table>
+          <tr>
+            <td><div>Port</div></td>
+            <td><div><input type="text" id="SSH_port"/></div></td>
+          </tr>  
+          <tr>
+            <td><div>User ID:</div></td>
+            <td><div><input type="text" id="SSH_login"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Password</div></td>
+            <td><div><input type="password" id="inptPassword"/></div></td>
+          </tr>
+        </table>       
+        
+        <table>
+        <tr>
+          <td><div id="cballow_ipv6"></div></td>
+          <td><div>Allow IPV6</div></td>
+        </tr>  
+        <tr>
+          <td><div id="cbSSH_usePutty"></div></td>
+          <td><div>Use TGPuttyLib</div></td>
+        </tr>
+        </table>
+
+
+
+      </div>
+      
+   </div>
+   <div><br/>Advanced<br/></div>    
+   <div>     
+     <div style='margin-left: 5px;'>     
+
+        <div>Character Set:</div><div id ="comboSSH_adv_Charset"></div>
+        <table>
+        <tr>
+          <td><div id="cbadv_replace_characters"></div></td>
+          <td><div>Replace Characters...</div></td>
+        </tr>
+        <tr>
+          <td><div id="cbadv_recursive_listing"></div></td>
+          <td><div>Recursive Listing (Supported Only By Some Servers)</div></td>
+        </tr>  
+        <tr>
+          <td><div id="cbSSH_adv_verify_destination_file"></div></td>
+          <td><div>Verify Destination File Size After Transfer</div></td>
+        </tr>  
+
+        <table>                        
+          <tr>
+            <td><div><div id="cbSSH_zoneauto"/></div></td>
+            <td><div>Zone</div></td>  
+            <td><div><div id="cbSSH_UTC"/></div></td>
+            <td><div>Auto</div></td>            
+          </tr>  
+          <tr>
+            <td><div><input type="text" id="SSH_adv_list"/></div></td>
+            <td><div>UTC Offsets List</div></td>
+            <td><div><input type="text" id="SSH_adv_upload_min"/></div></td>
+            <td><div>Upload (min)</div></td>           
+          </tr>
+          <tr>
+             <td><div><input type="text" id="adv_timeout"/></div></td>
+             <td><div>Timeout(Sec.)</div></td>
+             <td><div><input type="text" id="adv_retries"/></div></td>
+             <td><div>Retries</div></td>   
+        </table>
+
+     </div>
+    </div>    
+    <div><br/>Proxy Settings<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+             <!--Proxy Settings-->          
+          <div>Proxy Type</div>
+          <div id ="comboproxy_type"></div>
+
+          <div>Proxy Host:</div><div><input type="text" id="proxy_host"/></div>
+          <div>Port:</div><div><input type="text" id="proxy_port"/></div>
+
+          <div>User ID (login):</div><div><input type="text" id="proxy_login"/></div>
+          <div>Password:</div><div><input type="password" id="proxy_password"/></div>
+          <div>If A Proxy Login Is Needed, It Must Be Specified Here And Will Be Stored Permamently (Encrypted)</div>
+      </div>
+    </div>
+    <div><br/>Security<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+        <div><b>Secure Transfer Settings</b></div>        
+        <div>Security Mode:</div>           
+        <button id="btnSSH_Security_Advanced_SSH">Advanced SSH Settings</button>
+        <div><b>Authentication Methods For SSH</b></div>
+        <table>
+          <tr>
+            <td><div id="cbSSH_Security_username_password"></div></td>
+            <td><div>User Name / Password</div><td>
+          </tr>
+          <tr>
+            <td><div id="cbSSH_Security_keyboard"></div></td>
+            <td><div>Keyboard</div></td>
+          </tr>
+          <tr>
+            <td><div id="cbSSH_Security_certificate"></div></td>
+            <td><div>Certificate / Public Key</div></td>
+          </tr>  
+        </table>
+        
+        
+        <div>Client Certificate for SSL/SSH</div>
+        <div id ="comboSSH_security_Certificate"></div>
+        <div>Certificate Password:</div>
+        <div><input type="password" id="SSH_security_CertificatePassword"/></div>
+        <table>
+          <tr>
+            <td><div id="cbSSH_security_nopassword"></div></td>
+            <td><div>No Password Needed</div></td>
+          </tr>
+        </table>
+      </div>
+    </div>      
+</div>    
+

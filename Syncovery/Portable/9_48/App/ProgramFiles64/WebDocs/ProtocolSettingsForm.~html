@@ -1,0 +1,19 @@
+
+  <div id="jqxwInternetProtSettingsDlg">
+  <div style="float: left;"><b>Internet Protocol Settings</b></div>
+  <div>        
+          <div>Protocol</div><div id ="jqxProtocolCombo" style="float: left;"></div>                        
+          <br/><br/>
+               <div id="jqxInternetProtSettingsTabs_div"></div>         
+               
+
+            <div>
+               <div style="float: left;">
+                 <button id="OK_btn3">OK</button>
+                 <button id="Cancel_btn3">Cancel</button>
+               </div>
+            </div>
+  </div>        
+         
+          
+      

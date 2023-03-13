@@ -1,0 +1,66 @@
+               <div id="jqxInternetProtSettingsTabs">
+                <ul>
+                    <li>Settings</li>
+                    <li>Advanced</li>
+                    <li>Proxy Settings</li>          
+                </ul>
+                <div style="margin-left: 10px;">    
+                    <br/>       
+                    <!--Settings-->                                                                                                   
+                    <div>Domain</div><div><input type="text" size="50" width="400" id="Sharepoint_domain"/>
+                    <button id="ContainerBrowseButton">...</button>
+                    </div>
+                    <div>Enter your Sharepoint domain and click the Browse button to choose the library and site.</div>
+                    <br/><br/>
+                    <div>Folder</div><div><input type="text" size="100" width="400" id="inptInternetFolder"/>
+                    <button id="FTPBrowseButton">...</button>
+                    </div>
+                    <br/><br/>
+                    <div>Account ID (optional)</div><div><input type="text" size="50" width="400" id="Sharepoint_account_id"/></div>
+                    <br/><br/>
+
+                    <table style="width:400px">
+                    <tr>
+                      <td><div id="cballow_ipv6">Allow IPV6</div></td>
+                    </tr>  
+                    </table>
+                    <br/>
+                </div>                  
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Advanced--> 
+                    <div id="cbadv_replace_characters">Replace characters...</div>
+                    <br/><br/>
+                    <table>
+                      <tr>
+                        <td><div id="cbrecursive_listing"/></div></td>
+                        <td><div>Changes Based Listing (speeds up folder listing after the first run)</div></td>
+                      </tr>
+                      <tr>
+                        <td><div id="cbAvoidChangesAPIInitialListing"/></div></td>
+                        <td><div>Except For First Scan (scan folders directly if cache database empty)</div></td>
+                      </tr>
+                    </table>
+
+                    <br/>
+                    <table>
+                        <tr>
+                    <td><div>Retries: &nbsp;</div></td><td><div id="adv_retries"><input type="text"/></div></td><td></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Proxy Settings-->
+
+                    <div>Proxy Type</div><div id ="comboproxy_type" style="float: left;"></div><br/><br/>
+                    <div>Proxy Host:</div><div><input type="text" id="proxy_host"/></div>
+                    <div>Port:</div><div id="proxy_port"><input type="text"/></div>
+                    <div>User ID (login):</div><div><input type="text" id="proxy_login"/></div>
+                    <div>Password:</div><div><input type="password" id="proxy_password"/></div>
+
+                </div>
+             </div>
+    
+   

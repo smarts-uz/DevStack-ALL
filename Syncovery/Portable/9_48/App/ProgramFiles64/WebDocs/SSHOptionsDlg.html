@@ -1,0 +1,91 @@
+<div id="jqxSSHOptionsDlg">
+<div>SSH-Options</div>
+<div> 
+<table align="left" style="margin: 0px auto;">
+<tr>
+  <td valign="top">
+   <br/>
+   <div>
+   <div>
+      <table cellspacing="10">
+       <tr>
+        <td>
+            <div id="jqxCompressionLevel_SSH_Cb">Zlib Compression Level</div>
+        </td>
+        <td>
+            <div></div><div><input type="text" id="inptCompressionLevel_SSH"/></div>
+        </td> 
+        <td><div>(1-9)</div></td>
+       </tr>
+     </table>
+   </div>
+      
+   <div><div style="float: left; margin-left: 10px;" id='jqxAutoAdjustCiphers_SSH_Cb'>Let the SSH library choose encryption algorithms if it recognizes the server type</div></div>
+
+   <br/>&nbsp;<br/>
+
+   <div style="float: left; margin-left: 10px;">
+     <table>
+       <tr>
+        <td>
+           <p>Encryption Algorithms</p>
+           <div id="jqxEncryptionAlgorithmsListBox"></div>
+        </td>
+        <td>&nbsp; &nbsp;</td>
+        <td>
+           <p>Key Exchange Algorithms</p>
+           <div id="jqxKeyExchangeAlgorithmsListBox"></div>
+        </td>
+        <td>&nbsp; &nbsp;</td>
+        <td>
+           <p>Public Key Algorithms</p>
+           <div id="jqxPublicKeyAlgorithmsListBox"></div>
+        </td>
+        <td>&nbsp; &nbsp;</td>
+        <td>
+           <p>MAC Algorithms</p>
+           <div id="jqxMACAlgorithmsListBox"></div>
+        </td>
+        <td>&nbsp; &nbsp;</td>
+        <td>
+           <p>SFTP Versions</p>
+           <div id="jqxSFTPVersionSetListBox"></div>
+        </td>
+       </tr>
+     </table>
+   </div>
+   <br/>&nbsp;<br/>
+   <div><div style="float: left; margin-left: 10px;" id = 'jqxAutoAdjustTransferBlock_SSH_Cb'>Auto-Adjust Transfer Block Size</div></div>
+   <br/><br/><br/>
+   <div style="float: left; margin-left: 10px;">  
+     <table cellspacing="10">   
+       <tr>
+        <td><div>Download Block Size: &nbsp;</div></td>
+        <td><div></div><div><input type="text" id="inptDownloadBlockSize_SSH"/></div></td>
+        <td><div>SFTP Buffer Size: &nbsp;</div></td>
+        <td><div></div><div><input type="text" id="inptSFTPBufferSize_SSH"/></div></td>
+       </tr>
+       <tr>
+        <td><div>Upload Block Size: &nbsp;</div></td>
+        <td><div></div><div><input type="text" id="inptUploadBlockSize_SSH"/></div></td>
+        <td><div>Pipeline Length: &nbsp;</div></td>
+        <td><div></div><div><input type="text" id="inptPipelineLength_SSH"/></div></td>
+       </tr> 
+     </table>
+  </div>
+  <br/>&nbsp;<br/>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td valign="bottom">
+  <div style="margin-left: 30px; margin-top: 20px">
+  <button id="SSHOptions_Close_btn">Close</button>
+  </div>
+  </td>
+</tr>
+</table>
+
+</div>
+
+</div>

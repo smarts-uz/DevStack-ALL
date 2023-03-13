@@ -1,0 +1,1489 @@
+  <!DOCTYPE html>
+  <html>
+  
+   <body>
+   <div><br/>Main<br/></div>    
+   <div>     
+     <div></div>
+      <div style='margin-left: 5px;'>     
+        <div>Profile Name</div>
+        <div><input type="text" id="inptProfileName"/><div></div><div></div></div>  
+        <div>Left-Hand Side</div>
+        <div><input type="text" id="inptLeftHandSide"/><div></div><div></div></div>
+        <div>Right-Hand Side</div>
+        <div><input type="text" id="inptRightHandSide"/><div></div><div></div></div> 
+        <div><b>Copying directions</b></div>
+        <table> 
+          <tr>
+            <td><div id='jqxLeftToRightCb'></div></td>
+            <td><div>Left to Right</div></td>
+          </tr>  
+          <tr>
+            <td><div id='jqxRightToLeftCb'></div></td>
+            <td><div>Right to Left</div></td>
+          </tr>
+        </table>
+        <table>
+            <tr>
+              <td><div id="NoneMode">None</div></td>
+              <td><div id="AllMode">All</div></td> 
+              <td><div id="SelectedMode">Selected</div></td>             
+            </tr>  
+        </table>
+        <div><b>Sync Operation Mode</b></div>   
+        <table>
+            <tr>
+              <td><div id="Standard_Copying_Mode"></div></td>
+              <td><div>Standard Copying</div></td>
+              <td><div id="SmartTracking_Mode"></div></td> 
+              <td><div>SmartTracking</div></td> 
+            </tr>  
+            <tr>              
+              <td><div id="Exact_Mirror_Mode"></div></td>
+              <td><div>Exact Mirror</div></td>
+              <td><div id="Move_Files_Mode"></div></td>
+              <td><div>Move Files to Dest.</div></td>
+            </tr>           
+        </table>              
+      </div>  
+    </div>
+    <div><br/>Schedule<br/></div>    
+    <div>     
+     <div></div>
+      <div style='margin-left: 5px;'>     
+        <table>
+          <tr>
+            <td><div id="jqxScheduleThisProfileCb"></div></td>
+            <td><div>Schedule This Profile</div></td>
+          </tr>
+        </table>    
+        <div id="Run_Every_Day_Radio_Mode" >Run Every Day(Or Specified Week Days) At </div>
+        <div id="jqxRun_Every_Day_Time_Input"></div>
+        <div id="Repeat_after_Radio_Mode">Repeat After</div>
+        <table>
+            <tr>
+              <td>
+               <div>Days</div> 
+              </td>
+              <td>
+                <div>Hours</div>
+              </td>
+              <td>   
+                <div>Minutes</div>         
+              </td>
+              <td>
+                <div>Sec</div>
+              </td>
+            </tr>
+            <tr>  
+              <td>                          
+                <div id="inptScheduleDays"><div></div></div>                                                                                     
+              </td>
+              <td>
+                <div id="inptScheduleHours"><div></div></div>
+              </td>
+              <td>                          
+                <div id="inptScheduleMinutes"><div></div></div>
+              </td>
+              <td>
+                <div id="inptScheduleSec"><div></div></div>
+              </td>
+            </tr>                                                           
+          </table>
+        <div id="Repeat_monthly_Radio_Mode">Repeat Monthly</div>
+        <div id="Run_only_Once_Radio_Mode">Run Only Once</div>                      
+        <table><tr><td><div id="jqxSpecifyNextRunCb"></div></td><td><div>Specify Next Run</div></td></tr></table>
+        <div>
+        <table>
+          <tr>        
+            <td>
+              <div id="jqxNextRunDay_Input"></div>
+            </td>
+            <td>
+              <div id="jqxNextRunTime_Input"></div>
+            </td>
+          </tr>                                                       
+        </table>
+        </div>
+        <table><tr><td><div id="jqxIntervalSpecificationCb"></div></td><td><div>Interval-Idle Time Between Runs</div></td></tr></table>
+     
+      </div>
+    </div>
+    <div><br/>Schedule->More<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'>  
+       <div><b>Run Upon</b></div>        
+       <table>        
+        <tr>          
+          <td><div id='jqxScheduleRunUponWinLoginCb'></div></td>      
+          <td><div>Windows Login</div></td>
+        </tr> 
+        <tr>          
+          <td><div id='jqxScheduleRunUponShutdownOrRebootCb'></div></td>
+          <td><div>Shutdown And Logout</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxScheduleRunUponLogOutCb'></div></td>
+          <td><div>Shutdown And Logout</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxScheduleRunMissedDaylyJobCb'></div></td>      
+          <td>Run Missed Job At Scheduler Start</td>
+        </tr>                        
+       </table>
+       
+        <table> 
+            <tr>
+              <td>
+                <div id='jqxScheduleAddRandomDelayUpToCb'></div>      
+              </td>  
+              <td>
+                 <div>Add Random Delay</div>
+              </td>
+              <td>
+                 <div id='jqxAddRandomDelay_Time_Input'><input type="text"><div></div><div></div></div>
+              </td>
+              <td>  
+                 <div>Minutes</div>                  
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <div id='jqxScheduleWarnIfProfileNotRunForCb'></div>
+              </td>  
+              <td>
+                <div>Warn If Not Run For</div>   
+              </td>
+              <td>
+                  <div id='jqxWarnIfProfileNotRunFor_Time_Input'><input type="text"><div></div><div></div></div>
+              </td>
+              <td>
+                  <div>Days</div>                  
+              </td> 
+            </tr>
+        </table>
+
+        
+        <b style='margin-left: 15px;'>Additional Times. Run Also On These Times:</b>
+        <table>  
+         <tr>
+             <td>   
+               <div id='jqxUseAdditionalTimes1Cb'></div>
+             </td>  
+             <td>
+               <div id='jqxAdditionalTimes_Time_Input1'><input type="text"><div></div><div></div></div>
+             </td> 
+         </tr>     
+         <tr>
+             <td>
+               <div id='jqxUseAdditionalTimes2Cb'></div>
+             </td>   
+             <td>
+               <div id='jqxAdditionalTimes_Time_Input2'><input type="text"><div></div><div></div></div>
+             </td>  
+         </tr>         
+         <tr>
+           <td>
+              <div id='jqxUseAdditionalTimes3Cb'></div>
+           </td>  
+           <td>
+              <div id='jqxAdditionalTimes_Time_Input3'><input type="text"><div></div><div></div></div>
+           </td>
+         </tr>     
+         <tr>
+           <td>                                
+              <div id='jqxUseAdditionalTimes4Cb'></div>
+           </td>   
+           <td>       
+              <div id='jqxAdditionalTimes_Time_Input4'><input type="text"><div></div><div></div></div>
+           </td>   
+         </tr>             
+       </table>
+      </div>
+    </div>
+    <div><br/>Schedule->Weekdays And Time Window<br/></div>
+    <div>
+      <div></div>      
+      <div style='margin-left: 5px;'>  
+          <b style='margin-left: 15px;'>Profile can run on these Days</b>          
+          <table>          
+            <tr>
+              <td><div id='jqxMondayCb'></div></td>                         
+              <td><div>Monday</div></td>                                                          
+              <td><div id='jqxTuesdayCb'></div></td>
+              <td><div>Tuesday</div></td>              
+            </tr>                                                       
+            <tr>
+              <td><div id='jqxWednesdayCb'>Wednesday</div></td>
+              <td><div>Wednesday</div></td>              
+              <td><div id='jqxThursdayCb'>Thursday</div></td>
+              <td><div>Thursday</div></td>                            
+            </tr>
+            <tr>
+              <td><div id='jqxFridayCb'>Friday</div></td> 
+              <td><div>Friday</div></td>  
+              <td><div id='jqxSaturdayCb'>Saturday</div></td>
+              <td><div>Saturday</div></td>                            
+            </tr>    
+            <tr>
+              <td><div id='jqxSundayCb'></div></td>
+              <td><div>Sunday</div></td>
+              <td></td>
+              <td></td>
+            </tr>  
+          </table>
+          <table>
+            <tr>
+               <td><b style='margin-left: 15px;'>Time Window</b></td>
+               <td><div style='margin-left: 5px;' id='jqxRunOnlyBetweenCb'></div></td>
+               <td><div>Run Only Between</div></td>
+            </tr>    
+          </table>  
+                    
+          <table>          
+            <tr>                                    
+              <td>                          
+                <div style='margin-left: 5px;' id='jqxRunOnlyMinTime_Input'></div>
+              </td>                             
+              <td>                          
+                <div style='margin-left: 5px;' id='jqxRunOnlyMaxTime_Input'></div>
+              </td>                               
+            </tr>                                                       
+          </table>
+         
+          <table>
+            <tr>                                    
+              <td><div id='jqxIgnoreTimeWindowOnWeekendsCb'></div></td>  
+              <td><div>Ignore Limitation On Saturday&#38;Sundays</div></td>              
+            </tr>
+            <tr>
+              <td><div id='jqxStopRunningProfilesCb'></div></td>
+              <td><div>Interrupt Profile At End Of Time Window</div></td>              
+            </tr>  
+            <tr>
+              <td><div id='jqxInterruptMiddleOfFileCb'></div></td>
+              <td><div>Interrupt In Middle Of File</div></td>              
+            </tr>  
+          </table>
+        </div>  
+    </div>
+    <div><br/>Schedule->Monitoring/Real-Time Sync<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'>
+          <!--table>
+        <tr>           
+           <td> 
+            <button id="btnRealTimeSettings">Real-Time Settings...</button>
+           </td> 
+        </tr>
+      </table-->        
+      <table>  
+        <tr>
+         <td><div  id='jqxRealTimeSynchronizationCb'></div></td>
+         <td><div>Real Time Synchronization</div></td>         
+        </tr>      
+        <tr>
+         <td><div id='jqxRealContinuousSyncCb'></div></td>
+         <td><div>Use a single never-ending profile run (to keep FTP connections)</div></td>
+        </tr> 
+        <tr>
+         <td><div id='jqxRealProfileAsSoonAsDriveAvailableCb'></div></td>
+         <td><div>Run profile when drive is available</div></td>
+       </tr>
+     </table>
+     <table>                       
+        <tr>
+          <td><div id="Real_Once_Mode">Once</div></td>
+          <td><div id="Real_Repeatedly_Mode">Repeatedly</div></td>                           
+        </tr>
+     </table>  
+
+     <div><br/>Delay Between Access Attempts<br/></div>                                 
+     <table>                        
+        <tr>
+          <td>                                                        
+            <div id='jqx_RealMonitoringIntervalMinutes'></div>
+          </td>
+          <td>
+            <div>Minutes</div>
+          </td>
+          <td>
+            <div id='jqx_RealMonitoringIntervalSeconds'></div>
+          </td>
+          <td>
+            <div>Seconds</div>
+          </td>
+        </tr>
+     </table>
+     <table>
+      <tr>
+        <td><div id='jqxRealUseMinimumPauseCb'></div></td>  
+        <td><div>Minimum Pause Between Actions</div></td>
+      </tr>
+     </table>
+     <table> 
+        <tr>          
+          <td>
+            <div id='jqx_RealPauseHoursInput'><div></div></div>
+          </td>
+          <td><div>Hours</div></td>
+          <td>
+            <div id='jqx_RealPauseMinutesInput'><div></div></div>                            
+          </td>
+          <td><div>Minutes</div></td>
+          <td>
+            <div id='jqx_RealPauseSecondsInput'><div></div></div>                            
+          </td>
+          <td><div>Seconds</div></td>
+        </tr>                        
+      </table>
+      </div>
+
+    </div>
+
+    <div><br/>Access &#38; Retries->File Access<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'>  
+       <div id='VolShad_lbl'><b>Volume Shadowing</b></div>                                         
+         <div>                        
+           <div id='Do_not_Use_Radio_Mode' style='float: left;'>Do Not Use</div><br/>
+           <div id='Use_to_copy_locked_files_Radio_Mode' style='float: left;'>Use To Copy Locked Files</div>
+           <div id='Use_for_all_files_Radio_Mode' style='float: left;'>Use For All Files</div><br/>
+           <div id='Use_for_all_Create_Radio_Mode' style='float: left;'>Use For All,Create Shadow Before Build FList</div>
+         </div>                       
+       <div><b>Ignore These Errors</b></div>
+       <table>
+         <tr>
+           <td><div id='jqxFAIgnoreAccessDeniedFoldersCb'></div></td>
+           <td><div>Any Errors Listing Folders</div></td>
+         </tr>
+         <tr>
+           <td><div id='jqxFAIgnoreAccessDeniedFilesCb'></div></td>
+           <td><div>Access Denied Reading Files</div></td>
+         </tr>
+         <tr>
+           <td><div id='jqxFAIgnoreMissingFilesCb'></div></td>
+           <td><div>Files That No Longer Exist</div></td>
+         </tr>
+         <tr>
+           <td><div id='jqxFAIgnoreLockedFilesOnDestCb'></div></td>
+           <td><div>Locked Files On Destination</div></td>
+         </tr>
+         <tr>
+           <td><div id='jqxFAIgnoreDeletionErrorsCb'></div></td>
+           <td><div>Any Errors Deleting Files</div></td>
+         </tr>
+         <tr>
+           <td><div id='jqxFAIgnoreDeletingFolderErrorsCb'></div></td>
+           <td><div>Any Errors Deleting Folders</div></td>
+         </tr>  
+       </table>                                                           
+      <div><b>Others</b></div>
+      <table>
+        <tr>
+         <td><div id='jqxFADatabaseSafeCopyCb'></div></td>
+         <td><div>Database Safe Copying: Enforce Exclusive Access</div></td>
+        </tr> 
+        <tr>
+         <td><div id='jqxFATakeAdminOwnershipCb'></div></td>
+         <td><div>Take Admin Ownership Temporarily If Needed to Replace (Update) Files</div></td>
+        </tr>         
+        <tr>
+         <td><div id='jqxFAVerifyOpeningPriorCopyCb'></div></td>
+         <td><div>Prior To Copying, Verify That All Files Can Be Copied</div></td>
+        </tr> 
+      </table>
+
+       </div>
+    </div>
+    <div><br/>Access &#38; Retries->Waiting &#38; Retrying<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'> 
+      <br/> 
+        <table>     
+          <tr>
+            <td><div id='jqxWRWaitForFileAccessCb'></div></td>                                 
+            <td><div>Wait For File Access</div></td>
+          </tr>
+        </table>
+        <table> 
+            <tr>
+              <td>
+                <div>Wait Up To(Mins)</div>
+              </td>
+              <td>  
+                <div id='inptWRWaitUpToMin'><input style='float: left' type="text"><div></div><div></div></div>
+              </td>  
+            </tr>
+         </table>
+
+        <table>     
+          <tr>
+            <td><div id='jqxWRWaitIfTransferProblemCb'></div></td>  
+            <td><div>Wait And Retry If Transfer Or Reading Problem</div></td>
+          </tr>
+        </table>                                
+        <div><b>Re-Run Profile If An Error Occurs While</b></div>
+
+        <table>                               
+            <tr>
+              <td><div id='jqxWRBuildingFileListCb'></div></td>
+              <td><div>Building File List</div></td>
+              <td><div id='jqxWRRunningTheProfileCb'></div></td>  
+              <td><div>Running The Profile</div></td>
+            </tr>                                                        
+        </table>                        
+         <table>   
+            <tr>
+              <td>
+                <div style='float: left; width: 120px;' id="Re_Run_Once_Radio_Mode">Re-Run Once</div>
+              </td>
+              <td>
+                <div style='float: left; width: 160px;' id="Re_Run_Until_Success_Radio_Mode">Re-Run Until Success</div>
+               </td>               
+             </tr>                              
+          </table>
+          <table>
+            <tr>
+               <td>
+                  <div style='float: left; width: 140px;' id="Max_Re_Runs_Radio_Mode">Maximum Re-Runs</div>
+               </td>
+               <td>
+                 <div id='inptWRMaxReRuns' style='float: right'><input type="text"><div></div><div></div></div> 
+               </td>
+            </tr>    
+          </table>
+          <table>
+            <tr>
+                <td><div>Retry After(Seconds)</div></td>
+                <td><div id='inptWRRetryAfter'><input style='float: left; width: 123px;' type="text"><div></div><div></div></div></td>
+            </tr>
+          </table>                                    
+          <table>
+            <tr>
+               <td><div id='jqxWRAvoidRerunDueToLockedCb'></div><td>
+                <td><div>Avoid Re-Run Due To Locked Files</div></td>
+            </tr> 
+          </table>
+        </div>                          
+
+    </div>
+
+    <div><br/>Comparison<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'> 
+          <b>When Size Identical</b><br/>
+          <table>
+            <tr>
+              <td><div id='jqxComparIgnoreSmallTimeDiffCb'></div></td>
+              <td><div>Ignore Small Time Difference</div></td>
+            </tr>
+          </table>
+          <table>            
+            <tr>
+              <td>max(seconds)</td><td><div id='inptComparIgnoreSec'><input type="text"><div></div><div></div></div></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+               <td><div id='jqxComparIgnoreExactHourTimeDiffCb'></div><td>
+               <td><div>Ignore Exact Hour Time Difference</div><td>
+            </tr>  
+          </table>
+          <table>  
+            <tr>
+              <td>Max(Hours)</td><td><div id='inptComparIgnoreHours'><input type="text"><div></div><div></div></div></td>
+            </tr>            
+          </table>
+          <table>
+            <tr>
+              <td><div id='jqxComparIgnoreSecondsCb'></div></td> 
+              <td><div>Ignore Seconds</div></td>         
+            </tr> 
+            <tr> 
+              <td><div id='jqxComparIgnoreTimestampAlltogetherCb'></div></td>
+              <td><div>Ignore Timestamp Altogether</div></td>
+            </tr>
+            <tr>  
+              <td><div id='jqxComparAdjustTimestampOnlyCb'></div></td>
+              <td><div>Never Copy, Adjust Timestamp Only</div></td>
+            </tr>  
+          </table>
+          <br/>           
+         
+          <div><b>When Size Is Different</b><br/>What Should Be Done With Files That Have The Same Timestamp But Different Sizes</div>                     
+           <table>
+             <tr>
+              <td><div id="Ask_Radio_Mode">Ask</div></td>
+              <td><div id="Copy_Left_To_Right_Radio_Mode">Copy Left to Right</div></td>
+             </tr> 
+             <tr>
+              <td><div id="Copy_Right_To_Left_Radio_Mode">Copy Right to Left</div></td>
+              <td><div id="Copy_Larger_Files_Radio_Mode">Copy Larger Files</div></td>
+             </tr>
+           </table>   
+         
+
+      </div>              
+    </div>
+    <div><br/>Comparison->More<br/></div>
+    <div>
+       <div></div>
+       <div style='margin-left: 5px;'> 
+        <table>                                             
+          <tr>
+             <td><div id='jqxComparMoreAlwaysCopyFilesCb'></div></td>
+             <td><div>Always Copy Files, Even Timestamp Unchanged</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxComparStripReadOnlyAttrCb'></div></td>
+            <td><div>Strip Read-Only Attributes</div><td>
+          </tr>
+          <tr>
+            <td><div id='jqxComparMoreBinaryComparisonCb'></div></td>
+            <td><div>Binary Comparison Of Existing Files</div></td>
+          </tr>
+        </table>
+        <div style='margin-left: 5px;'><b>Use remotely generated MD5 On:</b></div>                
+          <table style='margin-left: 5px;'>                        
+            <tr>                                                            
+              <td><div id='jqxComparMoreBinaryLeftSideCb'></div></td>
+              <td><div>Left Side</div></td>              
+              <td><div id='jqxComparMoreBinaryRightSideCb'></div></td>                          
+              <td><div>Right Side</div></td>                          
+            </tr>
+          </table>
+          <table>
+            <tr>
+               <td><div id='jqxComparMoreFileAttributeComparisonCb'></div></td>
+               <td><div>File Attribute Comparison</div></td>                                    
+            </tr>
+            <tr>
+               <td><div id='jqxComparMoreFolderAttributeComparisonCb'></div></td>
+               <td><div>Folder Attribute Comparison</div></td>                                    
+            </tr>
+            <tr>
+               <td><div id='jqxComparMoreCaseSencivityCb'></div></td>
+               <td><div>Case Sensivity: Adjust At Destination</div></td>
+            </tr>
+            <tr>
+               <td><div id='jqxComparMoreFolderTimestampComparisonCb'></div></td>
+               <td><div>Folder Timestamp Comparison</div></td>
+            </tr>
+            <tr>
+               <td><div id='jqxComparMoreVerifySyncStatisticsCb'></div></td>
+               <td><div>Verify Sync Statistics After Completion</div></td>
+            </tr>
+            <tr>
+               <td><div id='jqxComparMoreDetectHardLinksCb'></div></td>
+               <td><div>Detect Hard Links</div></td>
+            </tr>
+            <tr>
+               <td><div id='jqxComparMoreEnforceHardLinksCb'></div></td>
+               <td><div>Enforce Hard Links For Existing Files</div></td>
+            </tr>
+          </table>
+        </div>                         
+                      
+    </div>
+    <div><br/>Files<br/></div>
+    <div>
+      <div></div>
+      <br/>
+      <div style='margin-left: 5px;'>     
+      <table>      
+        <tr>
+          <td><div id='jqxFilesDetectMovedFilesCb'></div></td>
+          <td><div>Detect Moved Files And Renamed Folders</div></td>
+        </tr>
+      </table>
+      <table> 
+        <tr>
+          <td><div>Adjust On:</div></td>
+          <td><div id="Files_Left_Radio_Mode">Left</div></td>
+          <td><div id="Files_Right_Radio_Mode">Right</div></td>                              
+          <td><div id="Files_Automatic_Radio_Mode">Automatic</div></td>                                    
+        </tr>
+      </table>
+      <table> 
+        <tr>             
+           <td><div id='jqxFilesDetectRenamedFilesCb'></div></td>
+           <td><div>Detect Renamed Files</div></td>
+        </tr>
+        <tr>
+           <td><div id='jqxFilesVerifyCopiedFilesCb'></div></td>
+           <td><div>Verify Copied Files</div></td>
+        </tr>
+        <tr> 
+          <td><div id='jqxFilesReCopyOnceCb'></div></td>
+          <td><div>Re-copy Once If Verification Fails</div></td>
+       </tr>
+       <tr>        
+          <td><div id='jqxFilesAutomaticallyResumeCb'></div></td>
+          <td><div>Automatically Resume</div></td>
+       </tr>
+       <tr>
+          <td><div id='jqxFilesProtectFromBeingReplacedCb'></div></td>
+          <td><div>Protect Files From Being Replaced With 0-Byte Files</div></td>
+       </tr>
+       <tr>
+          <td><div id='jqxFilesDoNotScanDestinationCb'></div></td>
+          <td><div>Do Not Scan Destination</div></td>
+      </tr>
+    </table>
+    
+    <div><b>Number Of Files To Copy In Parallel</b></div>
+        <table>
+          <tr>            
+            <td><div id='inptFilesNumberToCopyInparallel'><input type="text"><div></div><div></div></div></td>
+            <td><div id='jqxFilesBypassFileBufferingLeftCb'></div></td>
+            <td><div>Bypass Buffering Left</div></td>
+            <td><div id='jqxFilesBypassFileBufferingRightCb'></div></td>
+            <td><div>Bypass Buffering Right</div></td>
+          </tr>
+        </table>  
+        <div><b>Split Large Files Into Parts Of This File Size</b></div>
+        <table>
+          <tr>            
+            <td><div id='inptFilesSplitLargeFiles'><input type="text"><div></div><div></div></div></td>
+            <td><div>Bytes (e.g. 2G; 0 = no splitting)</div></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+    <div><br/>Files->Deletions<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'>    
+        <div id='jqxRecycleBinOptions'><b>Use recycle Bin For</b></div>                      
+        <table>
+          <tr>
+            <td><div id='jqxFilesDeletions_OverwrittenFiles'></div></td>
+            <td><div>Overwritten Files</div></td>
+            <td><div id='jqxFilesDeletions_DeletedFiles'></div></td>
+            <td><div>Deleted Files</div></td>
+          </tr>            
+        </table>
+
+        <table> 
+          <tr>
+            <td><div id='jqxFilesDeletions_MoveFilesToSFolder'></div></td>
+            <td><div>Move Files Into A Specified Folder</div></td>
+          </tr>          
+        </table>
+        <button id="btnFiles_EditPaths">Edit Paths...</button>
+        <table>
+          <tr>
+             <td><div id='jqxFilesDeletions_DeleteOlderVersionsPermamently'></div></td>
+             <td><div>Delete Older Versions Permamently</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxFilesDeletions_DoubleCheckNonExistence'></div></td>
+            <td><div>Double Check The Non-Existence Of Files Before Deleting On The Other Side</div></td>
+          </tr>           
+          <tr>
+            <td><div id='jqxFilesDeletions_NeverDelete'></div></td> 
+            <td><div>Never Delete Any Files(Only Folders)</div></td> 
+          </tr>
+          <tr>
+             <td><div id='jqxFilesDeletions_DeleteBeforeCopying'></div></td>        
+             <td><div>Delete Files Before Copying</div></td>        
+          </tr>
+        </table>
+      </div>      
+    </div>
+    <div><br/>Files->More<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'>    
+        <table>
+          <tr>
+             <td><div id='jqxFilesMore_UseWindowsApi'></div></td>
+             <td><div>Use Windows API Copying Function</div></td>
+          </tr> 
+        </table>
+        <table>
+        <tr>
+          <td><div id='jqxFilesMore_CopyOnlyFilesPerRun'></div></td>
+          <td><div>Copy Only</div></td>
+          <td><div id='inptFilesMore_FilesPerRun'><input type="text"><div></div><div></div></div></td>  
+          <td><div>Files Per Run</div></td> 
+        </tr>        
+        <tr>
+          <td><div id='jqxFilesMore_CopyOnlyMBPerRun'></div></td>
+          <td><div>Copy Only</div></td>
+          <td><div id='inptFilesMore_MBPerRun'><input type="text"><div></div><div></div></div></td>
+          <td><div>MegaBytes Per Run</div></td>
+        </tr>
+        <tr>
+            <td><div id='jqxFilesMore_SpeedLimit'></div></td>
+            <td><div>Limit</div></td>
+            <td><div id='inptFilesMore_SpeedLimit'><div></div></div></td>
+            <td><div>MB/sec</div></td>  
+         </tr>
+      </table>
+      <table>
+        <tr>
+          <td><div id='jqxFilesMore_CopiedFilesSysTime'></div></td>  
+          <td><div>Copied Files receive current syetem time</div></td>  
+        </tr>                                                        
+        <tr>
+          <td><div id='jqxFilesMore_NeverReplace'></div></td>
+          <td><div>Never Replace Any Files</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxFilesMore_DontAddAnyFiles'></div></td>
+          <td><div>Don't Add Any Files</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxFilesMore_AlwaysAppend'></div></td>
+          <td><div>Always Append Smalled Destination Files</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxFilesMore_IgnoreGlobalSpeedLimit'></div></td>
+          <td><div>Ignore Global and Group Speed Limit</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxFilesMore_AlwaysConsider'></div></td>
+          <td><div>Always Consider Larger Files Newer</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxFilesMore_AndCompareFileDetails'></div></td>
+          <td><div>And Compare File Details(Again)</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxFilesMore_CheckDestinationFile'></div></td>
+          <td><div>Check Destination File(Again) During Copying</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxFilesMore_PreserveLastAccessOnSource'></div></td>
+          <td><div>Preserve Last Access Timestamp on Source</div></td>
+        </tr>
+      </table>
+    </div>
+
+    </div>
+    <div><br/>Folders<br/></div>
+    <div>
+      <br/>
+      <div></div>
+      <div style='margin-left: 5px;'> 
+        <table> 
+          <tr>
+            <td><div id='jqxFolders_CreateEmptyFolders'></div></td> 
+            <td><div>Create Empty Folders</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxFolders_UseIntermediateLocationCb'></div></td>
+             <td><div>Use Intermediate Copying Location...</div></td>                  
+          </tr>
+          <tr>
+            <td><div id='jqxFolders_RemoveEmptiedFolders'></div></td>
+            <td><div>Remove Folders That Were Emptied</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxFolders_OnRightSideCreateFolderEachTime'></div></td>
+            <td><div>On The Right Side Create Folder Each Time</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxFolders_IncludeTimeOfDay'></div></td>
+            <td><div>Include Time Of Day In Created Folder Names</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxFolders_FlatRightSide'></div></td>
+            <td><div>Flat Right Side(No Folders)</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxFolders_CopyLatestFileIfExists'></div></td>
+            <td><div>Copy Latest File If Several Files With The Same Name Exists</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxFolders_EnsureFolderTimestamps'></div></td>
+            <td><div>Ensure Folder Timestamps Reflect The Most Recently Modified File In The SubTree</div></td>
+          </tr>          
+        </table>
+      </div>
+    </div>
+    <div><br/>Job<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'>  
+        <table>
+          <tr>
+            <td><div id='jqxJob_ExecuteCommand'></div></td>
+            <td><div>Execute Command Or Script Before/After</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxJob_ShowCheckboxesInPreview'></div></td>
+            <td><div>Show Checkboxes In Preview</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxJob_OverrideEmailSettings'></div></td>
+            <td><div>Override Email Settings...</div></td>
+          </tr> 
+          <tr>
+            <td><div id='jqxJob_CheckFreeSpaceBeforeCopying'></div></td>
+            <td><div>Check Free Space Before Copying</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxJob_RunAsUser'></div></td>
+            <td><div>Run As User</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxJob_IgnoreInternetConnectivityCheck'></div></td>
+            <td><div>Ignore Internet Connectivity Check</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxJob_NetworkConnections'></div></td>
+            <td><div>Network Connections...</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxJob_RunOnlyIfNeitherSideEmpty'></div></td>
+            <td><div>Run Only If Neither Side Is Empty</div></td>
+          </tr>
+        </table>
+        <div id='jqxJob_ShutdownLabel'><b>Shutdown Computer After This Job</b></div> 
+        <table>           
+          <tr>
+            <td><div id='jqxJob_WhenRunViaScheduler'></div></td>
+            <td><div>When Run Via Scheduler</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxJob_WhenRunManuallyUnattended'></div></td>
+            <td><div>When Run Manually(Unattended)</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxJob_WhenRunManuallyAttended'></div></td>    
+            <td><div>When Run Manually(Attended)</div></td>    
+          </tr>
+        </table>
+        <div><b>File List Threads:</b></div>
+        <table>
+          <tr>
+            <td><div id="Job_Threads_Default_Radio_Mode">Default</div></td>
+            <td><div id="Job_Threads_Custom_Radio_Mode">Custom</div></td>
+            <td><div id='inptScanningThreads'><div></div></div></td>
+          </tr>
+        </table>    
+      </div>                                   
+    </div>
+    <div><br/>Masks &#38; Filters->Inclusion Masks<br/></div>
+    <div>
+      <div></div>
+      <div style='margin-left: 5px;'>  
+        <div><b>Inclusion Masks</b></div>
+        <textarea id='inptInclusionMasks' rows="4" cols="50"></textarea>
+        <table>                        
+          <tr>                                              
+            <td><div id='jqxMasks_SpecFolderMasksCb'></div></td>    
+            <td><div>Specify Folder Masks</div></td>
+          </tr>  
+          <tr>
+            <td><div id='jqxMasks_RestrictionsCb'></div></td>
+            <td><div>Restrictions..</div></td>
+          </tr>
+          <tr>  
+            <td><div id='jqxMasks_IncludeBackupFilesCb'></div></td>                          
+            <td><div>Include Backup Files(*.$?$.*)</div></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div><br/>Masks &#38; Filters->Exclusion Masks<br/></div>
+    <div>
+      <div></div>      
+      <div style='margin-left: 5px;'>  
+        <div><b>Exclusions (Files and folders)</b></div>
+          <table>
+            <tr>              
+              <td><div id="Masks_DontCopy_Radio_Mode">Don't Copy</div></td>
+              <td><div id="Masks_IgnoreTotaly_Radio_Mode">Ignore Totally</div></td>
+            </tr>            
+          </table>
+          <textarea id='inptExclusionMasks' rows="4" cols="50"></textarea>  
+          <table>         
+            <tr>
+              <td><div id='jqxMasks_UseGlobalExclAlsoCb'></div></td>
+              <td><div>Use Global Exclusion Also</div></td>
+            </tr>
+          </table>
+       </div>
+    </div>
+    <div><br/>Masks &#38; Filters->General Filters<br/></div>
+    <div>
+      <div></div>      
+      <div style='margin-left: 5px;'> 
+        <table>       
+          <tr>
+             <td><div id='jqxMasks_ProcessHiddenFilesCb'></div></td>
+             <td><div>Process Hidden Files</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxMasks_CopyFilesWithArchiveFlagCb'></div></td>
+             <td><div>Copy Files With Archive Flag</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxMasks_SearchHiddenFoldersCb'></div></td>
+             <td><div>Search Hidden Folders</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxMasks_ClearArchiveFlagsCb'></div></td>
+             <td><div>Clear Archive Flags</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxMasks_ProcessReparsePointsCb'></div></td>
+             <td><div>Analyze Reparse Points</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxMasks_FollowJunctionPointsFilesCb'></div></td>
+             <td><div>Follow Junction Points/Symbolic Links To Files</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxMasks_FollowJunctionPointsFoldersCb'></div></td>
+            <td><div>Follow Junction Points/Symbolic Links To Fldrs</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxMasks_CopyOtherReparsePointsCb'></div></td>
+            <td><div>Copy Other Reparse Points</div></td>
+          </tr>
+        </table>
+      </div>    
+    </div>
+    <div><br/>Masks &#38; Filters->Files &#38; Size<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'>  
+        <!--div>Must Be Within</div-->
+        <table>
+          <tr>
+            <td><div id='jqxMasks_FileSizesWithinCb'></div></td>
+            <td><div>File Sizes</div></td>
+          </tr>  
+        </table>  
+        <table>        
+          <tr>            
+             <td><div>min</div></td>
+             <td><div id='jqxInptMasks_FileSizesMin'><input type="text"><div></div><div></div></div></td>
+             <td><div>min</div></td>
+             <td><div id='jqxInptDateMasks_FileMinDate'></div></td>
+          </tr>
+         </table>  
+         <table>  
+          <tr>
+             <td><div id='jqxMasks_FileDatesWithinCb'></div></td>
+             <td><div>File Dates</div></td>
+          </tr>  
+          </table>  
+          <table>  
+          <tr>            
+             <td><div>max</div></td>
+             <td><div id='jqxInptMasks_FileSizesMax'><input type="text"><div></div><div></div></div></td>
+             <td><div>max</div></td>
+             <td><div id='jqxInptDateMasks_FileMaxDate'></div></td>
+          </tr>          
+        </table>
+        <table>
+          <tr>
+            <td><div id ='jqxMasks_FileAgeCb'></div></td>
+            <td><div>File Age</div></td>
+            <td><div id ='jqxMasks_FileAgeCombo'></div></td>
+          </tr> 
+        </table>  
+        <table>
+          <tr>
+            <td><div id='inptMasks_FileAgeDays'><input type="text"><div></div><div></div></div></td>
+            <td><div>Days</div></td>
+            <td><div id='inptMasks_FileAgeHours'><input type="text"><div></div><div></div></div></td>
+            <td><div>Hours</div></td>
+            <td><div id='inptMasks_FileAgeMinutes'><input type="text"><div></div><div></div></div></td>
+            <td><div>Minutes</div></td>
+          </tr>  
+        </table>  
+        <table>
+          <tr>
+            <td><div>Filter by</div></td>
+            <td><div id="Masks_LastModification_Radio_Mode">Last Modification</div></td>
+            <td><div id="Masks_Creation_Radio_Mode">Creation</div></td> 
+          </tr>                                  
+        </table>                       
+        <table>
+          <tr>
+            <td><div>Apply To</div></td>
+            <td><div id="Masks_ApplyToFiles_Radio_Mode">Files</div></td>
+            <td><div id="Masks_ApplyToFolders_Radio_Mode">Folders</div></td> 
+            <td><div id="Masks_ApplyToBoth_Radio_Mode">Both</div></td>
+          </tr>             
+        </table>  
+        <table>
+          <tr>
+            <td><div id='jqxMasks_TargetDataRestoreCb'></div></td>
+            <td><div>Target Date For Restore</div></td>
+          </tr>  
+        </table>  
+        <table>          
+          <tr>                                      
+              <td>
+                <div>Date</div><div id='jqxInptDateMasks_TargetDateRestoreDate'></div>
+              </td>
+              <td>
+                 <div>Time</div><div id='jqxInptDateMasks_TargetDateRestoreTime'></div>
+              </td>
+          </tr>  
+        </table>  
+                                                                                          
+       </div>
+    </div>
+    <div><br/>Safety<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'>  
+        <div><b>Attended Mode. Warnings</b></div>            
+        <table>
+          <tr>
+            <td><div id='jqxSafety_WarnIfMovingFiles'></div></td>
+            <td><div>If Moving Files(Deleting from Source)</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSafety_WarnBeforeOverridingReadOnly'></div></td>
+            <td><div>Before Overriding Read-Only Files</div></td>
+          </tr> 
+          <tr>
+            <td><div id='jqxSafety_WarnBeforeOverridingLarger'></div></td>
+            <td><div>Before Overriding Larger Files With Smaller</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSafety_WarnBeforeOverridingNewer'></div></td>
+            <td><div>Before Overriding Newer Files With Older</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSafety_WarnBeforeDeleting'></div></td>
+            <td><div>Before Deleting Files</div></td>
+          </tr>
+        </table>
+        <div><b>Special Safety</b></div>
+        <table>
+          <tr>
+            <td><div id='jqxSafetySpecial_WarnIfDeletingFilesMoreThan'></div></td>
+            <td><div>Warn If Deleting Files More Than</div></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td><div id='inptSafetySpecial_WarnIfDeletingFilesMoreThan'><input type="text"><div></div><div></div></div></td>
+            <td><div>% From Either L or R Side</div></td>
+          </tr>
+        </table>  
+        <table>  
+          <tr>
+             <td><div id='jqxSafetySpecial_WarnIfDeletingAllFilesInAnySubfolder'></div></td>
+             <td><div>Warn If Deleting All Files In Any(Sub)Folder</div></td>
+             <td><div id='jqxSafetySpecial_WarnIfDeletingMoreThanInAnySubfolder'></div></td>
+             <td><div>Warn If Deleting More than</div></td>
+          </tr>
+        </table>  
+        <table>  
+          <tr>
+            <td><div id='inptSafetySpecial_WarnIfDeletingMoreThanInAnySubfolder'><input type="text"><div></div><div></div></div></td>
+            <td><div>% Files Any(Sub)Folder</div></td>
+          </tr>
+        </table>                            
+      </div>             
+    </div>
+    <div><br/>Safety->Unattended<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'>  
+        <table>
+          <tr>
+            <td><div id='jqxSafetyUnattended_OverwriteReadOnly'></div></td>
+            <td><div>Overwrite Read-Only Files</div></td>
+          </tr>
+          <tr> 
+           <td><div id='jqxSafetyUnattended_OverwriteLarge'></div></td>
+           <td><div>Overwrite Larger Files With Smaller Ones</div></td>
+          </tr> 
+        </table>
+        <div>If File Dates Require It</div>
+        <table>
+          <tr>
+             <td><div id='jqxSafetyUnattended_NewerFilesCanBeOverwritten' style='float: left;'></div></td>
+             <td><div>Newer Files Can Be Overwritten If Necessary</div></td>
+          </tr>    
+          <tr>
+             <td><div id='jqxSafetyUnattended_FileDeletionAllowedCb'></div></td>
+             <td><div>File Deletion Allowed,  Maximum</div></td>
+          </tr>
+        </table>
+        <table>   
+          <tr>
+            <td><div id='inptSafetyUnattended_FileDeletionAllowed'><input type="text"><div></div><div></div></div></td>
+            <td><div>% Of The Files From Either Side</div></td>              
+          </tr>          
+        </table>
+        <div id='jqxSafetyUnattended_ReplaceMaxPercentCb' >Ransomware Protection: Replace Max.</div>
+        <table>
+          <tr>
+            <td><div id='inptSafetyUnattended_ReplaceMaxPercent'><input type="text"><div></div><div></div></div></td>
+            <td><div>% Of The Files From Either Side</div></td>
+          </tr>
+        </table>  
+        <table>
+          <tr>
+            <td><div id='jqxSafetyUnattended_EnableSpecialSafetyCheck'></div></td>
+            <td><div>Enable Special Safety Checks From Special Safety Tab Sheet(Can Prevent Deletions)</div></td>
+          </tr>
+        </table>        
+      </div>                    
+    </div>
+
+    <div><br/>Special<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'>  
+        <table>
+          <tr>
+            <td><div id='jqxSpecialSpFeatr_CacheDestinationFileListCb'></div></td>
+            <td><div>Cache Destination File List...</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxSpecialSpFeatr_ProcessSecurityCb'></div></td>
+             <td><div>Process Security and Shares...</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSpecialSpFeatr_LeftSideUsesRemoteServiceCb'></div></td>
+            <td><div>Left side listing uses Remote Service</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSpecialSpFeatr_UsePartialFileUpdatingCb'></div></td>
+            <td><div>Block Level Copying</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSpecialSpFeatr_RightSideUsesRemoteServiceCb'></div></td>
+            <td><div>Right side listing uses Remote Service</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSpecialSpFeatr_RightSideRemoteServiceCb'></div></td>
+            <td><div>Right side uses Remote Service</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSpecial_DontFallBackFromPartialCb'></div></td>
+            <td><div>No full copying if service unavailable</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxSpecial_PartialRemoteOneByOneCb'></div></td>
+            <td><div>Request only one file at a time</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxSpecialSpFeatr_FastModeCb'></div></td>
+             <td><div>Fast Mode( process target directly. no<br/> temp file. Reft to Right is always fast) </div></td>
+          </tr>
+         </table> 
+       </div>
+    </div>
+    <div><br/>Special->More<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'>      
+          <button id="btnSpecial_AlternateDataStreams">Alternate Data Streams...</button>
+          <table>
+            <tr>
+              <td><div id='jqxSpecialSpFeatr_UseDifferentFoldersCb'></div></td>
+              <td><div>Use Different Folders for Communication...</div></td>
+            </tr>
+            <tr>
+               <td><div id='cbRedownloadServerModifiedUploads'></div></td>
+               <td><div>If Destination Machine Modifiers Received Files, Changing their Size Upon Reception</div></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><div>Then Copy Such Updated Files Back</div></td>
+            </tr>  
+          </table>
+          
+          <div>Set Target Volume Label <input type="text" id='inptSpecialSpFeatr_SetTargetVolumeLabel'><div></div><div></div></div>                      
+       </div>
+    
+    </div>
+    <div><br/>Special->Database<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'>
+          <div>The Settings Here Are Filled In Automatically And Rarely Need To Be Changed By The User.<br/>
+                        To Specify The Folder Where The Database Should Be Stored, See Program Options.</div><br/>
+        <table>
+          <tr>
+            <td><div id='jqxSpDb_OpenDatabaseReadOnlyCb'></div></td>                        
+            <td><div>Open Database Read-Only</div></td>
+          </tr>
+          <tr>  
+            <td><div id='jqxSpecialDatabase_FastModeCb'></div></td>
+            <td><div>Fast Mode: Don't Check All DB Entries</div></td>
+          </tr>
+        </table>
+
+
+          <div style='margin-left: 5px;'>Database Name To Use(Profile name) </div>
+          <div style='margin-left: 5px;'><input type="text" id='inptSpecialDatabase_DatabaseNameToUse'><div></div><div></div></div>                       
+          <div style='margin-left: 5px;'>Database Contains Paths Relative To</div>   
+          <table>                    
+            <tr>
+              <td>
+                <div>Left</div>
+              </td>
+              <td>
+                <div><input type="text" id='inptSpecialDatabase_Left'><div></div><div></div></div>
+              </td>          
+            </tr>
+            <tr>
+              <td>
+                <div>Right </div>
+              </td>
+              <td>  
+                <div><input type="text" id='inptSpecialDatabase_Right'><div></div><div></div></div>
+              </td>  
+            </tr>
+          </table>
+       </div>   
+    </div>
+    <div><br/>Versioning<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'>
+         <table>        
+           <tr>
+             <td><div id='jqxVersVers_KeepOlderVersionsWhenReplacing'></div></td> 
+             <td><div>Keep Older Versions When Replacing</div></td> 
+           </tr>
+         </table>
+         <table>
+          <tr>
+            <td><div><input type="text" id='inptVersVers_PerFile'><div></div><div></div></div></td><td><div>Per File</div></td> 
+          </tr>
+         </table>
+         <div style='margin-left: 5px;'>
+            <table>
+              <tr>
+                <td><div id='jqxVersVers_OnlyOnRightHandSide'></div></td>
+                <td><div>Only on Right-Hand Side</div></td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td><div id='jqxVersVers_MoveIntoFolder'></div></td>
+                <td><div>Move Into Folder:</div></td>                
+                <td><div><input type="text" id='inptMoveIntoFolder'><div></div><div></div></div></td>
+              </tr>  
+            </table>
+            
+            <table>              
+              <tr>
+                <td><div id='jqxVersVers_AsSubfolerInEachFolderCb'></div></td>
+                <td><div>As Subfolder In Each Folder</div></td>
+              </tr>
+              <tr>
+                <td><div id='jqxVersVers_RecreateTreeBelowCb'></div></td>
+                <td><div>Recreate Tree Below One "Older" folder</div></td>
+              </tr>
+               <tr>
+                <td><div id='jqxVersVers_DontRenameNewestOlderVersionCb'></div></td>
+                <td><div>Don't Rename newest older version</div></td>
+              </tr>
+            </table>
+         </div>
+         <div><b>Renaming Of Older Versions</b></div>
+         <table> 
+          <tr>   
+            <td><div id="VersVers_Add_Prefix_Mode">Add .$1$., .$2$. etc.</div></td>
+            <td><div id="VersVers_Add_Timestamp_Mode">Add Timestamp</div></td>                              
+          </tr>
+         </table>
+         <table>
+           <tr>
+            <td><div id='jqxVersVers_FileNameEncodingCb'></div></td>
+              <td><div>FileName Encoding: On The Right Side, 
+                                                  Put Timestamps Into All File Names(Preserves
+                                                  Timestamps On Servers That Normally Loose It)</div></td>
+           </tr>                                       
+         </table>
+          </div> 
+       
+    </div>
+    <div><br/>Versioning->Synthetic Backups<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'> 
+        <table>
+          <tr>
+             <td><div id='jqxVersSynth_UseSynthBackupsCb'></div></td> 
+             <td><div>Use Synthetic Backups</div></td> 
+          </tr>
+        </table>  
+        <table>
+          <tr>
+            <td><div id='jqxVersSynth_UseCheckPointsCb'></div><td> 
+            <td><div>Use Checkpoints To Reduce The Number Of Incremental Versions Needed For Restore</div><td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td><div>Create Checkpoint Every</div></td>
+            <td><div id ="jqxVersSynth_CreateCheckpointCombo"></div></td>
+           </tr>            
+        </table>
+        <div>Checkpoints are relative to:</div>
+        <div id ="jqxVersSynth_CheckpointsRelativeCombo"></div>
+      
+      <table>
+        <tr>
+          <td><div id='jqxVersSynth_BuildAllIncrementalCb'></div></td>
+          <td><div>Build All Incremental Images Against The Preceeding Checkpoint(Uses More Space)</div></td>
+        </tr>                        
+      </table>                
+          
+      <table>
+        <tr>
+           <td><div id='jqxVersSynth_RemoveUnneededCb'></div></td>
+           <td><div>Remove Incrementals Older</div></td>
+        </tr>
+      </table>                         
+      <table>
+        <tr>          
+          <td><div id='inptVersSynth_RemoveUnneeded'><input type="text"><div></div><div></div></div></td>                           
+          <td><div>Days</div></td>          
+        </tr>                        
+      </table>
+        <div id ="jqxVersSynth_RemoveUnneededCombo"></div>                      
+      <table>
+        <tr>
+          <td><div id='jqxVersSynth_IfAllBlocksCb'></div></td>
+          <td><div>If All Blocks In A File Change, Keep Only Number Of Versions From Versioning Tab Sheet</div></td>
+        </tr>
+      </table>
+      </div>
+    </div>
+    <div><br/>Versioning->More<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'> 
+        <table>
+          <tr>
+            <td><div id='jqxVersMore_DoNotDecodeLeftHandCb'></div></td>
+            <td><div>Do Not Decode Left-Hand Filenames When Building The File List</div></td>
+          </tr>          
+          <tr>
+            <td><div id='jqxVersMore_DoNotDecodeRightHandCb'></div></td> 
+            <td><div>Do Not Decode Right-Hand Filenames When Building The File List</div></td> 
+          </tr>          
+          <tr>
+            <td><div id='jqxVersMore_CleanUpIdenticalCb'></div></td>
+            <td><div>Clean Up Identical Duplicates Of Files With Differently Encoded Unicode Umlauts</div></td>
+          </tr>          
+          <tr>
+            <td><div id='jqxVersMore_RemoveParenthesizedCb'></div></td>
+            <td><div>Remove Parenthesized Version Numbers Before Extension On The Right Side: File(2).ext</div></td>
+          </tr>          
+          <tr>
+            <td><div id='jqxVersMore_RemoveVesioningTagsCb'></div></td> 
+            <td><div>Remove The Versioning Tags -1 And -2 And Rename Such Files Immediately</div></td> 
+          </tr>          
+          <tr>
+             <td><div id='jqxVersMore_CleanUpAllOlderVersionsCb'></div></td> 
+             <td><div>Clean Up All Older Versions Based On The Specified Number To Keep(If Unchecked, The Limit Is Enforced Only For Files That Are Copied)</div></td> 
+          </tr>
+          
+          <tr>
+            <td><div id='jqxVersMore_FilesBackupV4Cb'></div></td> 
+            <td><div>Files Backed Up With V4 Used UTC/GMT (World Time) For Encoding (Like V5)</div></td> 
+          </tr>
+        </table>      
+      </div>
+    </div>
+    <div><br/>Zip/Zipping<br/></div>
+    <div>
+      <div></div>       
+      <div style='margin-left: 5px;'>
+        <table>
+          <tr>
+            <td><div id='jqxZipping_ZipEachFileCb'></div></td>
+            <td><div>ZIP Each File Individually (When Copying Left To Right) Use Right To Left To Unzip</div></td>
+          </tr>            
+          <tr>
+            <td><div id='jqxZipping_UseZipPackagesCb'></div></td>
+            <td><div>Use ZIP Packages (Many Files Per ZIP Archive)...</div></td>
+          </tr>
+          <tr>
+             <td><div id='jqxZipping_ZipDirectlyToDestinationCb'></div></td>
+             <td><div>Zip Directly To Destination</div></td>         
+          </tr>  
+          <tr>
+             <td><div id='jqxZipping_UnzipAllfilesCb'></div></td> 
+             <td><div>Unzip All ZIP Files Which Are Copied To The Destination</div></td> 
+          </tr>  
+          <tr>
+             <td><div id='jqxZipping_LimitZipFileSizeCb'></div></td> 
+             <td><div>Limit Zip File Size To</div></td> 
+          </tr>  
+        </table>
+        
+        
+        
+        <table>
+          <tr>
+            <td><div><input style='float: none; width:100px;' type="text" id='inptZipping_Limit'/><div></div><div></div></div></td>
+            <td><div>Bytes(e.g 10M or 1G)</div></td>            
+          </tr>  
+        </table>  
+      </div>
+    </div>
+    <div><br/>Zip/Encryption<br/></div>
+    <div>
+      <div></div>             
+      <div style='margin-left: 5px;'>
+        <table>
+          <tr>
+            <td><div id='jqxZippingEncrypt_EncryptFilesCb'></div></td>
+            <td><div>Encrypt Files Copied Left To Right(Encryption Implies Zipping)</div></td>        
+          </tr>
+        </table>
+        <div id ="jqxZippingEncrypt_Combo"></div>
+        <table>
+          <tr>
+            <td><div id='jqxZippingEncrypt_DecryptFilesCb'></div></td>
+            <td><div>Decrypt Files Copied Left to Right</div></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td><div>Password Phrase:</div></td>
+            <td><div><input id='jqxZippingEncrypt_Password' type='password'><div></div><div></div></div></td>
+          </tr>
+          <tr>
+            <td><div>Confirm:</div></td>
+            <td><div><input id='jqxZippingEncrypt_Confirm' type='password'><div></div><div></div></div></td>
+          </tr>  
+        </table>
+        <table>
+          <tr>
+            <td><div id='jqxZippingEncrypt_FilenameEncryptionCb'></div></td>
+            <td><div>Encrypt File Names</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxZippingEncrypt_EncryptExistingNamesCb'></div></td>
+            <td><div>Encrypt Names Of Existing Files On The Right</div></td>
+          </tr>
+          <tr>
+            <td><div id='jqxZippingEncrypt_FoldernameEncryptionCb'></div></td>
+            <td><div>Encrypt Folder Names(On The Right Hand Side)</div></td>
+          </tr>
+        </table>
+      </div>         
+    </div>
+  </body>
+</html>    

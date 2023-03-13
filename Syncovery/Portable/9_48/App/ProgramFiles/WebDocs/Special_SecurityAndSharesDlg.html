@@ -1,0 +1,169 @@
+<div id='jqxSpecial_SecurityAndSharesDlg'>
+<div>Security And Shares</div>
+<div> 
+<table id="container">
+<tr>
+<td valign="top">
+  </br>
+
+    <div id='SecurityAndSharesTabs'>
+    <ul>
+        <li>Security (Permissions)</li>
+        <li>Network Shares (File Shares)</li>
+    </ul>
+
+  <div>
+  <div style='margin-left: 30px; margin-top: 10px'>
+  On NTFS volumes, Windows can remember the owner of files and folders and store access permissions.
+  By default, files copied by this software belong to the user account under which the program is running. In this dialog
+  box, you can change the behavior so that file security settings are mirrored also.
+  <br/><br/>
+  <table>
+   <tr>
+     <td><div id="jqxSpecial_CopyOwnerSetting">Copy Owner Setting</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbCompareOwner" style='margin-left: 30px; margin-top: 5px'>Update existing items (can be slow)</div></td>
+   </tr>
+   <tr>
+     <td><div id="jqxSpecial_CopyGroupSetting" style='margin-top: 10px'>Copy Group Setting</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbCompareGroup" style='margin-left: 30px; margin-top: 5px'>Update existing items (can be slow)</div></td>
+   </tr>
+   <tr>
+     <td><div id="jqxSpecial_CopyPermissions" style='margin-top: 10px'>Copy Permissions</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbComparePermissions" style='margin-left: 30px; margin-top: 5px'>Update existing items (can be slow)</div><br/></td>
+   </tr>
+
+   <tr><td><hr></td></tr>
+
+   <tr>
+     <td><div id="jqxSpecial_ProcessBaseFolder" style='margin-top: 15px'>Process Base Folder Too</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbBreakInheritance" style='margin-left: 30px; margin-top: 6px'>Break inheritance on the base folder if necessary</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbCopyInheritedAsExplicitIfNecessary" style='margin-top: 10px'>Copy inherited ACL entries as explicit ones if necessary</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbUpdateFolderSecurity" style='margin-top: 10px'>To speed up comparing security for existing items, process folders only (and files will just inherit)</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbTranslateSIDs" style='margin-top: 10px'>Translate Security IDs Between Computers/Domains</div></td>
+   </tr>
+
+   <tr>
+   <td>
+   <div  style='margin-left: 30px; margin-top: 5px'>
+   Right Side Target Domain (optional):
+   <input style='margin-left: 10px;' type="text" id='edTargetDomain' />
+   </div>
+   <br/>
+   </td>
+   </tr>
+
+   <tr><td><hr></td></tr>
+
+   <tr>
+   <td>
+   <div  style='margin-top: 10px'>
+   Use ".metadata-syncovery" files to save permissions (rather than native file system security):
+   </div>
+   </td>
+   </tr>
+
+   <tr>
+   <td>
+   <div id='cbUsePermissionFilesLeft' style='margin-left: 30px; margin-top: 5px'>For folders on the left side</div>
+   </td>
+   </tr>
+
+   <tr>
+   <td>
+   <div id='cbUsePermissionFilesRight' style='margin-left: 30px; margin-top: 10px'>For folders on the right side</div><br/>
+   </td>
+   </tr>
+
+   <tr>
+   <td>
+   If files are compressed:
+   </td>
+   </tr>
+
+   <tr>
+   <td>
+   <div id='cbPutPermissionsIntoCompressedFiles' style='margin-left: 30px; margin-top: 5px'>Store permissions inside the zip/sz file</div>
+   </td>
+   </tr>
+
+   <tr>
+   <td>
+   <div id='cbApplyPermissionsToCompressedFiles' style='margin-left: 30px; margin-top: 10px'>Apply permissions to the zip/sz file itself</div><br/>
+   </td>
+   </tr>
+
+   <tr><td><hr></td></tr>
+
+   <tr>
+   <td>
+   <div id='cbAssumeUnreadableDifferent' style='margin-top: 10px'>Assume unreadable security settings are different</div>
+   </td>
+   </tr>
+
+   <tr>
+   <td>
+   <div id='cbStripUnknownSIDs' style='margin-top: 10px'>Strip unknown SIDs</div><br/>
+   </td>
+   </tr>
+
+  </table>
+  </div>
+  </div>
+
+  <div>
+  <div style='margin-left: 30px; margin-top: 10px'>
+  This feature duplicates file shares on the other side. Use this to create a backup server with all shares which
+  can immediately replace the main server in the case of a failure.
+  Remote systems must be referenced via UNC network syntax, for example: \\backupserver\C
+
+  <table>
+   <tr>
+     <td><div id="cbCopyShares" style='margin-top: 20px'>Compare And Copy File Shares With Permissions</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbCompareSharePaths" style='margin-left: 30px; margin-top: 10px'>Update shared paths for existing shares</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbCompareSharePermissions" style='margin-left: 30px; margin-top: 15px'>Update share permissions for existing shares</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbShareSelectedFoldersOnly" style='margin-left: 30px; margin-top: 15px'>Process shares for selected folders only</div></td>
+   </tr>
+   <tr>
+     <td><div id="cbShareTranslatePaths" style='margin-left: 30px; margin-top: 15px'>Translate shared paths if their location on the destination system is different.</div><br>
+         <p style='margin-left: 30px;'><i>Translation is only possible for shares of the profile's base folders and any of their subfolders.</i></p></td>
+   </tr>
+  </table>
+  </div>
+  </div>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+    <div  style="float: none;">
+       <div style='float: none;'>
+           <button id="Special_SecurityAndShares_OK_btn">OK</button> 
+            <button id="Special_SecurityAndShares_Cancel_btn">Cancel</button>               
+        </div>
+    </div>          
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>

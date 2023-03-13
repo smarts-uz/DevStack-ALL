@@ -1,0 +1,147 @@
+
+<div id='jqxSmartTrackingSettingsDlg'>
+<div>SmartTracking Settings</div>
+<div> 
+<table id="container">
+<tr>
+<td valign="top">
+
+	<div style='margin-left: 10px; background-color:lightgrey;text-align: center; padding-top: 10px; padding-bottom: 10px;'>
+  SmartTracking keeps information in a database linked to the profile name. On the first run,<br/>
+  SmartTracking will record the state of each file. Starting with the second run, the settings<br/>
+  below will become active. Do not use more than one profile for synchronization of the same folders.
+  </div>
+  <br/>
+   <div id='jqxSmartTracking_SettingsTabs'>
+            <ul>
+                <li>Moved Files</li>
+                <li>Deleted Files</li>                
+                <li>Conflicting Files</li>
+                <li>Options</li>
+            </ul>
+            <div>
+               <br/>
+               <div style='margin-left: 30px;'><b>Detection of Moved Files:</b></div>
+               <br/>
+               <div style='margin-left: 40px;'>
+                  <div id="Smt_Moved_Off_Mode">Off</div>
+                  <div id="Smt_Moved_Fully_Automatic_Mode" style='margin-top: 5px;'>Fully Automatic</div>
+                  <div id="Smt_Moved_Adjust_On_Left_Mode" style='margin-top: 5px;'>Adjust File Locations On Left Side, Keep File Locations On Right Side</div>
+                  <div id="Smt_Moved_Adjust_On_Right_Mode" style='margin-top: 5px;'>Adjust File Locations On Right Side, Keep File Locations On Left Side</div>
+               </div>
+            </div>
+            <div>
+               <br/>
+               <div style='margin-left: 30px;'><b>Files Deleted on One Side:</b></div>
+               <br/>
+               <div style='margin-left: 40px;'>                           
+                  <div id="Smt_Deleted_Copy_Back_Mode">Copy Back From Other Side</div>
+                  <div id="Smt_Deleted_Ignore_Mode" style='margin-top: 5px;'>Ignore</div>
+                  <div id="Smt_Deleted_Move_IntoFolder_Mode" style='margin-top: 5px;'>Move Into Folder For Deleted Files</div>
+                  <div id="Smt_Deleted_DeletePermamently_Mode" style='margin-top: 5px;'>Delete Permamently</div>
+               </div>
+               
+              <br/>
+              <div style='margin-left: 30px;'>Folders For Deleted Files:</div>
+              <br/>
+              <table style='margin-left: 20px;'>
+                  <tr>
+                    <td><div>L:</div></td>
+                    <td><input type="text" id="inpt_Smt_DeletedFilesIntoFolderL"/></td>
+                    <td><button id="btn_Smt_DirSelectL">...</button></td>
+                  </tr>
+                  <tr>
+                    <td><div>R:</div></td>
+                    <td><input type="text" id="inpt_Smt_DeletedFilesIntoFolderR"/></td>
+                    <td><button id="btn_Smt_DirSelectR">...</button></td>
+                  </tr>
+              </table>   
+              <br/>
+               <div style='margin-left: 30px;'>For FTP, SSH or WebDAV servers, please specify absolute paths starting with a slash (/)<br>
+                and do not use the Browse button.</div>
+            </div>
+            <div>
+               <br/>
+               <div style='margin-left: 30px;'><b>Files Changed On Both Sides:</b></div>
+               <br/>
+               <div style='margin-left: 40px;'>                           
+                  <div id="Smt_Confl_Copy_Latest_Mode">Copy Latest Version</div>
+                  <div id="Smt_Confl_DoNothing_Mode" style='margin-top: 5px;'>Do Nothing/LABEL As CONFLICT</div>
+                  <div id="Smt_Confl_AlwaysCopyLeftToRight_Mode" style='margin-top: 5px;'>Always Copy Left To Right</div>
+                  <div id="Smt_Confl_AlwaysCopyRightToLeft_Mode" style='margin-top: 5px;'>Always Copy Right To Left</div>
+                  <div id="Smt_Confl_Rename_Mode" style='margin-top: 5px;'>Rename One Side & Synchronize Both Versions</div>
+                  <div id="Smt_Confl_Prompt_Mode" style='margin-top: 5px;'>Prompt (not available in web GUI)</div>
+               </div>
+                <br/>
+               <div style='margin-left: 30px;' id="jqxSmt_BothNewConflictCb">Consider different files with the same name, not present in database, a conflict</div>
+              <div style='margin-left: 30px;' id="jqxSmt_BothNewConflictCheckArchiveFlagAndTimestampCb" style='margin-top: 5px;'>Only for files with archive attributes, or changed since the last synchronization</div>
+
+              <br/>
+              <div style='margin-left: 30px; margin-right: 30px;'>
+              <table>
+                <colgroup>
+                   <col span="1" style="width: 25%;">
+                   <col span="1" style="width: 25%;">
+                   <col span="1" style="width: 15%;">
+                   <col span="1" style="width: 25%;">
+                   <col span="1" style="width: 10%;">
+                </colgroup>
+                <tr>
+                  <td><div>If renaming, use:</div></td>
+                  <td><div id="jqxSmt_ConflictsAddNumberCb">Numbers (-1,-2 etc)</div></td>
+                  <td><div id="jqxSmt_ConflictsAddUserCb">User Name</div></td>
+                  <td><div id="jqxSmt_ConflictsAddTimeCb">Modification Time</div></td>
+                  <td><div id="jqxSmt_ConflictsAddDollarCb">$</div></td>
+                </tr>
+
+              </table>
+
+                <table style='margin-top: 10px;'>
+                  <tr>
+                    <td><div>If renamed file already exists: &nbsp;</div></td>
+                    <td><div id="Smt_Confl_UseNumbers_Mode">Use Numbers</div></td>
+                    <td><div id="Smt_Confl_Replace_Mode">Replace</div></td>
+                  </tr>
+                </table>
+              
+              </div>              
+               
+            </div>
+            <div>
+               <br/>
+               <div style='margin-left: 30px;'><b>If Timestamp Differ, Detect If A File Has Really Been Changed Or Not:</b></div>
+               <br/> 
+               <div style='margin-left: 30px;'>This feature should only be used if the program cannot set the timestamps for files<br/>
+                 that it has copied.This problem normally occurs with FTP or WebDAV servers only.
+               </div>  
+            <br/> 
+                <div style='margin-left: 30px;' id="jqxSmt_DetectUnchangedLeftCb">Detect Unchanged Files On Left-Hand Side</div>    
+                <br/> 
+                <div style='margin-left: 30px;' id="jqxSmt_DetectUnchangedRightCb">Detect Unchanged Files On Right-Hand Side</div>    
+                <br/> 
+                <div style='margin-left: 30px;' id="jqxSmt_DetectServerSizeModsCb">Also Ignore File Sizes Being Modified By Server Immediately After Upload</div>    
+
+
+            </div>
+        </div>   
+
+ 
+
+
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+    <div  style="float: none;">
+       <div style='float: none;'>
+           <button id="SmtSet_OK_btn">OK</button> 
+            <button id="SmtSet_Cancel_btn">Cancel</button>               
+        </div>
+    </div>          
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>

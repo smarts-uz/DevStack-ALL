@@ -1,0 +1,156 @@
+
+<div id='jqxRealTimeSettingsDlg'>
+<div>Real-Time Settings</div>
+<div> 
+<table id="container">
+<tr>
+<td>
+
+<div style='margin-left: 30px;'>
+These settings allow you to fine-tune folder monitoring (Real Time Synchronization).</br>
+Real Time Synchronization detects only current changes. Therefore we recommend to also</br>
+give the profile a regular schedule on the "Schedule" tab sheet, where a full sync will be done.</br>
+&nbsp;</br>
+</div>
+
+<div id="jqxReal_Tabs" style="float: left;">
+  <ul style='margin-left: 20px;'>
+      <li>Main</li>
+      <li>Advanced</li>
+      <li>Internet Folders (Polling for Changes)</li>
+  </ul>
+  <div>
+        <div style='margin-left: 10px;'>  
+      </br>
+        <table>
+        <tr>
+          <td><div style='margin-left: 10px; float: left;' id='jqxRealDlg_RealTimeSynchronizationCb'>Use Real-Time Synchronization</div></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td><div style='margin-left: 10px; float: left;' id='jqxRunCompletelyOnceCb'>Run profile entirely once, then use Real-Time Synchronization</div>
+          </td>
+        </tr>
+        </table>
+        <div style='margin-left: 40px;'>(it will be run entirely once each time you run scheduler, or after a network disconnection.)</div>
+        </br></br>
+
+          <table>
+            <tr>
+              <td><div style='margin-left: 10px; float: left;'>Operating Mode: &nbsp;</div></td>
+              <td><div id="Process_Each_FileRb">Process Each File Event Individually</div></td> 
+              <td><div id="Process_Complete_FoldersRb">Process Complete Folders</div></td>
+            </tr>  
+          </table>
+          </br>
+          <div style='margin-left: 10px; float: left;' id='jqxRealDlg_RealTimeDeletionsCb'>Process deletions when running in real time.</div>
+          </br></br></br>
+          <table>            
+            <tr>              
+              <td><div style='float: left;'>Safety delay for deletions: &nbsp;</div></td>
+              <td><div style='float: left;' id='jqxRealTimeDeletionsSafetyDelay_Input' ></div></td>
+              <td><div style='float: left;'>&nbsp; minutes (value must be from 0 to 223)</div></td>
+            </tr>              
+          </table>
+
+      </br>
+      <div style='margin-left: 10px; float: left;' id='jqxRealDlg_RealTimeRenamesCb'>Process file and folder renames when running in real-time</div></br>
+      </br>
+      <div style='margin-left: 10px; float: left;' id='jqxRealTimeIgnoreTempFilesCb'>Ignore certain temporary files in real-time</div></br>
+    </div>
+  </div>
+
+  <div>
+  <div style='margin-left: 10px;'>
+  </br>
+  <table>
+    <tr>
+      <td><div style='float: left;'>Switch to a normal full sync if more than &nbsp;</div></td>
+      <td><div style='float: left;' id='jqxFullRunBasedOnItemCount_Input'  style='float: left;' ></div></td>
+      <td colspan="2"><div style='float: left;'>&nbsp; real-time events are to be processed (0=don't)</div></td>
+    </tr>
+    <tr>
+      <td></br></td>
+      <td></br></td>
+      <td></br></td>
+      <td></br></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td colspan="2"><div style='float: left;'>Switch to full sync if processing the real time events takes more than &nbsp;</div></td>
+      <td><div style='float: left;' id='jqxFullRunBasedOnTimeSeconds_Input'  style='float: left;' ></div></td>
+      <td><div style='float: left;'>&nbsp; seconds  (0=don't)</div></td>
+    </tr>
+  </table>
+  </br></br>
+
+  <table>
+    <tr>
+      <td><div style='float: left;'>Real-time processing delay: &nbsp;</div></td>
+      <td><div style='float: left;'></div><div id='jqxRealtimeDelaySeconds_Input'  style='float: left;' ></div></td>
+  <td><div style='float: left;'></div>&nbsp; seconds (usually 5)</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div>
+<div style='margin-left: 10px;' id="RealtimeTab2">
+<br>
+Syncovery can regularly check non-local folders for changes. This works best with cloud storages that use a</br>
+changes-based listing method: Google Drive, Sharepoint, OneDrive, DropBox, and Box.</br>
+</br>
+On other storages, Syncovery can check the base folder for changes regularly, and scan subfolders if they have</br>
+new modification timestamps. However, most servers will not update folder modification timestamps correctly</br>
+across the whole hierarchy, so that a regular full scan would still be necessary. To avoid this, Syncovery itself can</br>
+ensure that parent folder timestamps are updated when it uploads to an Internet server. It will do so in real-time</br>
+two-way profiles, or if the option "Touch parent folders" is chosen on the Folders tab sheet in the profile.</br>
+This technique usually works with FTP, SFTP, and WebDAV, but not with Amazon S3, Azure BLOB, Rackspace, and</br>
+other cloud storages that do not support setting folder timestamps.</br>
+</br>
+
+<div style='margin-left: 10px; float: left;' id='cbRealtimeCheckFTPForChanges'>Regularly poll Internet servers for changes (if changes API or folder timestamps are supported)</div>
+<br/>
+<br/>
+Also use this technique for other folders (rather than subscribing to file system events), on the:
+<br>
+
+<table>
+<tr>
+<td width="33%">
+<div style='margin-left: 10px; float: left;' id='cbUseFTPChangesTechniqueForLeftSide'>Left-Hand Side</div>
+</td>
+<td width="33%">
+<div style='margin-left: 10px; float: left;' id='cbUseFTPChangesTechniqueForRightSide'>Right-Hand Side</div>
+</td>
+<td width="34%">
+&nbsp;
+</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<td><div>Polling Interval: &nbsp;</div></td>
+<td><div></div><div id='edFTPChangesCheckIntervalSeconds'  style='float: left;' ></div></td>
+<td><div></div>&nbsp; seconds  (usually 60 - use shorter intervals carefully)</td>
+</tr>
+</table>
+<br>
+Please note: cloud servers must not be polled too frequently. The absolute minimum is 30 seconds for these.
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+<td><button id="Real_OK_btn">OK</button> &nbsp;
+<button id="Real_Cancel_btn">Cancel</button></td>
+</tr>
+</table>
+
+</div>
+
+</div>

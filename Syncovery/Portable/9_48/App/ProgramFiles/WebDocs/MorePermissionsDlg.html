@@ -1,0 +1,127 @@
+<div id='jqxSpecial_SecurityAndSharesDlg'>
+<div>File and Folder Security Settings (Permissions)</div>
+<div> 
+<table id="container">
+<tr>
+<td valign="top">
+  </br>
+
+    <div id='SecurityAndSharesTabs'>
+    <ul>
+        <li>Permission Settings</li>
+    </ul>
+
+  <div>
+  <div style='margin-left: 30px; margin-top: 10px'>
+  <b>This dialog contains all settings related to owner, group, and permissions.</b>
+  <table>
+   <tr>
+     <td colspan=5>
+     <div style='margin-top: 15px'>
+     <b>Main Strategies for permissions on files and folders that Syncovery creates:</b>
+     </div>
+     </td>
+   </tr>
+   <tr>
+     <td colspan=2>
+     <div id='divCopyOwner' style='margin-top: 5px'>
+     Owner and Group Strategy:<br>
+     <div id='jqxLinuxOwnerMode' style='margin-left: 2px;margin-top: 5px'></div>
+     <div style='margin-top: 10px'>
+     &nbsp;Owner:<input style='margin-left: 5px; float: none; width:80px;' type="text" id='inptOwner'/>
+     &nbsp;&nbsp;Group:<input style='margin-left: 5px; float: none; width:80px;' type="text" id='inptGroup'/>
+     </div>
+     </div>
+     <td> &nbsp; &nbsp;  &nbsp; &nbsp; </td>
+     <td colspan=2>
+     <div id='divCopyPermissions' style='margin-top: 5px'>
+     Permissions Strategy:<br>
+     <div id='jqxLinuxPermissionMode' style='margin-left: 2px;margin-top: 5px'></div>
+     <div style='margin-top: 10px'>
+     &nbsp;Permissions:<input style='margin-left: 5px; float: none; width:80px;' type="text" id='inptPerms' />
+     </div>
+     </div>
+     </td>
+   </tr>
+
+   <tr>
+     <td colspan=5>
+     <div style='margin-top: 30px'>
+     <b>Additional Settings:</b>
+     </div>
+     </td>
+   </tr>
+   <tr>
+   <td><div style='margin-top: 10px'>Existing Items:</div></td>
+   </tr>
+   <tr>
+   <td><div id='cbCompareOwner' style='margin-top: 10px'>Compare Owner</div></td>
+   <td><div id='cbCompareGroup' style='margin-top: 10px'>Compare Group</div></td>
+   <td> &nbsp; &nbsp;  &nbsp; &nbsp; </td>
+   <td><div id='cbComparePermissions' style='margin-top: 10px'>Compare Permissions</div></td>
+   <td><div id='cbCompareACLs' style='margin-top: 10px'>Compare ACLs</div></td>
+   </tr>
+
+   <tr colspan=5>
+     <td><div id="jqxSpecial_ProcessBaseFolder" style='margin-top: 15px'>Process Base Folder Too</div></td>
+   </tr>
+
+   <tr>
+   <td colspan=5>
+   <div  style='margin-top: 30px'>
+   Use ".metadata-syncovery" files to save permissions (rather than native file system security):
+   </div>
+   </td>
+   </tr>
+
+   <tr>
+   <td colspan=5>
+   <div id='cbUsePermissionFilesLeft' style='margin-left: 30px; margin-top: 5px'>For folders on the left side</div>
+   </td>
+   </tr>
+
+   <tr>
+   <td colspan=5>
+   <div id='cbUsePermissionFilesRight' style='margin-left: 30px; margin-top: 10px'>For folders on the right side</div><br/>
+   </td>
+   </tr>
+
+   <tr>
+   <td colspan=4>
+   If files are compressed:
+   </td>
+   </tr>
+
+   <tr>
+   <td colspan=5>
+   <div id='cbPutPermissionsIntoCompressedFiles' style='margin-left: 30px; margin-top: 5px'>Store permissions inside the zip/sz file</div>
+   </td>
+   </tr>
+
+   <tr>
+   <td colspan=5>
+   <div id='cbApplyPermissionsToCompressedFiles' style='margin-left: 30px; margin-top: 10px'>Apply permissions to the zip/sz file itself</div><br/>
+   </td>
+   </tr>
+
+  </table>
+  </div>
+  </div>
+
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+    <div  style="float: none;">
+       <div style='float: none;'>
+           <button id="Special_SecurityAndShares_OK_btn">OK</button> 
+            <button id="Special_SecurityAndShares_Cancel_btn">Cancel</button>               
+        </div>
+    </div>          
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>

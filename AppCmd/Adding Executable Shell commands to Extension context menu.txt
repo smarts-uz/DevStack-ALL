@@ -1,0 +1,1 @@
+Adding Shell commands to Extension context menu

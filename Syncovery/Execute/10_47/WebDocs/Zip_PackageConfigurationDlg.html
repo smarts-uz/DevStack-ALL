@@ -1,0 +1,75 @@
+<div id='jqxZip_PackageConfigurationDlg'>
+<div>Compressed Package Configuration</div>
+<div> 
+<table id="container">
+<tr>
+<td valign="top">
+  </br>
+  <div style='margin-left: 30px;'> 
+    <table>
+      <tr>
+        <td><div>Instead of copying or zipping each file individually, you can create compressed<br/>
+        archives containing many files in each archive. Since the contents of<br/> 
+        these backup archives is not visible to future synchronization runs, use<br/>
+        the Archive flag to determine which files need to be backed up.
+        </div></td>        
+      </tr>  
+      <tr>
+        <td><br/></td>
+      </tr>
+      <tr>
+        <td><div>This fearure can also be used to speed up sending many small files over a<br/>network by packaging them in compressed archives. Use the Syncovery Remote<br/>
+          Service on the destination computer to unpack the files. This service must be<br/>
+          configured using the Syncovery Remote Service Control Panel.</div></td>        
+      </tr>
+    <table>  
+      <br/>
+      <div id="jqxZip_UseZipPackages">Use Compressed Packages (many files per archive)</div>
+      <br/>
+     <table style='margin-left: 30px;'>
+      <tr>
+        <td><div id="jqxZip_UseRemoteUnzipService">Syncovery Remote Service will be used (as described above)</div></td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td><div id="jqxZip_UseProfileNameForPackage">Use Profile Name for archive file name</div></td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td><div id="jqxZip_SeparateZipPerFolder">Create a Separate Archive File for Each Folder in Profile's Base Path</div></td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td><div id="jqxZip_TimestampZIPs">Put current timestamp in archive file name</div></td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td><div id="jqxZip_ReplaceZIPPackages">Delete and replace existing archives with the same name</div></td>
+      </tr>
+      
+     </table>
+      <br/>
+     <table style='margin-left: 30px;'>
+      <tr> 
+        <td><div style='float: left;'>Files Per Package: &nbsp;</div></td>
+        <td><div id='inptFilesPerPackage'  style='float: left;' ><div></div></div></td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr> 
+        <td><div style='float: left'>Max file size to put in package: &nbsp;</div></td>
+        <td>
+           <input style='float: none; ' type="text" id='inptMaxSizeForPackage' />
+        </td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+     </table>
+     <table>
+      <tr><td><button id="Zip_PackageConfiguration_OK_btn">OK</button></td>
+          <td>&nbsp; &nbsp;</td>
+          <td><button id="Zip_PackageConfiguration_Cancel_btn">Cancel</button></td>
+     </tr>
+     </table>
+
+</div>
+
+</div>

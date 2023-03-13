@@ -1,0 +1,82 @@
+<div id='jqxEmailSettingsDlg'>
+<div>Email Settings</div>
+<div> 
+<table align="left" style="margin: 0px auto;">
+<tr>
+  <td valign="top">
+
+    <div id="jqxEmailSettingsTabs">         
+    <ul>
+      <li>Recipients</li>
+      <li>SMTP Configuration</li>                
+    
+    </ul>   
+      <div>
+        <br/>
+        <div style='margin-left: 10px;'>Please enter recipients's email addresses here (one per line). If you<br/>
+         prefix an address with a - (minus sign), emails will only be sent to this<br/>
+         address if an error occured.        
+        </div>
+       
+        <br/>
+        <div><textarea id="inptRecipientsText"/></div>
+      </div>
+      <div>
+         <br/>
+         <table>
+           <tr>
+              <td><div>Sender Name:</div></td><td><input id='inptSenderName'  style='float: left;' type='text'/></td>
+          </tr>
+          <tr>
+              <td><div>Email Address:</div></td><td><input id='inptSenderEmail'  style='float: left;' type='text'/></td>
+          </tr>
+          <tr>        
+              <td><div>SMTP Server:</div></td><td><input id='inptSMTPServer'  style='float: left;'type='text'/></td>
+          </tr>    
+          <tr>          
+             <td><div>SMTP Port:</div></td><td><input id='inptSMTPPort'  style='float: left;' type='text'/></td>
+          </tr>   
+          <tr> 
+             <td><div>User ID (login):</div></td><td><input id='inptSMTPUser'  style='float: left;' type='text'/></td>
+          </tr>   
+          <tr> 
+             <td><div>Password:</div></td><td><input id='inptSMTPPassword'  style='float: left;' type='password'/></td> 
+          </tr>
+         </table>
+         <br/>
+         <table>
+          <tr>
+            <td>
+               <div id='jqxSMTPAuthCb' style='margin-left: 10px;'>Use SMTP Authentication</div>
+               <div id='jqxSASLCb' style='margin-left: 10px;'>Use SASL</div>
+               <div id='jqxExplicitTLSCb' style='margin-left: 10px;'>Explicit TLS</div>
+            </td>
+            <td><div id='jqxEmailSSLCombo'style='margin-left: 10px;'>SSL</div></td>
+          </tr>           
+         </table>
+                
+      </div>
+    </div>
+    </br>
+    <div style='margin-left: 30px;'></div>
+  	<div style='margin-left: 30px;'> 
+  	
+  	</div>
+
+  </td>
+</tr>
+<tr>
+  <td valign="bottom">
+      <div  style="float: none;">
+         <div style='float: none;'>
+             <button id="EmailSettings_OK_btn">OK</button> 
+              <button id="EmailSettings_Cancel_btn">Cancel</button>               
+          </div>
+      </div>          
+  </td>
+</tr>
+</table>
+
+</div>
+
+</div>

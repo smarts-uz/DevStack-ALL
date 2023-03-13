@@ -1,0 +1,96 @@
+
+<div id='jqx_internet_settings_navigationbar'>
+
+   <div><div class="inner first"></div></div>    
+   <div>         
+      <!--Settings-->                                                                                                   
+      <table>
+        <tr>
+           <td><div>Container</div></td>
+           <td><div><input type="text" id="Azure_container"/></div></td>
+        </tr>
+        <tr>
+           <td><div>Folder</div></td>
+           <td><div><input type="text" id="inptInternetFolder"/></div></td>
+        </tr>
+        <tr>
+      </table>    
+      <div>User ID Examples: test.blob.core.windows.net,</br>
+        Or Simply Test, Or (For German Microsoft Cloud):</br> test.blob.core.cloudapi.de.</div>
+      <table>
+        <tr>
+          <td><div>Account ID</div></td>
+          <td><div><input type="text"  id="Azure_account_id"/></div></td>
+        </tr>
+        <tr>
+          <td><div>Access Key</br>(opt.)</div></td>
+          <td><div><input type="password" id="inptPassword"/></div></td>
+       </tr>
+       <tr>
+          <td><div>Allow IPV6</div></td>
+          <td><div id="cballow_ipv6"></div></td>
+       </tr>  
+      </table>
+      
+      
+       
+   </div>
+   <div><br/>Advanced<br/></div>    
+   <div>     
+     <div style='margin-left: 5px;'>     
+        <!--Advanced--> 
+        <table>
+          <tr>
+            <td><div>Replace characters...</div></td>
+            <td><div id="cbadv_replace_characters"></div></td>
+          </tr>
+          <tr>
+            <td><div>Recursive listing</div></td>
+            <td><div id="cbrecursive_listing"></div></td>
+          </tr>
+          <tr>
+             <td><div>Cache Control</br> Sec.(0=unspecified )</div></td>
+             <td><div><input type="text" id="Azure_adv_cache_control"/></div></td>
+
+          </tr>
+          <tr>
+              <td><div>Timeout(Sec.)</div></td>
+              <td><div><input type="text" id="adv_timeout"/></div></td>
+          </tr>
+          <tr>
+              <td><div>Retries</div></td>
+              <td><div><input type="text" id="adv_retries"/></div></td>
+           </tr>
+        </table>
+                
+      </div>
+    </div>    
+    <div><br/>Proxy Settings<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+       <!--Proxy Settings-->
+         <table>
+          <tr>
+             <td><div>Proxy Type</div></td>
+             <td><div id ="comboproxy_type"></div></td>
+          </tr>                          
+          <tr>
+            <td><div>Proxy Host:</div></td>
+            <td><div><input type="text" id="proxy_host"/></div></td>
+          </tr>
+          <tr>          
+            <td><div>Port:</div></td>
+            <td><div><input type="text" id="proxy_port"/></div></td>
+          </tr>
+          <tr>          
+            <td><div>User ID (login):</div></td>
+            <td><div><input type="text" id="proxy_login"/></div></td>
+          </tr>          
+            <td><div>Password:</div></td>
+            <td><div><input type="password" id="proxy_password"/></div></td>
+          </table>                    
+        <div>If a proxy login is needed, it must be specified here and will be stored permamently (encrypted)</div>
+      </div>
+    </div>  
+</div>    
+

@@ -1,0 +1,178 @@
+
+  <div id="jqxProgramSettingsDlg">
+  <div style="float: left;"><b>Program Settings</b></div>  
+  <div>        
+      <br/>
+      <table id="container">
+      <tr>
+        <td>
+           <button id="OK_btn_ProgramSettingsDlg">OK</button>         
+        </td>
+        <td>
+          <button id="Cancel_btn_ProgramSettingsDlg">Cancel</button>         
+        </td>  
+      </tr>
+      </table>
+      
+             
+      <div id='ProgSetNavBar'>   
+
+         <div><br/>Startup<br/></div>    
+         <div>     
+           <div></div>
+            <div style='margin-left: 5px;'>  
+             <table>
+                <tr>
+                  <td><div id='jqxShedIdleTimeAfterStartupCb'></div></td>
+                  <td><div>Scheduler Idle Time After Startup:</div></td>
+                </tr>    
+                <tr>
+                  <td><div id='inptShedIdleTimeAfterStartup'><div></div></div></td>
+                  <td><div>Minutes</div></td>
+                </tr>
+                <tr>
+                  <td><div id='jqxDetectInternetCb'></div></td> 
+                  <td><div>Use Internet Connectivity Detection:</div></td> 
+                </tr>  
+              </table>
+                                  
+              <div>Syncovery Will Query <b>https://www.syncovery.com/whoami.php</b></br> To Detect Internet connection.</div>
+              </br>
+              <div>Run Jobs Only If Connection Name Contains</div>
+              <div><textarea id="inptDetectInternetPositive"/></div>
+              <div>Connection Name Must Not Contain</div>
+              <div><textarea id="inptDetectInternetNegative"/></div>                                  
+              
+              <table>  
+                <tr>
+                   <td><div id='inptDetectInternetInterval'><div></div></div></td>                          
+                   <td><div>Checking Interval. Min(5 min minimum)</div></td>                     
+                </tr>                                 
+                <tr>
+                   <td><div id='jqxDetectInternetEvenManuallyCb'></div></td>
+                   <td><div>Check When Jobs Are Run Manually Too</div></td>
+                </tr>
+              </table>     
+            
+            </div>        
+          </div>
+          <div><br/>Logs<br/></div>    
+          <div>     
+             <div></div>
+              <div style='margin-left: 5px;'>     
+              <table>
+                <tr>
+                  <td><div id ="jqxLoggingKindCombo"></div></td>
+                  <td><div>Logging:</div></td>
+                </tr>  
+              </table>  
+              <table>                    
+                    <tr>
+                      <td><div id='jqxFAbbreviatedLogsCb'></div></td>
+                      <td><div id='jqxFAbbreviatedLogsCb'>Abbreviated Logs</div></td>
+                    </tr>  
+                    <tr>
+                      <td><div id='jqxFLogTimingCb'></div></td>
+                      <td><div>With Timing Info</div></td>
+                    </tr>
+                    <tr>  
+                      <td><div id='jqxFLogTimingDetailsCb'></div></td>                      
+                      <td><div>Detailed</div></td>
+                    <tr>
+                  </table>
+                  
+                  <table>
+                  <tr>                    
+                    <td><input type="text" id="inptLogPath"/></td>
+                    <td><button id="btnLogPathDirSelect">...</button></td>
+                    <td><div>Path For Logging</div></td>
+                  </tr>                  
+                  </table>
+                  <table>
+                    <tr>
+                      <td><div id='jqxFDeleteNothingToDoLogsCb'></div></td>
+                      <td><div>Delete Logs With "Nothing To Do"</div></td>
+                    </tr>
+                  </table>
+
+                  <div>Additional Logging (For Troubleshooting)</div>
+                  
+                  <table>                            
+                    <tr>
+                      <td><div id='jqxFIPLoggingCb'></div></td>
+                      <td><div>Internet Protocol Logging</div></td>                                          
+                    </tr>
+                    <tr>  
+                      <td><div id='jqxFLogSmartTrackingCb'></div></td>
+                      <td><div>SmartTracking Details</div></td>
+                    </tr>
+                    <tr>  
+                       <td><div id='jqxFWithThreadCPHistoryCb'></div></td>
+                       <td><div>Keep Checkpoint History</div></td>                      
+                    </tr>  
+                    <tr>
+                      <td><div id='jqxFLogFileListCb'></div></td>
+                      <td><div>File List Building Details</div></td>
+                    </tr>  
+                    <tr>
+                       <td><div id='jqxFOutputFileListingsCb'></div></td>
+                       <td><div>Output Left/Right File Listrings</div></td>
+                    </tr>    
+                    <tr>                    
+                      <td><div id='jqxFLogSpeedLimitCb'></div></td>
+                      <td><div>Speed Limit Details</div></td>                      
+                    </tr>  
+                    <tr>  
+                      <td><div id='jqxFDetailedSecurityLoggingCb'></div></td>
+                      <td><div>File Security Details</div></td>
+                    </tr> 
+                    <tr> 
+                      <td><div id='jqxFLogSharesCb'></div></td>
+                      <td><div>File Share Details</div></td>                      
+                    </tr>  
+                    <tr>  
+                      <td><div id='jqxFLogTimestampsCb'></div></td>
+                      <td><div>Destination Time Stamp Setting Details</div></td>
+                    </tr>  
+                    <tr>
+                      <td><div id='jqxFLogSyntheticDetailsCb'></div></td>                      
+                      <td><div>Synthetic Details</div></td>                      
+                    </tr>                       
+                  </table> 
+
+                  
+                <table>  
+                  <tr>
+                    <td><div id='jqxiLogRealtimeStatusMinutesCb'></div></td>
+                    <td><div>Log Real-Time Monitoring Status Every</div></td>
+                  </tr>
+                </table>  
+                <table>
+                  <tr>  
+                    <td><div id='inptiLogRealtimeStatusMinutes'><div></div></div></td>
+                    <td><div>Minutes</div></td>                  
+                    <td><div id ="jqxiLogRealtimeStatusLevelCombo"></div></td>
+                  </tr>
+                </table>
+            </div>
+          </div> 
+          <div><br/>Tab1<br/></div>    
+          <div>     
+             <div></div>
+              <div style='margin-left: 5px;'>     
+              
+            </div>
+          </div> 
+       </div>
+
+
+  </div>     
+  
+  </div>
+         
+          
+
+
+
+
+        

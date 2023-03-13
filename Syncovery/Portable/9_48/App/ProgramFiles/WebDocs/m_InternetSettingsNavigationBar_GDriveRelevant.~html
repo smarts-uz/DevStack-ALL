@@ -1,0 +1,87 @@
+
+<div id='jqx_internet_settings_navigationbar'>
+
+   <div><div class="inner first"></div></div>    
+   <div>         
+      <div style='margin-left: 5px;'>     
+         <table>
+           <tr>
+             <td><div>Folder</div></td>
+             <td><div><input type="text" id="inptInternetFolder"></div></td>
+           </tr>
+           <tr>
+             <td><div>Account (optional)</div></td>
+             <td><div><input type="text" id="inptAccountID"/></div></td>
+           </tr> 
+           <tr>
+             <td><div>Allow IPV6</div></td>
+             <td><div id="cballow_ipv6"></div></td>
+           </tr>                           
+         </table>
+      </div>
+      
+   </div>
+   <div><br/>Advanced<br/></div>    
+   <div>     
+     <div style='margin-left: 5px;'>     
+      <!--Settings-->                                                                                                   
+               
+                    
+             <table>
+                <tr>
+                  <td><div>Character Set:</div></td>
+                  <td></td>
+                </tr>  
+                <tr>
+                  <td><div>Replace Characters...</div></td>
+                  <td><div id="cbadv_replace_characters"></div></td>
+                </tr>
+                <tr>
+                   <td><div>Retries</div></td>
+                   <td><div><input type="text" id="adv_retries"></div></td>
+                </tr>
+                <tr>
+                  <td><div>Recursive or Changes Based Listing</div></td>
+                  <td><div id="cbrecursive_listing"/></div></td>
+                </tr>
+                <tr>
+                  <td><div>Except Initial Scan</div></td>
+                  <td><div id="cbAvoidChangesAPIInitialListing"/></div></td>
+                </tr>
+              </table>
+                            
+      
+      </div>
+    </div>    
+    <div><br/>Proxy Settings<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+       <!--Proxy Settings-->
+       <table>
+          <tr>
+            <td><div>Proxy Type</div></td>
+            <td><div id ="comboproxy_type"></div></td>
+          </tr>
+          <tr>
+            <td><div>Proxy Host:</div></td>
+            <td><div><input type="text" id="proxy_host"></div></td>
+          </tr>
+          <tr>
+            <td><div>Port:</div></td>
+            <td><div><input type="text" id="proxy_port"></div></td>
+          </tr>
+          <tr>
+            <td><div>User ID (Login):</div></td>
+            <td><div><input type="text" id="proxy_login"></div></td>
+          </tr>
+          <tr>
+            <td><div>Password:</div></td>
+            <td><div><input type="password" id="proxy_password"></div></td>
+          </tr>
+          <div>If A Proxy Login Is Needed, It Must Be Specified Here And Will Be Stored Permamently (Encrypted)</div>
+       </table>   
+      </div>
+    </div>  
+    
+</div>    
+

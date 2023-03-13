@@ -1,0 +1,213 @@
+
+<div id='jqx_internet_settings_navigationbar'>
+
+   <div><div class="inner first"></div></div>    
+   <div>         
+      <div style='margin-left: 5px;'>     
+        <table>
+          <tr>
+            <td><div>Folder</div></td>
+            <td><div><input type="text" id="Container"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Folder</div></td>
+            <td><div><input type="text" id="inptInternetFolder"/></div></td>
+          </tr>
+          <tr>          
+            <td><div>Account (optional)</div></td>
+            <td><div><input type="text" id="inptAccountID"/></div><td>
+          </tr>
+           <tr>
+              <td><div>Allow IPV6</div></td>
+              <td><div id="cballow_ipv6"></div></td>
+          </tr>  
+        </table>                  
+      </div>
+      
+   </div>
+   <div><br/>Advanced<br/></div>    
+   <div>     
+     <div style='margin-left: 5px;'>     
+      
+      <table>
+        <tr>
+          <td><div>Character Set:</div></td>
+          <td></td>
+        </tr>  
+        <tr>
+          <td><div>Replace characters...</div></td>
+          <td><div id="cbadv_replace_characters"></div></td>
+        </tr>            
+        <tr>
+          <td><div>Enable Document Conversion</div></td>
+          <td><div id="cbGDrive_adv_enable_doc_convercion"></div></td>
+        </tr>            
+        <tr>
+          <td><div>Create Links to Online Docs</div></td>
+          <td><div id="cbGDrive_create_links"></div></td>
+        </tr>            
+          <tr>
+             <td><div>Retries</div></td>
+             <td><div><input type="text" id="adv_retries"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Changes Based Listing</div></td>
+            <td><div id="cbrecursive_listing"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Except Initial Scan</div></td>
+            <td><div id="cbAvoidChangesAPIInitialListing"/></div></td>
+          </tr>
+      </table>
+                                        
+        
+      </div>
+    </div>    
+    <div><br/>Proxy Settings<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>
+        <table>  
+          <tr>
+            <td><div>Proxy Type</div></td>
+            <td><div id ="comboproxy_type"></div></td>
+          </tr>
+          <tr>
+            <td><div>Proxy Host:</div></td>
+            <td><div><input type="text" id="proxy_host"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Port:</div></td>
+            <td><div><input type="text" id="proxy_port"/></div></td>
+          </tr>  
+          <tr>
+            <td><div>User ID (login):</div></td>
+            <td><div><input type="text" id="proxy_login"/></div></td>
+          </tr>  
+          <tr>
+             <td><div>Password:</div></td>
+             <td><div><input type="password" id="proxy_password"/></div></td>
+          </tr>  
+
+        </table>
+        <div>If A Proxy Login Is Needed, It Must Be Specified Here And Will Be Stored Permamently (Encrypted)</div>
+            
+            
+        </div>    
+      
+    </div>
+     
+    <div><br/>Google Docs<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+      <!--Google Docs-->
+               <div><b>Global Settings That Apply To All Profiles</b></div>  
+             </br>
+               
+               <div>Format For Downloaded Spreadsheets</div>
+               
+               <table>
+                <tr>
+                  <td><div id="rbGDocs_Spread_xlsx">.xlsx</div></td>
+                  <td><div id="rbGDocs_Spread_csv">.csv</div></td>
+                  <td><div id="rbGDocs_Spread_pdf">.pdf</div></td>
+                </tr>  
+                </table>
+                  
+                                                   
+               <div>Format For Downloaded Documents</div>
+               
+               <table>
+                <tr>
+                  <td><div id="rbGDocs_TextDocs_docx">.docx</div></td>
+                  <td><div id="rbGDocs_TextDocs_odt">.odt</div></td>
+                  <td><div id="rbGDocs_TextDocs_rtf">.rtf</div></td>
+                </tr>
+                <tr>
+                  <td><div id="rbGDocs_TextDocs_html">.html</div></td>
+                  <td><div id="rbGDocs_TextDocs_pdf">.pdf</div></td>
+                  <td><div id="rbGDocs_TextDocs_txt">.txt</div></td>
+                </tr>
+                </table>
+
+
+
+                <div>Format For Downloaded Presentations</div>
+
+                <table>
+                <tr>
+                  <td><div id="rbGDocs_Pres_pptx">.pptx</div></td>
+                  <td><div id="rbGDocs_Pres_txt">.txt</div></td>
+                  <td><div id="rbGDocs_Pres_pdf">.pdf</div></td>
+                </tr>  
+                </table>
+              
+                   
+                <div>Format For Downloaded Drawings</div>
+                <table>
+                <tr>
+                  <td><div id="rbGDocs_Draw_jpg">.jpg</div></td>
+                  <td><div id="rbGDocs_Draw_png">.png</div></td>
+                  <td><div id="rbGDocs_Draw_pdf">.pdf</div></td>
+                  <td><div id="rbGDocs_Draw_xml">.xml</div></td>
+                </tr>                 
+                </table>
+
+
+                <div><b>File Types To Convert As Google Docs When Uploading</b></div>
+                   
+                    <table>
+                    <tr>
+                      <td><div id="cbGDocs_ftconvert_csv"></div></td>
+                      <td><div>.csv</div></td>                      
+                      <td><div id="cbGDocs_ftconvert_html"></div></td>
+                      <td><div>.html</div></td>
+                      <td><div id="cbGDocs_ftconvert_pdf"></div></td>
+                      <td><div>.pdf</div></td>
+                    </tr>
+                    <tr>                      
+                      <td><div id="cbGDocs_ftconvert_pptx"></div></td>
+                      <td><div>.pptx</div></td>                    
+                      <td><div id="cbGDocs_ftconvert_txt"></div></td>
+                      <td><div>.txt</div></td>
+                      <td><div id="cbGDocs_ftconvert_doc"></div></td>
+                      <td><div>.doc</div></td>
+                    </tr>  
+                    <tr>                      
+                      <td><div id="cbGDocs_ftconvert_ods"></div></td>
+                      <td><div>.ods</div></td>
+                      <td><div id="cbGDocs_ftconvert_pps"></div></td>
+                      <td><div>.pps</div></td>                      
+                      <td><div id="cbGDocs_ftconvert_rtf"></div></td>
+                      <td><div>.rtf</div></td>
+                    </tr>  
+                    <tr>  
+                      <td><div id="cbGDocs_ftconvert_xls"></div></td>
+                      <td><div>.xls</div></td>                    
+                      <td><div id="cbGDocs_ftconvert_docx"></div></td>
+                      <td><div>.docx</div></td>
+                      <td><div id="cbGDocs_ftconvert_odt"></div></td>
+                      <td><div>.odt</div></td>                       
+                    </tr>
+                    <tr>  
+                      <td><div id="cbGDocs_ftconvert_ppt"></div></td>
+                      <td><div>.ppt</div></td>
+                      <td><div id="cbGDocs_ftconvert_tsv"></div></td>
+                      <td><div>.tsv</div></td>                    
+                      <td><div id="cbGDocs_ftconvert_xlsx"></div></td>
+                      <td><div>.xlsx</div></td>                      
+                    </tr>  
+                    </table>
+                    <table>   
+                      <tr>
+                        <td><div>Clean Up Duplicate Filenames</br> In The Same Folder</div></td>
+                        <td><div id="cbGDrive_clenup_in_folder"></div></td>
+                      </tr>
+                    </table>
+
+
+             </div>
+          </div>       
+          
+   
+</div>    
+

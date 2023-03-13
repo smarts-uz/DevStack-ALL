@@ -1,0 +1,833 @@
+<div id="jqxProgramSettingsDlg">
+<div><b>Program Settings</b></div>
+<div>
+  <br/>
+  <table id="container">
+  <tr>
+  <td valign="top">
+    <div id="jqxProgramSettingsTabs">
+    <ul id ="TabProgramSettingsLis">
+      <li>Prefs</li>
+      <li>Startup</li>
+      <li>Logs</li>
+      <li>Notify</li>
+      <li>Misc, License</li>
+      <li>Advanced</li>
+      <li>Types, Limits</li>
+      <li>Cloud</li>
+      <li>DB</li>
+      <li>Events</li>
+      <li>Performance</li>
+      <li>Keys</li>
+    </ul>
+
+    <div>
+    <!--Prefs-->
+    <br/>
+    <div style='margin-left: 30px;font-weight:bold;'>This tab sheet contains options related to how your profiles and settings are saved.</div>
+    <div style='margin-left: 30px'>
+    <br/>
+    <div id='config_path'></div>
+    <br/>
+    <div id='jqxConfigRWAllUsersCb' style='margin-left:12px;'>Make config file writeable for all users (necessary to use SyncoveryCL command line as normal user).</div>
+    <br/>
+    <button id="btnDownloadConfigFile" style='margin-left: 20px;'>Download Config File</button> &nbsp;
+    <button id="btnDownloadDiagnosticFile" style='margin-left: 20px;'>Download Diagnostic File</button> &nbsp;
+    <button id="btnImportConfigLines" style='margin-left: 20px;'>Import Config Lines (INI Style)...</button>
+    <br/>
+
+    <div style='margin-top: 20px; margin-bottom: 20px;'><hr/></div>
+
+
+    </div>
+    </div>
+
+    <div>
+    <!--Startup-->
+    <br/>
+    <div style='margin-left: 30px;font-weight:bold;'>This tab sheet contains start-up related settings.</div>
+    <div style='margin-left: 30px;margin-top: 10px;'>
+     <table>
+       <tr>
+         <td>
+     <div id='jqxShedIdleTimeAfterStartupCb' style='margin-left: 10px;'>Scheduler Idle Time After Startup:</div>
+         </td>
+         <td>
+     <div id='inptShedIdleTimeAfterStartup'><div></div></div>
+         </td>
+         <td>
+           <div>Minutes</div>
+         </td>
+       </tr>
+     </table>
+
+     <br/>
+       <div id='jqxDetectInternetCb' style='margin-left: 10px;'>Use Internet Connectivity Detection:</div>
+
+      <div style='margin-left: 40px;'>Syncovery will query <b>https://www.syncovery.com/whoami.php</b> regulary to detect your Internet connection.<br/>
+          The requests may be logged on the server but the data is not used for anything other than statistics.<br/>
+          Syncovery does not send any further information and no personal data other than your IP address.<br/>
+      <br/>
+
+
+      <table>
+        <tr>
+          <td>
+            <div>Run jobs only if connection name contains one of<br/> these settings</div>
+          </td>
+          <td>
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br/></div>
+          </td>
+          <td>
+            <div>Connection name must not contain<br/><br/></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+             <div><textarea id="inptDetectInternetPositive"/></div>
+          </td>
+          <td>
+            <div><br/></div>
+          </td>
+          <td>
+             <div><textarea id="inptDetectInternetNegative"/></div>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+         <tr>
+            <td>
+              <div>Checking Interval:</div>
+            </td>
+            <td>
+                <div id='inptDetectInternetInterval'><div></div></div>
+            </td>
+            <td>
+                <div>Minutes (minimum 5)</div>
+            </td>
+         </tr>
+      </table>
+    </div>
+
+    <div id='jqxDetectInternetEvenManuallyCb' style='margin-left: 40px;'>Check When Jobs Are Run Manually Too</div>
+
+    </div>
+    </div>
+
+    <div>
+      <!--logs-->
+       <br/>
+          <table>
+            <tr>
+              <td>
+              <div style="margin-left: 10px;">Logging:</div>
+              </td>
+              <td>
+              <div id ="jqxLoggingKindCombo"  style="margin-left: 10px;"></div>
+              </td>
+            <tr>
+          </table>
+          <table style="margin-left: 10px;">
+            <tr>
+              <td>
+                  <div id='jqxFAbbreviatedLogsCb'>Abbreviated Logs</div>
+              </td>
+              <td>
+                  <div id='jqxFDeleteNothingToDoLogsCb'>Delete Logs With "Nothing To Be Done"</div>
+              </td>
+            <tr>
+          </table>
+
+          <table style='margin-left: 20px;'>
+          <tr>
+            <td><div>Path for logging: &nbsp; </div></td>
+            <td><input type="text" id="inptLogPath"/></td>
+            <td><button id="btnLogPathDirSelect">...</button></td>
+          </tr>
+          </table>
+
+        <table>
+          <tr>
+            <td>
+                <div id='jqxKeepLogFilesCb' style='margin-left: 10px;'>Number of Log Files to Keep (per Profile):</div>
+            </td>
+            <td>
+                <div id='inptKeepLogFiles'><div></div></div>
+            </td>
+          </tr>
+        </table>
+          <br/>
+          <button id="btnCleanUpLogFiles" style='margin-left: 20px;'>Clean Up Log Files</button>
+          <br/>
+          <div style='margin-top: 10px;'><hr/></div>
+          <div style='margin-left: 10px;margin-top: 8px;'>Additional Logging (for troubleshooting)</div>
+          <table style='margin-top: 8px;'>
+          <colgroup>
+          <col span="1" style="width: 40%;">
+          <col span="1" style="width: 60%;">
+          </colgroup>
+            <tr>
+             <td>
+             <div id='jqxFIPLoggingCb' style='margin-left: 10px;'>Internet Protocol Logging</div>
+             </td>
+             <td>
+             <div id='jqxFLogFileListCb' style='margin-left: 10px;'>File List Building Details</div>
+             </td>
+            </tr>
+
+            <tr>
+               <td>
+                  <div id='jqxFLogSmartTrackingCb' style='margin-left: 10px;'>SmartTracking Details</div>
+               </td>
+               <td>
+                  <div id='jqxFWithThreadCPHistoryCb' style='margin-left: 10px;'>Keep Checkpoint History</div>
+               </td>
+
+            </tr>
+            <tr>
+              <td>
+                  <div id='jqxFOutputFileListingsCb' style='margin-left: 10px;'>Output Left/Right File Listrings</div>
+              </td>
+              <td>
+                <div id='jqxFLogSpeedLimitCb' style='margin-left: 10px;'>Speed Limit Details</div>
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <div id='jqxFDetailedSecurityLoggingCb' style='margin-left: 10px;'>File Security Details</div>
+              </td>
+              <td>
+                <div id='jqxFLogSharesCb' style='margin-left: 10px;'>File Share Details</div>
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <div id='jqxFLogTimestampsCb' style='margin-left: 10px;'>Destination Time Stamp Setting Details</div>
+              </td>
+              <td>
+                <div id='jqxFLogSyntheticDetailsCb' style='margin-left: 10px;'>Synthetic Details</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <div id='jqxFLogTimingCb' style='margin-left: 10px;'>With Extremely Detailed Timing Info</div>
+              </td>
+              <td>
+                  <div id='jqxFLogTimingDetailsCb' style='margin-left: 10px;'>Even More Detailed</div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                  <div id='jqxFLogTransferDetailsCb' style='margin-left: 10px;'>Log Transfer Details (especially for large files and resuming)</div>
+              </td>
+            </tr>
+
+          </table>
+
+          <br/>
+
+        <table>
+          <tr>
+            <td>
+                <div id='jqxiLogRealtimeStatusMinutesCb' style='margin-left: 10px;'>Log Real-Time Monitoring Status Every</div>
+            </td>
+            <td>
+                <div id='inptiLogRealtimeStatusMinutes'><div></div></div>
+            </td>
+            <td>
+              <div>&nbsp; Minutes &nbsp; &nbsp;</div>
+            </td>
+            <td>
+              <div id ="jqxiLogRealtimeStatusLevelCombo"></div>
+            </td>
+          </tr>
+        </table>
+        <br/>
+          <table>
+            <tr>
+              <td>
+              <div style="margin-left: 10px;">Create timerlog files (for debugging only), level:</div>
+              </td>
+              <td>
+              <div id ="jqxTimerLoggingCombo"  style="margin-left: 10px;"></div>
+              </td>
+              <td>
+                  <div id='jqxCPLoggingCb' style='margin-left: 10px;'>Checkpoint logging (for debugging only)</div>
+              </td>
+            <tr>
+          </table>
+    </div>
+    <div>
+      <!-- notify tab -->
+      <br/>
+      <table>
+        <tr>
+          <td width="30%">
+             <div id='jqxSendEmailWhenTasksCompleteCb' style='margin-left: 10px;'>Send email when tasks complete</div>
+          </td>
+          <td width="20%">
+          </td>
+          <td width="50%">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+          <hr/>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+             <div id='jqxScheduledEmailCb' style='margin-left: 10px;'>For scheduled tasks</div>
+           </td>
+          <td>
+             <div id='jqxEmailLogfileCb' style='margin-left: 10px;'>Attach log file</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div id='jqxManualEmailCb' style='margin-left: 10px;'>For manually started tasks</div>
+          </td>
+          <td>
+             <div id='jqxEmailFilteredItemsCb' style='margin-left: 10px;'>List filtered items</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+             <div id='jqxEmailEmptyCb' style='margin-left: 10px;'>Send Email even when nothing was done</div>
+          </td>
+          <td>
+            <div id='jqxEmailSimpleSubjectCb' style='margin-left: 10px;'>Use simple success/failure subjects</div>
+          </td>
+        </tr>
+        <tr>
+           <td colspan="2">
+             <div id='jqxEmailOnErrorOnlyCb' style='margin-left: 10px;'>Send Email only when an error has occured</div>
+             <div style='margin-left: 20px;'>
+               <table>
+                 <tr>
+                   <td>
+                     <div id='jqxEmailWhenFileReplacedCb' style='margin-left: 10px;'>Send email when a file has been replaced</div>
+                   </td>
+                 </tr>
+                 <tr>
+                   <td>
+                     <div id='jqxEmailConflictCb' style='margin-left: 10px;'>Send email upon conflict</div>
+                   </td>
+                 </tr>
+                 <tr>
+                   <td>
+                     <div id='jqxNoEmailIfRerunSucceedsCb' style='margin-left: 10px;'>No email if re-run is successful</div>
+                   </td>
+                 </tr>
+               </table>
+             </div>
+           </td>
+           <td>
+              <div style='margin-left: 13px;'>Failing Jobs Being Retried: Send Email After:</div>
+              <div id ="jqxEmailModeForRetriesCombo"  style="margin-left: 13px;"></div>
+           </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+             <div id='jqxNoEmailIfVolumeMissingCb' style='margin-left: 10px;'>No email if drive with specified volume label is missing</div>
+          </td>
+          <td>
+            <div id='jqxEmailFilesCb' style='margin-left: 10px;'>Include List Of Copied Files And Other Actions</div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+          <div id ="jqxDigestCb" style='margin-left: 10px;'>Send Email In A Digest Every:</div>
+          </td>
+          <td><div id ="jqxDigestIntervalCombo"></div></td>
+          </tr>
+
+        <tr>
+            <td><div style='margin-left: 30px;'>Send first digest each day at:</div></td>
+            <td><div id='jqxFirstDigestTime_Input''><input type="text" /></div></td>
+          </tr>
+
+        <tr>
+          <td colspan="2">
+           <div id='jqxErrorsNotInDigestCb' style='margin-left: 10px;'>Send high importance emails immediately (not in digest)</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+          <hr/>
+          </td>
+        </tr>
+
+       <tr>
+         <td><div id='jqxEmailDailySummaryCb' style='margin-left: 10px;'>Send Daily Summary At</div></td>
+         <td><div id='jqxDailySummaryTime_Input'><input type="text" /></div></td>
+       </tr>
+
+       <tr>
+        <td colspan="2"><div id='jqxHTMLEmailCb' style='margin-left: 10px;'>Use HTML Format</div></td>
+        <td><button id="EmailSettings_btn_ProgramSettingsDlg">Email/SMTP Settings...</button></td>
+       </tr>
+       <tr>
+        <td colspan="2"><button id="btnSendDailySummary" style='margin-left: 10px;'>Send Daily Summary Now</button></td>
+        <td><button id="btnSendTestMail">Send Test Mail</button></td>
+       </tr>
+
+
+     </table>
+    </div>
+
+    <div>
+      <!--Misc-->
+          <br/>
+          <table style='margin-left: 20px;'>
+          <tr>
+            <td><div>Path For Temporary Files: &nbsp; </div></td>
+            <td><input type="text" id="inptTempPath"/></td>
+            <td><button id="btnTempPathSelect">...</button></td>
+          </tr>
+          </table>
+          <table style='margin-left: 20px;'>
+            <tr>
+              <td>
+          <div>Waiting Time countdown before shutdown:</div>
+              </td>
+              <td>
+          <input type="text" id="inptiShutdownWait"/>
+              </td>
+              <td>
+          <div>Seconds</div>
+               </td>
+            </tr>
+    </table>
+    <table style='margin-left: 20px;'>
+    <tr>
+    <td>
+    <div id='jqxSchedulerCanPromptForVolumesCb'>Scheduler may prompt to turn on and connect missing drives</div>
+    </td>
+    </tr>
+      <tr>
+         <td>
+         <div id='jqxFailIfRemoteListingFailsCb'>Avoid direct folder scans if a remote listing fails</div>
+         </td>
+         <td>
+         </td>
+     </tr>
+    </table>
+    <table style='margin-left: 20px;'>
+      <tr>
+        <td>
+           <div id='jqxRealtimeKeepAliveSecondsCb'>Test and keep alive real-time notifications after</div>
+        </td>
+        <td>
+           <div><input type="text" id="inptiRealtimeKeepAliveSeconds"/></div>
+        </td>
+        <td>
+           <div style="margin-left: 10px;">seconds silence</div>
+        </td>
+      </tr>
+    </table>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <table style='margin-left: 20px;'>
+    <tr>
+    <td colspan="2">
+    <div>
+    <br/>
+    <div style="font-weight:bold;" id='license_status'></div>
+    <br/>
+    </div>
+    </td>
+    </tr>
+      <tr>
+        <td><div>Registration Name: &nbsp; </div></td>
+        <td><input type="text" id="inptRegName"/></td>
+      </tr>
+      <tr>
+        <td><div>Registration Code: &nbsp; </div></td>
+        <td><input type="text" id="inptRegCode"/></td>
+      </tr>
+    </table>
+
+    <br/>
+    <hr>
+    <br/>
+
+    <table style='margin-left: 20px;'>
+    <tr><td><div>
+    <button id="ChangeLogin_btn_ProgramSettingsDlg">Change Login and Password...</button>
+    </div></td></tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr><td><div>
+    <button id="btnSetTimezone">Configure Syncovery Timezone to Match This Browser</button>
+    </div></td></tr>
+    </table>
+    <table style='margin-left: 20px;'>
+      <tr>
+        <td><div>Date Format: &nbsp; </div></td>
+        <td><input type="text" id="inptDateFormat"/></td>
+        <td><div> &nbsp; (example: mm/dd/yyyy)</div></td>
+      </tr>
+      <tr>
+        <td><div>Time Format: &nbsp; </div></td>
+        <td><input type="text" id="inptTimeFormat"/></td>
+        <td><div> &nbsp; (default: hh:nn:ss, where nn=minute)</div></td>
+      </tr>
+    </table>
+
+    </div>
+
+    <div>
+       <br/>
+      <table>
+        <tr>
+          <td><div style="margin-left: 10px;">Max. running profiles per process:</div></td>
+          <td><div><input type="text" id="inpti_iMaxThreads"/></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><div style="margin-left: 10px;">Max. simultaneous jobs:</div></td>
+          <td><div><input type="text" id="inpti_iSeparateProcesses"/></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><div style="margin-left: 10px;">Buffer size for copying files:</div></td>
+          <td><div><input type="text" id="inpti_BufSize"/></div></td>
+          <td><div>Kb</div></td>
+        </tr>
+        <tr>
+          <td><div id='jqxSplitAfterEntriesCb' style='margin-left:10px;'>Split jobs (to save memory) after</div></td>
+          <td><div><input type="text" id="inpti_iSplitAfterEntries"/></div></td>
+          <td><div>million entries</div></td>
+        </tr>
+      </table>
+      <div id='jqxWithGlobalLimitsCb' style='margin-left:12px;'>Use Global Speed Limit Mechanism (needs scheduler restart)</div>
+      <table>
+        <tr>
+          <td>
+            <div id='jqxUseGlobalSpeedLimitCb' style='margin-left:10px;'>Speed Limit For All Profiles</div>
+          </td>
+          <td>
+            <div><input type="text" id="inptGlobalSpeedLimit"/></div>
+          </td>
+          <td>
+            <div>MegaBytes/second</div>
+          </td>
+        </tr>
+      </table>
+
+      <div id='jqxSyncIgnoreWeekdaysCb' style='margin-left:12px;'>Ignore Weekdays Restrictions In All Profiles</div>
+      <div id='jqxSyncForceSeparateMonitorsCb' style='margin-left:12px;'>Force separate folder monitor thread for each real-time profile</div>
+      <div id='jqxUserSpecificMutexesCb' style='margin-left:12px;'>Allow different users to run the same job at the same time without warning</div>
+      <div id='jqxWebStatusServerCb' style='margin-left:12px;'>Enable status web pages for each SyncoveryCL process (ports 8998 and below).</div>
+
+      <br/>
+      <button id="btnConfigureSSL" style='margin-left: 20px;'>Configure SSL/TLS for Web GUI</button>
+      <br/>
+      &nbsp;<br/>
+      <button id="btnStartGuardian" style='margin-left: 20px;'>Start Syncovery Guardian</button>
+      <br/>
+      &nbsp;<br/>
+      <button id="btnStopGuardian" style='margin-left: 20px;'>Stop Syncovery Guardian</button>
+
+    </div>
+    <div>
+      <!--Types, Limits-->
+      <br/>
+      <div style='margin-left:15px;'>Global Exclusion Masks(separate with semicolon or Enter)</div>
+
+      <div style='margin-left:15px;'><textarea id="inptGlobalExcludeMasks"/></div>
+
+
+      <table style='margin-left:15px;'>
+      <tr>
+        <td><div id="SyncGlobalMasksDontCopy_Mode">Don't copy</div></td>
+        <td><div id="SyncGlobalMasksIgnoreTotally_Mode">Ignore Totally</div></td>
+      </tr>
+      </table>
+
+      <div style='margin-left:15px;'>File masks which should not be zipped (unless encryption is also chosen)</div>
+      <div style='margin-left:15px;'><textarea id="inptNotToZipMasks"/></div>
+      <br/>
+      <div style='margin-left:15px;'>File masks which should not be updated on Block Level (and no Synthetic Backup)</div>
+      <div style='margin-left:15px;'><textarea id="inptNotForPartialMasks"/></div>
+      <table>
+        <tr>
+          <td><div style="margin-left: 10px;">Minimum file size for Block Level Copying / Synthetic Backup:</div></td>
+          <td><div><input type="text" id="inpt_MinPartialSize"/></div></td>
+          <td><div>Kb</div></td>
+        </tr>
+        <tr>
+          <td><div style="margin-left: 10px;">File Name Extension For Incomplete Files During Transfer:</div></td>
+          <td><div><input type="text" id="inpt_IncompleteExtension"/></div></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+
+      <br/>
+
+      <table style='margin-left:10px;'>
+        <tr>
+        <td><div>Maximum Part Size For Upload to Amazon S3</div></td>
+        <td><div><input type="text" id="inpt_S3PartSize"/></div></td>
+        <td><div>MB</div></td>
+        </tr>
+        <tr>
+          <td>Maximum Upload Threads Per File to S3, Azure, Glacier</td>
+          <td><div><input type="text" id="inpt_S3MaxUploadThreads"/></div></td>
+          <td></td>
+        <tr>
+        <td>
+        <div id='jqxAcceptNewServers'>Accept new SSH and SSL servers</div>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <div id='jqxGlobal_Synapse_SBBSSL'>Use SecureBlackBox SSL rather than OpenSSL</div>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <br/>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <button id="btnResetKnownSSHSSLServers" style='margin-left: 20px;'>Reset Known SSL/SSH Servers</button>
+          &nbsp; &nbsp;
+          <button id="btnForgetCloudTokens" style='margin-left: 20px;'>Forget Cloud Access Tokens</button>
+        </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <br/>
+
+      <table style='margin-left: 10px;'>
+          <tr>
+            <td>
+              <div style="margin-left:10px;">Path For SmartTracking and Caching Database:</div>
+            </td><td></td>
+          </tr>
+          <tr>
+            <td><div style="margin-left:10px;"><input type="text" id="inpt_DatabasePath"/></div></td>
+            <td><button id="btnDatabasePath">...</button></td>
+          </tr>
+      </table>
+      <div id='jqxSyncNeverShareDatabaseCb' style='margin-left:18px;'>Never allow two profiles to share the same database</div>
+      <div id='jqxCacheDBsRWAllUsersCb' style='margin-left:18px;'>Make databases writeable for all users (to use SyncoveryCL via command line as normal user).</div>
+      <br/>
+
+      <table id="DBTable" style='margin-left:15px;'>
+      <tr>
+        <td><div id="DBServerType_Embedded_Firebird_Mode">Embedded Firebird (default - included in installation)</div></td>
+      </tr>
+      <tr>
+        <td><div id="DBServerType_Standalone_Firebird_Local_Mode">Standalone Firebird Server(connect directly/lockally)</div></td>
+      </tr>
+      <tr>
+        <td><div id="DBServerType_Standalone_Firebird_TCP_Mode">Standalone Firebird Server(connect via TCP/IP)</div></td>
+      </tr>
+      </table>
+      <br/>
+      <table id="DBTable2" style='margin-left:15px;'>
+         <tr>
+          <td>
+             <div>User Name (default: SYSDBA):</div>
+             <div style="float: left"><input type="text" id="inpt_DBServerUsername"/></div>
+          </td>
+          <td>
+             <div>Password (default: masterkey):</div><div><input type="password" id="inpt_DBServerPassword"/></div>
+          </td>
+         <tr>
+         <tr>
+            <td>
+               <div>Firebird Server Address (IP or computer name):</div>
+               <div style="float: left"><input type="text" id="inpt_DBServerAddress"/></div>
+           </td>
+           <td>
+           </td>
+         </tr>
+      </table>
+    </div>
+
+   <div>
+     <br/>
+     <div id='jqxEventLogServiceStartStopCb' style='margin-left:18px;'>Service Start/Stop</div><br/>
+     <div id='jqxEventLogSchedulerStartStopCb' style='margin-left:18px;'>Scheduler Start/Stop</div><br/>
+     <div id='jqxEventLogServiceErrorCb' style='margin-left:18px;'>Service Error</div><br/>
+     <div id='jqxEventLogApplicationErrorCb' style='margin-left:18px;'>Application Error</div><br/>
+     <div id='jqxEventLogGeneralWarningsCb' style='margin-left:18px;'>General Warnings</div><br/>
+     <div id='jqxEventLogProfileRunStartedCb' style='margin-left:18px;'>Profile Run Started</div><br/>
+     <div id='jqxEventLogProfileCompletedWithoutECb' style='margin-left:18px;'>Profile Run Completed Without Errors</div><br/>
+     <div id='jqxEventLogProfileCompletedWithECb' style='margin-left:18px;'>Profile Run Completed With Errors</div><br/>
+     <div id='jqxEventLogProfileGeneralECb' style='margin-left:18px;'>Profile Run General Error(immediately logged before profile completion)</div><br/>
+     <div id='jqxEventLogProfileRunWithWarningsCb' style='margin-left:18px;'>Profile Run With Warnings</div><br/>
+     <div id='jqxEventLogProfileModifiedByUserCb' style='margin-left:18px;'>Profile Modified by User</div><br/>
+
+
+   </div>
+
+   <div>
+      <br/>
+   <!--Tab Performance-->
+      <table style='margin-left:15px;'>
+        <tr>
+          <td><div>CPU Usage</div></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td>
+            <div id='jqxCPUAffinityCPU0Cb' style='margin-left:18px;'>CPU 0</div>
+          </td>
+          <td>
+            <div id='jqxCPUAffinityCPU1Cb' style='margin-left:18px;'>CPU 1</div>
+          </td>
+          <td>
+            <div id='jqxCPUAffinityCPU2Cb' style='margin-left:18px;'>CPU 2</div>
+          </td>
+          <td>
+            <div id='jqxCPUAffinityCPU3Cb' style='margin-left:18px;'>CPU 3+</div>
+          </td>
+        </tr>
+      </table>
+      <br/>
+      <table style='margin-left:15px;'>
+        <tr>
+          <td>
+            <div>Thread Priority:</div>
+          </td>
+          <td>
+            <div id ="jqxSyncThreadPriorityCombo"></div>
+          </td>
+        </tr>
+      </table>
+      <br/>
+      <div style='margin-left:15px;'>Thread Count for File List Building</div><br/>
+
+      <div style='margin-left:15px;'>Folders can be scanned using multithreading. Spesify how many folders should be procesed<br/>
+      simultaneously for these types of storages by each job. The maximum is 500.<br/>
+
+
+      <table>
+        <tr>
+          <tr>
+             <td>
+                <div>Local folders</div>
+             </td>
+             <td>
+               <div><input type="text" id="inpt_iLocalScanningThreads"/></div>
+             </td>
+             <td>
+               <div style='margin-left:15px;'>Internet Protocols</div>
+             </td>
+             <td>
+               <div><input type="text" id="inpt_iInternetScanningThreads"/></div>
+             </td>
+          </tr>
+        </tr>
+        <tr>
+          <td>
+            <div>Network folders</div>
+          </td>
+          <td>
+            <div><input type="text" id="inpt_iNetworkScanningThreads"/></div>
+          </td>
+          <td>
+            <div style='margin-left:15px;'>Remote Listing and Database Cache</div>
+          </td>
+          <td>
+            <div><input type="text" id="inpt_iRemoteAndCacheScanningThreads"/></div>
+          </td>
+        </tr>
+      </table>
+      <br/>
+      <div>Please note: a higher number of threads can cause high CPU and disc or network usage. Threads will<br/>
+      also compete with each other when allocating memory, so more threads can actually be slower than <br/>
+      just a few threads.
+      </div>
+      <br/><br/>
+      <div>
+
+      Internet protocol and cloud servers (such as FTP or GoogleDrive) usually allow only a limited<br/>
+      number of simultaneous connections for each users (such as 3 or 8)
+      </div>
+      <br/><br/>
+
+   </div>
+ </div>
+
+
+   <div>
+          <br/>
+            <div>On this page, you can configure the private keys that should be used for authentication as a client.
+             When private keys are set up, you can choose them individually for each profile on the Security tab sheet of the Internet Protocol Settings dialog.</div>
+            <br/>
+            <div><div id="inpt_certificates_certificates"/></div>
+            <table>
+              <tr>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <div>Private Key Name For Reference in This Program:</div><div><input type="text" id="inpt_certificates_certname_forreference"/></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                          <div>Private Key File:</div><div><input type="text" id="inpt_certificates_private_keyfile"/></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div>Public Key File (optional):</div><div><input type="text" id="inpt_certificates_public_keyfile"/></div>
+                      </td>
+                    </tr>
+                  </table>
+              </td>
+              <td>
+                    <table>
+                      <tr>
+                        <td>
+                          </br>
+                          <button id="Certificates_New_btn">New</button></br></br>
+                          <button id="Certificates_Add_btn">Add</button></br></br>
+                          <button id="Certificates_Update_btn">Update</button></br></br>
+                          <button id="Certificates_Remove_btn">Remove</button>
+                        </td>
+                      </tr>
+                    </table>
+                 </td>
+              </tr>
+            </table>
+
+            <div>Key files must continue to exist in their specified locations</div>
+
+       </div>
+      </td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr><td><button id="OK_btn_ProgramSettingsDlg">OK</button> &nbsp;
+      <button id="Cancel_btn_ProgramSettingsDlg">Cancel</button></td>
+      </tr>
+  </table>
+
+</div>
+
+</div>
+
+
+
+
+
+
+

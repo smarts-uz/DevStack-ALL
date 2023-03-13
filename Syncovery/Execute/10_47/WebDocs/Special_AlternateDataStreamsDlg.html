@@ -1,0 +1,73 @@
+<div id='jqxSpecial_AlternateDataStreamsDlg'>
+<div>Alternate Data Streams</div>
+<div> 
+<table id="container">
+<tr>
+<td valign="top">
+  <div style='margin-left: 30px;margin-left: 10px;'>
+    <div>Alternate Data Streams may contain additional information about a file, such as additional file properties.
+    In many cases, their existence is little known to the user and their content is
+    not very important. However, some users and some software may store important information in Alternate Data Streams. In
+    such cases, you may want to make sure that they are preserved in your backups.</div>
+    <br/>
+    <div id='jqxSpecial_AlternateDataStreamsTabs'>
+    <ul>
+        <li>Copying Alternate Data Streams</li>
+        <li>Special Handling of Macintosh Shares</li>
+    </ul>
+
+    <div>
+    <br/>
+    <div style='margin-left: 30px;'>
+    Alternate Data Streams are copied along with the files by default, if possible. They can be copied between local folders and network folders,
+    but they cannot be copied directly via FTP or other Internet Protocols. Alternate ways to store the streams are therefore offered below.
+    In most cases, you will want to keep the checkmark below chosen for the best behavior. However, in some cases you may opt to have the alternate
+    data streams be removed during the copy, for example to gain speed or to remove additional file properties.
+    </div>
+    <br/><br/>
+    <div style='margin-left: 30px;' id="jqxCopyADSCb">Copy Alternate Data Streams (if possible)</div>
+    <br/><br/>
+    <div style='margin-left: 30px;'>If files are compressed:
+    </div>
+    <br/>
+    <div style='margin-left: 30px;' id="cbPutADSIntoCompressedFiles">Store Alternate Data Streams inside the zip/sz file</div>
+    <br/>
+    <div style='margin-left: 30px;' id="cbApplyADSToCompressedFiles">Add Alternate Data Streams to the zip/sz file itself (not via Internet Protocol)</div>
+    <br/><br/>
+    <div style='margin-left: 30px;'>Use ".metadata-syncovery" files to save alternate data streams (rather than using native file system streams):
+    </div>
+    <br/>
+    <div style='margin-left: 30px;' id="cbFolderADSinMetadataFilesLeft">For folders on the left side</div>
+    <br/>
+    <div style='margin-left: 30px;' id="cbFolderADSinMetadataFilesRight">For folders on the right side</div>
+   </div>
+
+ <!-- Macintosh Shares  -->
+ <div>
+    <br/>
+    <div style='margin-left: 30px;'>This option can be useful if you still have an old (now absolete) Macintosh file share on Windows NTFS volume. Such file<br/>systems store Macintosh resource forks and Finder Info in alternate data streams. Using the checkmark below, you can make<br/>Syncovery split the metadata into separate AppleDouble files whem copying form "left to right", and merge the data when copying<br/>"right to left".
+    </div>
+    <br/><br/>
+    <div style='margin-left: 30px;' id="jqxSplitResourceForksCb">Split and Reassemble Macintosh Resource Forks To AppleDouble Files</div>
+ </div>
+            
+</div>
+
+  </div>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+    <div  style="float: none;">
+       <div style='float: none;'>
+           <button id="Special_AlternateDataStreams_OK_btn">OK</button> 
+            <button id="Special_AlternateDataStreams_Cancel_btn">Cancel</button>               
+        </div>
+    </div>          
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>

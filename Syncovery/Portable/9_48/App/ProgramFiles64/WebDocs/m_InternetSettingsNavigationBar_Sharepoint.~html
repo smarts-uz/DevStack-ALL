@@ -1,0 +1,78 @@
+
+<div id='jqx_internet_settings_navigationbar'>
+
+   <div><div class="inner first"></div></div>    
+   <div>         
+      <div style='margin-left: 5px;'>     
+        <table>
+          <tr>
+            <td><div>Domain</div></td>
+            <td><input type="text" id="Sharepoint_domain"></div></td>
+          </tr>
+        </table>
+        <div>Domain Examples: contoso.sharepoint.com <br/>   
+          (Accesses Default TeamSite) <br/>
+          contoso.sharepoint.com[sitename]<br/>   
+          (Accesses The Site "sitename")<br/>
+          Only The Default Shared Document Libraries Can Be Accessed.<br/>Additional Libraries Cannot Be Used.</div>
+        <table>
+          <tr>
+            <td><div>Folder</div></td>
+            <td><input type="text" id="inptInternetFolder"></div></td>
+          </tr>
+          <tr>
+            <td><div>Account<br/> ID( opt. )</div></td>
+            <td><input type="text" id="Sharepoint_account_id"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Allow IPV6</div></td>
+            <td><div id="cballow_ipv6"></div></td>
+          </tr>  
+        </table>
+
+      </div>
+      
+   </div>
+   <div><br/>Advanced<br/></div>    
+   <div>     
+     <div style='margin-left: 5px;'>     
+       <table>
+        <tr>
+          <td><div>Replace characters...</div></td>
+          <td><div id="cbadv_replace_characters"></div></td>
+        </tr>
+       </table>                                                                                                
+      
+      </div>
+    </div>    
+    <div><br/>Proxy Settings<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+        <table>
+          <tr>
+            <td><div>Proxy Type</div></td>
+            <td><div id ="comboproxy_type"></div></td>
+          </tr>                
+          <tr>
+            <td><div>Proxy Host:</div></td>
+            <td><div><input type="text" id="proxy_host"></div></td>
+          </tr>          
+          <tr>
+            <td><div>Port:</div></td>
+            <td><div><input type="text" id="proxy_port"></div></td>
+          </tr>          
+          <tr>
+            <td><div>User ID (login):</div></td>
+            <td><div><input type="text" id="proxy_login"></div></td>
+          </tr>          
+          <tr>
+            <td><div>Password:</div></td>
+            <td><div><input type="password" id="proxy_password"></div></td>
+          </tr>          
+        </table>            
+        <div>If A Proxy Login Is Needed, It Must Be Specified Here And Will Be Stored Permamently (Encrypted)</div>
+      </div>
+    </div>  
+    
+</div>    
+

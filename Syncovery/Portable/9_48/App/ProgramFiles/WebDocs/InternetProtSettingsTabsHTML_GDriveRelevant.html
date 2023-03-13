@@ -1,0 +1,62 @@
+<div id="jqxInternetProtSettingsTabs">
+<ul>
+    <li>Settings</li>
+    <li>Advanced</li>
+    <li>Proxy Settings</li>
+</ul>
+<div style="margin-left: 10px;">
+    <br/>
+    <div id="lbCont">Container</div><div><input type="text" id="Container"/>
+    <button id="ContainerBrowseButton">...</button>
+    </div>
+    <br/>
+    <div>Folder</div><div><input type="text" id="inptInternetFolder"/>
+    <button id="FTPBrowseButton">...</button>
+    </div>
+    <br/><br/>
+    <div>Account (optional)</div><div><input type="text" id="inptAccountID"/></div>
+    <br/><br/>
+
+    <table style="width:400px">
+    <tr>
+      <td><div id="cballow_ipv6">Allow IPV6</div></td>
+    </tr>
+    </table>
+</div>
+<div style="margin-left: 10px;">
+    <br/>
+   <table>
+      <tr>
+        <td><div id="cbadv_replace_characters"/></div></td>
+        <td><div>Replace characters...</div></td>
+
+      </tr>
+    </table>
+    <br/><br/>
+    <table>
+      <tr>
+         <td><div>Retries: &nbsp;</div></td><td><div id="adv_retries"><input type="text"/></div></td><td></td>
+      </tr>
+    </table>
+    <br/>
+    <table>
+      <tr>
+        <td><div id="cbrecursive_listing"/></div></td>
+        <td><div id="recursive_listing_label">Changes Based Listing (speeds up folder listing after the first run)</div></td>
+      </tr>
+      <tr>
+        <td><div id="cbAvoidChangesAPIInitialListing"/></div></td>
+        <td><div id="avoidinlabel">Except For First Scan (scan folders directly if cache database empty)</div></td>
+      </tr>
+    </table>
+</div>
+<div style="margin-left: 10px;">
+    <br/>
+    <!--Proxy Settings-->
+    <div>Proxy Type</div><div id ="comboproxy_type" style="float: left;"></div><br/><br/>
+    <div>Proxy Host:</div><div><input type="text" id="proxy_host"/></div>
+    <div>Port:</div><div id="proxy_port"><input type="text"/></div>
+    <div>User ID (login):</div><div><input type="text" id="proxy_login"/></div>
+    <div>Password:</div><div><input type="password" id="proxy_password"/></div>
+</div>
+</div>

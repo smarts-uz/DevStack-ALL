@@ -1,0 +1,70 @@
+               <div id="jqxInternetProtSettingsTabs">
+                <ul>
+                    <li>Settings</li>
+                    <li>Advanced</li>
+                    <li>Proxy Settings</li>
+                </ul>
+                <div style="margin-left: 10px;">    
+                    <br/>       
+                    <!--Settings-->                                                                                                   
+                    <div>Container</div><div><input type="text" id="Azure_container"/>
+                    <button id="ContainerBrowseButton">...</button>
+                    </div>
+                    <div>Folder</div><div><input type="text" id="inptInternetFolder"/>
+                    <button id="FTPBrowseButton">...</button>
+                    </div>
+                    <br/><br/>
+                    <div id="AzureText">Azure Account ID Examples: test.blob.core.windows.net, or simply test.<br>&nbsp;<br>
+                    If you have a Shared Signature URI, you need to take it apart. The domain (see example) goes into the Account ID, and the first identifier following the slash is the Container name.
+                    If there are additional identifiers after another slash, these are the folder names. The signature itself starts after the question mark, and it starts with
+                    sv=xxx. This long last part of the SAS URI goes into the Access Key field.
+                    </div>
+                    <br/>
+                    <div>ID</div><div><input type="text" id="Azure_account_id"/></div>
+                    <div>Secret Key</div><div><input type="password" id="inptPassword"/></div>
+                    <br/><br/>    
+
+                    <table style="width:400px">
+                    <tr>
+                      <td><div id="cballow_ipv6">Allow IPV6</div></td>
+                    </tr>  
+                    </table>
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Advanced-->
+                    <div id="cbadv_replace_characters">Replace characters...</div>
+                    <br/>
+                    <div id="cbrecursive_listing">Recursive listing</div>
+                    <br/><br/>
+
+                    <table>
+                    <tr>
+                    <td><div id="CacheControlText1">Cache Control: &nbsp;</div></td>
+                    <td><div id="Azure_adv_cache_control"><input type="text"/></div></td>
+                    <td><div id="CacheControlText2">&nbsp; Seconds (0=unspecified )</div></td>
+                    </tr>
+                    </table>
+                    <br/><br/> 
+                    <table>
+                        <tr>
+                          <td><div>Retries: &nbsp;</div></td><td><div id="adv_retries"><input type="text"/></div></td>
+                          <td></td>   
+                       </tr>
+                    </table>   
+                               
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Proxy Settings-->
+
+                    <div>Proxy Type</div><div id ="comboproxy_type" style="float: left;"></div><br/><br/>
+                    <div>Proxy Host:</div><div><input type="text" id="proxy_host"/></div>
+                    <div>Port:</div><div id="proxy_port"><input type="text"/></div>
+                    <div>User ID (login):</div><div><input type="text" id="proxy_login"/></div>
+                    <div>Password:</div><div><input type="password" id="proxy_password"/></div>
+
+                </div>
+             </div>
+    
+   

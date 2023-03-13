@@ -1,0 +1,62 @@
+<div id='jqxExecuteBeforeAfterDlg'>
+<div>Execute before/after</div>
+<div> 
+<table id="container">
+<tr>
+<td valign="top">
+  <div>
+       <div style='float: none;'>
+           <button id="JobExecuteBeforeAfter_OK_btn">OK</button> 
+            <button id="JobExecuteBeforeAfter_Cancel_btn">Cancel</button>               
+        </div>
+    </div>        
+      
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+  <div >Command lines or scripts to execute:</div>  
+  <div> 
+     <table>
+      <tr>     
+        <td><div>Before</div></td> 
+      </tr>  
+      <tr>
+        <td><input type="text" id="inptJob_ExecuteBefore"/></td>      
+      </tr>
+      <tr>     
+        <td><div>After</div></td> 
+      </tr>
+      <tr>  
+        <td><input type="text" id="inptJob_ExecuteAfter"/></td>        
+      </tr>      
+     </table>     
+     <div>
+      You can specify either of the following:</br>
+      - a complete path to a script, batch file or program</br>
+      - RUN PROFILE Profile Name</br>
+      - HTTP GET url, for example HTTP GET www.syncovery.com/index.htm
+      </br></br>
+      With RUN PROFILE, the software may or may not wait for the additional profile to finish.</br>
+      Therefore, please use only the "After" field if you want to chain profiles sequentially.
+      </br></br>
+      The software will wait for two minutes for external commands to complete. To change this, you</br>
+      can start the command line with ! to enable an unlimited wait or # which disables the waiting entirely.</br>
+      You can specify an additional delay after completion of the external command by starting the</br>command line like this:*060* for a 60 second delay.</br></br>
+      Add & before the command line to disable launching of the After command line if the profile's time
+      window is over.</br></br>
+      Add - before the After comman line to have it run only when an error occured in the profile</br>execution. Use + for only upon complete success, and ++ to also require thet something was done.</br></br>
+      Add [135] or similar before the command lines to specify the weekdays to run on, where</br>
+      1=Monday (the example means Mon, Wed, Fri).</br></br>
+      Use :: to separate several command lines with different conditions. Only one command will</br>be executed. For example: - error.bat :: ++ copied.bat :: + ok.bat
+     </div> 
+  </div> 
+    
+
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>

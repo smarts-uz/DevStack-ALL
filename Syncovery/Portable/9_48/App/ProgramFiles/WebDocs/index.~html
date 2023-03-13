@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" /> 
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.energyblue.css" type="text/css" />  
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.shinyblack.css" type="text/css" />  
+          
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.arctic.css" type="text/css" />          
+        
+    <!--script type="text/javascript" src="scripts/angular.min.js"></script-->        
+    <!--script type="text/javascript" src="scripts/Int64.js"></script>-->
+
+    <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+    <!--script type="text/javascript" src="scripts/jquery-3.5.1.min.js"></script-->
+
+    <script type="text/javascript" src="jqwidgets/jqx-all.js"></script>
+    <script type="text/javascript" src="jqwidgets/globalization/globalize.js"></script>
+
+
+    <script type="text/javascript" src="synappglobals.js"></script>
+    <script type="text/javascript" src="m_synapp_main_form.js"></script>
+    <script type="text/javascript" src="m_synapp_profile_editor_form.js"></script>
+    <script type="text/javascript" src="m_synapp_internet_protocol_settings_form.js"></script>
+
+    <script type="text/javascript" src="programsettings.js"></script>
+    <script type="text/javascript" src="synapp_profile_editor_form.js"></script>  
+    <script type="text/javascript" src="ChooseFolderFilesDlg.js"></script>  
+    <script type="text/javascript" src="synapp_dir_tree_form.js"></script>  
+    <script type="text/javascript" src="synapp_internet_protocol_settings_form.js"></script>  
+
+    <script>
+      'use strict';
+        $(document).ready(function ()
+        {
+          if ((window.location.href.indexOf('://127.0.0.1')>=0) || // "includes" is not supported by all browsers!
+              (window.location.href.indexOf('://localhost')>=0)) // "includes" is not supported by all browsers!
+          {
+             // no login needed on localhost
+             var d = new Date();
+             var n = d.getTimezoneOffset();
+             var Obj = GetJSONObject( 'post_applogin.php',
+                    ['login','xxx',
+                     'password','yyy',
+                     'timezoneoffset',n],
+                    true); // true = with param names
+             G_LoginFormDestroyed = true;
+             GClientToken = Obj.session_token;
+             GLastError = '';
+             InitGlobalVars();
+          }
+          else
+          {
+              $("#LoginDlg_div").html( GLoginFormHTMLPart1+GSyncoveryTitle+GLoginFormHTMLPart2 );
+              $('#jqxLoginDlg').jqxWindow({ maxWidth: 400,  width:400, maxHeight:240, height:240, autoOpen: false, isModal: true, theme: 'energyblue', animationType: 'slide' });
+              $("#inptApp_login").jqxInput({ width : 200, height : 25, theme: 'shinyblack' });
+              $("#inptApp_password").jqxPasswordInput({ width : 200, height : 25, theme: 'shinyblack' });//
+              $('#jqxMobileWebsite_Cb').jqxCheckBox({ width: 100, height: 25, checked: false});
+
+               $("#Login_OK_btn").jqxButton({width : 100});
+               $("#Login_OK_btn").on('click', function ()
+               {
+                  if( !G_LoginFormDestroyed )
+                  {
+                     GIsTabletApplication = false;
+                     var d = new Date();
+                     var n = d.getTimezoneOffset();
+                     var Obj = GetJSONObject( 'post_applogin.php',
+                                       ['login', $("#inptApp_login").jqxInput('val'),
+                                        'password', $("#inptApp_password").jqxPasswordInput('val'),
+                                        'timezoneoffset',n],
+                                       true); // true = with param names
+
+                     if( Obj != undefined )
+                     {
+
+                         if( Obj.error == 'session_busy')
+                         {
+                            window.location = '/post_session_busy.php';
+                            GLastError = Obj.error;
+                            return;
+                         }
+                         else if( ( Obj.error == 'authentication_error' ) && ( GLastError != Obj.error ) )
+                         {
+                           alert('User ID or Password does not match. Please try again.');
+                           GLastError = Obj.error;
+                           return;
+                         }
+                         else if( ( Obj.error == 'server_side_error' ) && ( GLastError != Obj.error ) )
+                         {
+                           alert('Server side error happened, please read log file.');
+                           GLastError = Obj.error;
+                           return;
+                         }
+                                 
+                         if( ( Obj.Result = "OK" ) && ( Obj.double_authentication_via_email == false ) )
+                         {
+                            GClientToken = Obj.session_token;
+                                      
+
+                            if( $('#jqxMobileWebsite_Cb').jqxCheckBox('val') == false )
+                            {
+                                InitGlobalVars();
+                            }
+                            else
+                            {
+                               InitGlobalVars(true);//for mobile
+                            }
+                                    
+                            $('#jqxLoginDlg').jqxWindow('close');
+                            $('#jqxLoginDlg').jqxWindow('destroy');
+                            G_LoginFormDestroyed = true;
+                                  
+                         }
+                         else if( ( Obj.Result = "OK" ) && ( Obj.double_authentication_via_email == true ) )
+                         {
+                                    
+                            $('#jqxLoginDlg').jqxWindow('close');
+                            $('#jqxLoginDlg').jqxWindow('destroy');
+                            G_LoginFormDestroyed = true;
+
+              
+                            $("#AuthCodeDlg_div").html( GAuthCodeFormHTML );
+                            $('#jqxAuthCodeDlg').jqxWindow({ maxWidth: 400,  width:400, maxHeight:210, height:210, autoOpen: false, isModal: true, theme: 'energyblue', animationType: 'slide' });
+                            $("#inptApp_AuthCode").jqxInput({ width : 200, height : 25, theme: 'shinyblack' });
+                      
+                            $("#AuthCode_OK_btn").on('click', function ()
+                            {
+                                var d = new Date();
+                                var n = d.getTimezoneOffset();
+
+                                var ObjSess = GetJSONObject( 'post_startsession.php',
+                                          ['auth_code',$("#inptApp_AuthCode").jqxInput('val'),
+                                           'timezoneoffset',n],
+                                          true); // true = with param names
+
+                                if( ( ObjSess != null ) && ( ObjSess.session_token != undefined ) && ( ObjSess.session_token != null ) && ( ObjSess.session_token != '') )
+                                {
+                                    GClientToken = ObjSess.session_token;
+                                            
+                                    if( $('#jqxMobileWebsite_Cb').jqxCheckBox('val') == false )
+                                    {
+                                      InitGlobalVars();
+                                    }
+                                    else
+                                    {
+                                      InitGlobalVars(true);//for mobile
+                                    }
+                                                                                                                                 
+                                }
+                                else
+                                  alert('The auth code is not valid, please try to pass authentication process from the begining. Press OK and refresh this page.');
+                                $('#jqxAuthCodeDlg').jqxWindow('close');
+                                $('#jqxAuthCodeDlg').jqxWindow('destroy');
+                            } );
+          
+                           $('#jqxAuthCodeDlg').jqxWindow('open');
+                         }
+                         else
+                          GLastError = '';
+                                 
+                     };
+                  }
+               });
+
+               $("#Login_Cancel_btn").jqxButton({width : 100});
+               $("#Login_Cancel_btn").on('click', function ()
+               {
+                  $('#jqxLoginDlg').jqxWindow('close');
+               });
+
+              $('#jqxLoginDlg').jqxWindow('open');
+                                    
+                 
+            }
+
+                
+
+       });
+
+
+    </script>
+
+
+   <style type="text/css">
+
+       
+
+
+       
+
+        .jqx-fill-state-normal-energyblue1, .jqx-widget-header-energyblue1{
+            border-color:#ccc; 
+            background-color:#FFFF
+        }
+        .jqx-fill-state-hover-energyblue1
+        {
+            border-color:#ddd; 
+            background-color:#FFFF
+        }
+        .jqx-fill-state-pressed-energyblue1{
+            border-color:#ccc; 
+            background-color:#FFFF
+        }
+
+
+        .auto-style_TopTable1
+        {
+            width: 500px;
+        }
+        .auto-style_FilesDeletions1
+        {
+            width: 200px;
+        }
+        .auto-style_FilesMore1
+        {
+          width: 450px;   
+        } 
+        .auto-style_FilesMore2
+        {
+          width: 550px;   
+        }
+        .auto-style_FileAgeAndSizeTab1
+        {
+           width: 300px;   
+        }
+        .auto-style_FileAgeAndSizeTab2
+        {
+           width: 250px;   
+        }
+        .auto-style_ComparisonComparisonTab1
+        {
+           width: 350px;   
+        }
+        .auto-style_VersioningVersioningTab1
+        {
+           width: 320px;   
+        }
+        .auto-style_VersioningSynthTab1
+        {
+           width: 350px;   
+        }
+        .auto-style_VersioningSynthTab2
+        {
+           width: 320px;   
+        }
+        .auto-style_VersioningSynthTab3
+        {
+           width: 150px;   
+        }
+        .auto-style_ZippingTab1
+        {
+           width: 600px;   
+        }
+        .auto-style_ZippingTab2
+        {
+           width: 220px;   
+        }
+        .auto-style_ZippingTab3
+        {
+           width: 600px;   
+        }
+        .auto-style_ZippingTab4
+        {
+           width: 450px;   
+        }7
+        .auto-style_IntProtAdv1
+        {
+           width: 100px;   
+        }
+        .auto-style_IntProtAdv2
+        {
+           width: 150px;   
+        }
+
+    </style>
+</head>
+
+<body class='default'>
+    <div id='MainForm_div'></div>
+    <div id='ProfileEditorForm_div' style='display:none'></div>
+    <div id='ProgramSettingsDlg_div' style='display:none'></div>
+    <div id='LoginDlg_div' style='display:none'></div>
+    <div id="jqxLoader" style='display:none'></div>
+    <div id='RenameProfileDlg_div' style='display:none'></div>
+    <div id='ImportProfilesDlg_div' style='display:none'></div>
+    <div id='ImportBinCompResultsDlg_div' style='display:none'></div>
+    <div id='ImportConfigLinesDlg_div' style='display:none'></div>
+    <div id='LogFilesDlg_div' style='display:none'></div>
+    <div id='EmailSettingsDlg_div' style='display:none'></div>
+    <div id='ChangeLoginDlg_div' style='display:none'></div>
+    <div id='ModelessAlertDlg_div' style='display:none'></div>
+    <div id='TreeSelectForm_div' style='display:none'></div> <!--Used by Program Settings and Profile Editor!!!-->
+</body>
+</html>

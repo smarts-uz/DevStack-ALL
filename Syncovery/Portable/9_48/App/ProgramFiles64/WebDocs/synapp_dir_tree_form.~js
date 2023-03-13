@@ -1,0 +1,561 @@
+'use strict';
+
+var TreeSelectFormHTML =  "<div id='jqxwindow2'>"+
+        "<div>Please Choose</div>"+
+        "<div>"+
+          "<div id=\"jqxTree\"></div>"+
+          "<div><br></div>"+
+          "<div></div>"+
+            "<div style='float: none;'>"+
+            "<button id=\"OK_btn2\">OK</button>&nbsp; &nbsp;"+
+            "<button id=\"Cancel_btn2\">Cancel</button>"+
+            "</div>"+
+          "<div><br></div>"+
+        "</div>"+
+
+      "</div>";
+
+ var GLeftRightSideInput = null;
+ var GAvoidProtocolPrefix = false;
+ var GSeparateFolderInput = null;
+ var GAssignFunc = null;
+ var GTreePathDelim = '/';
+ var GFreeDummyCalled = false;
+ var GURLPrefix;
+ var GChooseContainer = false;
+
+ var GRemainingPathToSelect = '';
+
+ function CallFreeDummy()
+ {
+   if (!GFreeDummyCalled)
+   {
+     $.post("post_freebrowsedummy.php",{token:GClientToken});
+     GFreeDummyCalled = true;
+   }
+ }
+
+ function SeparateURL(ADirStr,AvoidProtocolPrefix)
+ {
+   var LURL="",LFolder="";
+
+   var p=ADirStr.indexOf(':\/\/'); // find ://
+
+   if (p<0)
+   {
+      if (GisSyncoveryWindows)
+      {
+         if ((ADirStr.length>2) && (ADirStr[1]==':'))
+            p=3
+         else
+            if ((ADirStr.length>4) && (ADirStr[0]=='\\') && (ADirStr[1]=='\\'))
+            {
+              p=4;
+              while ((p<ADirStr.length) && (ADirStr[p]!='\\'))
+                p++;
+              p++; // skip one backslash
+              // look for another one
+              while ((p<ADirStr.length) && (ADirStr[p]!='\\'))
+                p++;
+              if (ADirStr[p]=='\\')
+                 p++;
+            }
+            else
+               p=0;
+         if ((p>0) && (p<ADirStr.length))
+         {
+            LURL = ADirStr.substring(0,p);
+            LFolder = ADirStr.substring(p,10000);
+            //alert("URL: "+LURL+", Folder:"+LFolder);
+         }
+         else
+            LURL = ADirStr;
+      }
+      else
+         LURL = ADirStr;
+   }
+   else
+   {
+      var q=ADirStr.substring(p+3,10000).indexOf('\/') + p+3; // get offset for next slash
+      if (q>p+3)
+      {
+         LURL = ADirStr.substring(0,q);
+         LFolder = ADirStr.substring(q,10000);
+      }
+      else
+         LURL = ADirStr;
+   }
+
+   if (AvoidProtocolPrefix)
+   {
+      LURL = LURL.substring(p+3,10000);
+      if (LFolder.substring(0,1)=='/') // no absolute path indication necessary for cloud storage
+         LFolder = LFolder.substring(1,10000);
+   }
+   return [LURL,LFolder];
+ }
+
+var directorylistingNeedRetry=false;
+var directorylistingCanceled=false;
+var directorylistingModelessAlertCreated=false;
+var directorylistingModelessAlertBig=false;
+
+var currentdirtreeLeftRightSideInput;
+var currentdirtreeAssignFunc;
+var currentdirtreewhichSide;
+var currentdirtreeSeparateFolderInput;
+
+function ShowDirListingWaitDialog(data)
+{
+   var needBig = (data.substring(0,20)=="RETRY: Open Auth URL");
+
+   if (needBig && directorylistingModelessAlertCreated && !directorylistingModelessAlertBig)
+   {
+      $('#jqxModelessAlertDlg').jqxWindow('resize', 250, 250);
+      directorylistingModelessAlertBig = true;
+   }
+
+   if (!directorylistingModelessAlertCreated)
+   {
+       directorylistingModelessAlertBig = needBig;
+       var aheight = needBig ? 250 : 130;
+       $("#ModelessAlertDlg_div").html( GModelessAlertHTML );
+       $('#jqxModelessAlertDlg').jqxWindow({ maxWidth: 400,  width:400, maxHeight:aheight, height:aheight, autoOpen: false, isModal: true, theme: 'energyblue', animationType: 'slide' });
+       $('#jqxModelessAlertDlg').on('close', function (event)
+       {
+           $('#jqxModelessAlertDlg').jqxWindow('destroy');
+           // $('#jqxProfileEditorForm').jqxWindow('focus');
+           directorylistingModelessAlertCreated = false;
+       });
+
+       $("#Alert_Cancel_btn").jqxButton({width: '100px',theme: 'energyblue'});
+       $("#Alert_Cancel_btn").on('click', function ()
+       {
+          directorylistingCanceled = true;
+          CallFreeDummy();
+          $('#jqxModelessAlertDlg').jqxWindow('close');
+       });
+
+      $('#jqxModelessAlertDlg').jqxWindow('open');
+      directorylistingModelessAlertCreated = true;
+   }
+   if (data.substring(0,21)=="RETRY: Visit Auth URL")
+   {
+      $("#jqxModelessMessage").html(
+      '<A target="_blank" HREF="'+data.substring(23,10000)+'">Click here to authorize Syncovery with the Cloud Service.</A>');
+      // window.open(data.substring(23,10000));
+   }
+   else
+    if (data.substring(0,20)=="RETRY: Open Auth URL")
+    {
+      $("#jqxModelessMessage").html(
+      '<A target="_blank" HREF="'+data.substring(22,10000)+'">Click here to authorize Syncovery with the Cloud Service.</A><br><br>'+
+                     '<b>Important Note:</b> The authentication process may end<br>with a localhost URL and a page load error.<br><br>'+
+                     'Please change the localhost part of that URL to the<br><b>IP address</b> of the device which are you trying to<br>'+
+                     'authorize, and then reload that page.');
+      // window.open(data.substring(23,10000));
+    }
+    else
+     $("#jqxModelessMessage").text(data.substring(6,500));
+}
+
+function DirFormRetryFunction()
+{
+  if (!directorylistingCanceled)
+     InitDirTreeSelectForm(currentdirtreeLeftRightSideInput, currentdirtreeAssignFunc, currentdirtreewhichSide, currentdirtreeSeparateFolderInput, GURLPrefix, GChooseContainer, GAvoidProtocolPrefix);
+}
+
+function FolderTreeExpandFunc(event)
+{
+   var theTree = event.args.owner;
+   var docelement = $(event.args.element);
+   var label = docelement.label;
+   var loader = false;
+   var loaderItem = null;
+   var children = docelement.find('ul:first').children();
+   $.each(children,
+      function (indexInArray,value)
+      {
+          var item = theTree.getItem(value);
+          if (item && (item.label == 'Loading...'))
+          {
+              loaderItem = item;
+              loader = true;
+              return false;
+          }
+          else
+            return true;
+      });
+   if (loader)
+   {
+       var theTreeItem = event.owner.getItem(event.args.element);
+       var Lurl;
+       if (theTreeItem.checked)
+          Lurl = loaderItem.value + "&checked=true"; // expanded items will be checked too
+       else
+          Lurl = loaderItem.value;
+
+       alert("3: Calling "+Lurl);
+
+       $.ajax({
+           // asynchronous!!
+           url: Lurl,
+           success: function (data, status, xhr)
+           {
+               if (data != '')
+               {
+                  if (data.substring(0,1)!="[")
+                  {
+                    loaderItem.label = data;
+                  }
+                  else
+                  {
+                     try
+                     {
+                       var items = jQuery.parseJSON(data);
+                     }
+                     catch(err)
+                     {
+                       alert('Invalid folder listing received from server: '+err);
+                     }
+                     theTree.addTo(items, docelement[0]);
+                     theTree.removeItem(loaderItem.element);
+                     if (GRemainingPathToSelect>"")
+                        ExpandPathToSelectNode(docelement);
+                  }
+               }
+           }
+       });
+   }
+}
+
+function NoLeadingSlash(s)
+{
+  if (s=="")
+     return s;
+  if (s[0]==GTreePathDelim)
+     return s.substring(1,s.length);
+  return s;
+}
+
+function FetchFromGRemainingPathToSelect()
+{
+  GRemainingPathToSelect=NoLeadingSlash(GRemainingPathToSelect);
+  var p=GRemainingPathToSelect.indexOf(GTreePathDelim);
+  if (p<0)
+  {
+     var res=GRemainingPathToSelect;
+     GRemainingPathToSelect="";
+     return res;
+  }
+  var res=GRemainingPathToSelect.substring(0,p);
+  GRemainingPathToSelect=GRemainingPathToSelect.substring(p+1,10000);
+  return res;
+}
+
+function ExpandPathToSelectNode(parentnode)
+{
+  var toexpandnode = undefined;
+  var allitems;
+
+  var toexpandname=FetchFromGRemainingPathToSelect();
+
+  //alert("Looking for "+toexpandname);
+
+  if (parentnode==undefined)
+  {
+     allitems=$('#jqxTree').jqxTree('getItems');
+     if (!allitems || (allitems.length==0))
+        return;
+
+     for (var i=0;i<allitems.length;i++)
+     {
+        var anitem = allitems[i];
+        if (anitem.label == toexpandname)
+        {
+           toexpandnode = anitem;
+           break;
+        }
+     }
+  }
+  else
+  {
+     var children = parentnode.find('ul:first').children();
+     $.each(children,
+        function (indexInArray,value)
+        {
+            var item = $('#jqxTree').jqxTree('getItem',value);
+            if (item && (item.label == toexpandname))
+            {
+               toexpandnode = item;
+               return false;
+            }
+            else
+              return true;
+        });
+  }
+
+  if (toexpandnode != undefined)
+  {
+     $('#jqxTree').jqxTree('ensureVisible',toexpandnode.element);
+
+     $('#jqxTree').jqxTree('selectItem',toexpandnode);
+
+     if (GRemainingPathToSelect>"")
+        $('#jqxTree').jqxTree('expandItem',toexpandnode);
+  }
+  else
+     GRemainingPathToSelect="";
+}
+
+ var TreeSelectDivLoaded = false;
+
+ function InitDirTreeSelectForm(LeftRightSideInput, AssignFunc, whichSide, SeparateFolderInput,
+                                URLPrefix, ChooseContainer, AvoidProtocolPrefix)
+ {
+     directorylistingCanceled = false;
+
+     // alert(AvoidProtocolPrefix);
+
+     if (SeparateFolderInput)
+     {
+        GRemainingPathToSelect=SeparateFolderInput.jqxInput('val');
+
+        //alert('InitDirTreeSelectForm, URLPrefix='+URLPrefix+
+        //   ', LeftRightSideInput='+LeftRightSideInput.jqxInput('val')+
+        //   ', SeparateFolderInput='+SeparateFolderInput.jqxInput('val'));
+     }
+     else
+     {
+        GRemainingPathToSelect=LeftRightSideInput.jqxInput('val');
+
+        //alert('InitDirTreeSelectForm, URLPrefix='+URLPrefix+
+        //   ', LeftRightSideInput='+LeftRightSideInput.jqxInput('val')+
+        //   ', SeparateFolderInput is undefined');
+
+        if ((GRemainingPathToSelect>"") && (GRemainingPathToSelect[0]!="/"))
+        {
+           var Separated = SeparateURL(GRemainingPathToSelect,AvoidProtocolPrefix);
+           GRemainingPathToSelect=Separated[1];
+        }
+     }
+
+     //alert('GRemainingPathToSelect = '+GRemainingPathToSelect);
+
+     GLeftRightSideInput = LeftRightSideInput;
+     GAvoidProtocolPrefix = AvoidProtocolPrefix;
+     GSeparateFolderInput = SeparateFolderInput;
+     GAssignFunc = AssignFunc;
+     GURLPrefix = URLPrefix;
+     GFreeDummyCalled = false;
+     GChooseContainer = ChooseContainer;
+
+     if (whichSide=='')
+        whichSide = "none";
+
+       function getAllParents(item1)
+       {
+         if (item1 != null)
+         {
+           if (GChooseContainer)
+              GSelectedDirStr = item1.label;
+           else
+           {
+             var realname=item1.label;
+             if (item1.value.substring(0,21)=="directorylisting.htm?")
+                realname=item1.label;
+             else
+                if (item1.value>'')
+                   realname=item1.value;
+             if (item1.parentElement != null)
+             {
+                // alert(item1.label);
+
+
+                if (GSelectedDirStr != '')
+                   GSelectedDirStr = ConcatPath(realname,GSelectedDirStr,GTreePathDelim);
+                else
+                   GSelectedDirStr = realname;
+
+                var parent1 = $('#jqxTree').jqxTree('getItem', item1.parentElement);
+                if (parent1)
+                {
+                   if (GSelectedDirStr.length>255)
+                      alert('Path too long: '+GSelectedDirStr); // probably an infinite recursion problem
+                   else
+                      getAllParents(parent1);
+                }
+             }
+             else
+               GSelectedDirStr = ConcatPath(item1.label,GSelectedDirStr,GTreePathDelim);
+           }
+         }
+       };
+
+     function ShowTreeItem()
+     {
+
+         var item = $('#jqxTree').jqxTree('getSelectedItem');
+         getAllParents( item )
+         // alert( str );
+     };
+
+
+     // Create jqxTree
+
+     var TreeSource = null;
+     var LDefaultPath = GLeftRightSideInput.jqxInput('val');
+
+     if (LDefaultPath==undefined)
+        LDefaultPath="";
+
+     if ((URLPrefix!='') && (URLPrefix!=undefined) &&
+        (LDefaultPath.substring(0,URLPrefix.length)!=URLPrefix))
+        LDefaultPath = ConcatPath(URLPrefix,LDefaultPath,'/');
+
+     if ((GSeparateFolderInput != null) && (GSeparateFolderInput.jqxInput('val') != ""))
+        LDefaultPath = LDefaultPath + '/' + GSeparateFolderInput.jqxInput('val');
+
+     if (LDefaultPath.indexOf("://")>=0)
+        GTreePathDelim='/';
+     else
+        GTreePathDelim=GPathDelim;
+
+     directorylistingNeedRetry=false;
+     var BrowseWhat="";
+     if (ChooseContainer)
+        BrowseWhat="container";
+     alert("2: Calling directorylisting.htm for " + LDefaultPath);
+     $.ajax({
+         async: false, // synchronous with progress reporting
+         url: "directorylisting.htm?path=" + encodeURIComponent(LDefaultPath) +
+              "&token="+ GClientToken +
+              "&isroot=true" +
+              "&side=" + whichSide +
+              "&what=" + BrowseWhat,
+         success: function (data, status, xhr)
+         {
+           if (data.substring(0,1)!="[")
+           {
+              if (data.substring(0,6)=="RETRY:")
+              {
+                 directorylistingNeedRetry=true;
+                 ShowDirListingWaitDialog(data);
+              }
+              else
+                 alert(data);
+           }
+           else
+              try
+              {
+                TreeSource = jQuery.parseJSON(data);
+              }
+              catch(err)
+              {
+                alert('Invalid folder listing received from server: '+err);
+              }
+
+         }
+     });
+
+     if (directorylistingNeedRetry && !directorylistingCanceled)
+     {
+        currentdirtreeLeftRightSideInput = LeftRightSideInput;
+        currentdirtreeAssignFunc = AssignFunc;
+        currentdirtreewhichSide = whichSide;
+        currentdirtreeSeparateFolderInput = SeparateFolderInput;
+        setTimeout(DirFormRetryFunction,2000);
+        return;
+     }
+
+     if (directorylistingModelessAlertCreated)
+     {
+        directorylistingModelessAlertCreated = false;
+        $('#jqxModelessAlertDlg').jqxWindow('close');
+        // $('#jqxModelessAlertDlg').jqxWindow('destroy'); // probably not needed
+     }
+
+     if ((TreeSource == null) || directorylistingCanceled)
+     {
+        if (!directorylistingCanceled)
+           alert("Cannot browse this storage.");
+        CallFreeDummy();
+        return;
+     }
+
+     //if (!TreeSelectDivLoaded)
+     if ($('#TreeSelectForm_div').is(':empty'))
+     {
+        $("#TreeSelectForm_div").html( TreeSelectFormHTML );
+        TreeSelectDivLoaded = true;
+     }
+
+     $('#jqxTree').jqxTree({ source: TreeSource,  height: 330, width: 500 });
+            
+     $('#jqxTree').on('expand', FolderTreeExpandFunc);
+
+     if (GRemainingPathToSelect!="")
+        ExpandPathToSelectNode(undefined);
+
+ // Directory Select Dialog
+ $("#jqxwindow2").jqxWindow({ height: 440, width: 510, theme: 'energyblue', autoOpen: false, isModal: true, draggable: false , closeButtonAction: 'close'});
+
+
+ $('#Cancel_btn2').jqxButton({height:GBtnHeight, width: GBtnWidth,theme: 'energyblue'});
+
+ $('#Cancel_btn2').click(function ()
+ {
+   CallFreeDummy();
+   $('#jqxwindow2').jqxWindow('destroy');
+ });
+
+            
+ $('#OK_btn2').jqxButton({height:GBtnHeight, width: GBtnWidth,theme: 'energyblue'});
+
+ $('#OK_btn2').click(
+  function ()
+  {
+         var item = $('#jqxTree').jqxTree('getSelectedItem');
+         if (item != null)
+         {
+           GSelectedDirStr = '';
+           getAllParents(item);
+           // alert(GSelectedDirStr);
+           if (GSelectedDirStr != '')
+           {
+              if ((GSeparateFolderInput == null) || GChooseContainer)
+                 GLeftRightSideInput.jqxInput('val', GSelectedDirStr);
+              else
+              {
+                 var Separated = SeparateURL(GSelectedDirStr,GAvoidProtocolPrefix);
+                 GLeftRightSideInput.jqxInput('val', Separated[0]);
+                 GSeparateFolderInput.jqxInput('val', Separated[1]);
+              }
+           }
+         }
+         CallFreeDummy();
+         $('#jqxwindow2').jqxWindow('destroy');
+         if (GAssignFunc != undefined )
+             GAssignFunc();
+  });
+
+
+ $('#jqxwindow2').on('close', function (event)
+ {
+   // alert('Closing');
+   CallFreeDummy();
+   $('#jqxwindow2').jqxWindow('destroy');
+   if ((GURLPrefix!='') && (GURLPrefix!=undefined))
+      $('#jqxwInternetProtSettingsDlg').jqxWindow('focus');
+
+ });
+
+ $('#jqxwindow2').on('destroy', function (event)
+ {
+   //alert('Destroying');
+   CallFreeDummy();
+ });
+
+ $('#jqxwindow2').jqxWindow('open');
+ $('#jqxwindow2').jqxWindow('focus');
+}

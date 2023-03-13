@@ -1,0 +1,162 @@
+
+<div id='jqxSmartTrackingSettingsDlg'>
+<div>SmartTracking Settings</div>
+<div> 
+<table id="container">
+<tr>
+<td valign="top">
+
+   <div  style="float: none;">
+       <div style='float: none;'>
+           <button id="SmtSet_OK_btn">OK</button> 
+            <button id="SmtSet_Cancel_btn">Cancel</button>               
+        </div>
+    </div>          
+
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<div style='background-color:lightgrey;'> 
+  SmartTracking keeps information in a database linked to the profile name. On the first run,
+  SmartTracking will record the state of each file. Starting with the second run, the settings
+  below will become active. Do not use more than one profile for synchronization of the same folders.
+  </div>
+
+  <div id='navigationbar_SmartTracking'>   
+
+   <div><br/>Moved Files<br/></div>    
+   <div>     
+     <div></div>
+        <div>Detection of moved files.</div>
+         <br/>
+         <table>
+           <tr>                           
+             <td><div id="Smt_Moved_Off_Mode">Off</div></td>
+             <td><div id="Smt_Moved_Fully_Automatic_Mode">Fully Automatic</div></td>                              
+           </tr>                                          
+         </table>
+         <div style='margin-left: 3px;' id="Smt_Moved_Adjust_On_Left_Mode">Locations.Adjust On Left Side, Keep On Right Side</div>
+         <div style='margin-left: 3px;' id="Smt_Moved_Adjust_On_Right_Mode">Locations.Adjust On Right Side, Keep On Left Side</div>
+   </div>  
+   <div><br/>Deleted Files<br/></div>    
+   <div>     
+     <div></div>     
+         <div>Files Deleted On One Side</div>  
+         <br/>
+         <div>                           
+            <div id="Smt_Deleted_Copy_Back_Mode">Copy Back From Other Side</div>
+            <div id="Smt_Deleted_Ignore_Mode">Ignore</div>                              
+            <div id="Smt_Deleted_Move_IntoFolder_Mode">Move Into Folder For Deleted Files</div>
+            <div id="Smt_Deleted_DeletePermamently_Mode">Delete Permamently</div>                              
+         </div>
+         <br/>
+              <div>Folders For Deleted Files:</div>
+              <br/>
+              <table>
+                  <tr>
+                    <td><div>L:</div></td>
+                    <td><input type="text" id="inpt_Smt_DeletedFilesIntoFolderL"/></td>
+                    <td><button id="btn_Smt_DirSelectL">...</button></td>
+                  </tr>
+                  <tr>
+                    <td><div>R:</div></td>
+                    <td><input type="text" id="inpt_Smt_DeletedFilesIntoFolderR"/></td>
+                    <td><button id="btn_Smt_DirSelectR">...</button></td>
+                  </tr>
+              </table>   
+              <br/>
+               <div>For FTP, SSH or WebDAV servers, please specify absolute paths starting with slash(/).</div>
+               
+   </div>  
+   <div><br/>Conflicting Files<br/></div>    
+   <div>     
+     <div></div>
+     <div>Files Changed On Both Sides</div>  
+         <br/>
+         <div>                           
+            <div id="Smt_Confl_Copy_Latest_Mode">Copy Latest Version</div>
+            <div id="Smt_Confl_DoNothing_Mode">Do Nothing/LABEL As CONFLICT</div>                              
+            <div id="Smt_Confl_AlwaysCopyLeftToRight_Mode">Always Copy Left To Right</div>
+            <div id="Smt_Confl_AlwaysCopyRightToLeft_Mode">Always Copy Right To Left</div>  
+            <div id="Smt_Confl_Rename_Mode">Rename One Side & Synchronize Both Versions</div>  
+            <div id="Smt_Confl_Prompt_Mode">Prompt</div>                                                
+         </div>
+          <br/>
+          <table>
+            <tr>
+              <td><div id="jqxSmt_BothNewConflictCb"></div></td> 
+              <td><div>Consider different files with the same name, not present in database, a conflict </div></td> 
+            </tr>
+            <tr>  
+               <td><div id="jqxSmt_BothNewConflictCheckArchiveFlagAndTimestampCb"></div></td> 
+               <td><div>Only for files with archive attributes, or changed since the last synchronization</div></td> 
+            </tr>
+          </table>
+
+       <div>If renaming, use:</div>
+        <table>          
+          <tr>            
+            <td><div id="jqxSmt_ConflictsAddNumberCb"></div></td> 
+            <td><div>Numbers (-1,-2 etc)</div></td> 
+          </tr>  
+          <tr>
+            <td><div id="jqxSmt_ConflictsAddUserCb"></div></td> 
+            <td><div>User Name</div></td> 
+          </tr>  
+          <tr>
+            <td><div id="jqxSmt_ConflictsAddTimeCb"></div></td> 
+            <td><div>Modification Time</div></td> 
+          </tr>  
+          <tr>
+            <td><div id="jqxSmt_ConflictsAddDollarCb"></div></td> 
+            <td><div>$Sign</div></td> 
+          </tr>          
+        </table>
+        <div>If renamed file already exists</div>
+          <table>
+            <tr>              
+              <td><div id="Smt_Confl_UseNumbers_Mode">Use Numbers</div></td>
+              <td><div id="Smt_Confl_Replace_Mode">Replace</div></td>
+            </tr>  
+          </table>
+              
+   </div>  
+   <div><br/>Options<br/></div>    
+   <div>     
+     <div></div>
+      <div>If Timestamp Differ, Detect If A File Has Already Been Changed Or Not</div>  
+               
+               <div>This feature should only be used if the program cannot set the timestamps for files
+                 that it has copied.This problem normally occures with FTP or WebDAV servers only.
+               </div>  
+            
+            <table>
+              <tr>
+                <td><div id="jqxSmt_DetectUnchangedLeftCb"></div></td>    
+                <td><div>Detect Unchanged Files On Left-Hand Side</div></td>
+              </tr>  
+              <tr>
+                <td><div id="jqxSmt_DetectUnchangedRightCb"></div></td>    
+                <td><div>Detect Unchanged Files On Right-Hand Side</div></td>    
+              </tr>  
+              <tr>
+                <td><div id="jqxSmt_DetectServerSizeModsCb"></div></td>
+                <td><div>Also Ignore File Sizes Being Modified By Server Immediately After Upload</div></td>    
+              </tr>  
+            </table>    
+
+   </div>  
+
+</div> 
+   
+    
+
+
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>

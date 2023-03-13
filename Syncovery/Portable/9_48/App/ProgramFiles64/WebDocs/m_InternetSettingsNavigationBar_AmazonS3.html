@@ -1,0 +1,104 @@
+
+<div id='jqx_internet_settings_navigationbar'>
+
+   <div><div class="inner first"></div></div>    
+   <div>         
+      <div style='margin-left: 5px;'>     
+        <table>
+          <tr>
+            <td><div>Bucket</div></td>
+            <td><div><input type="text" id="AmazonS3_bucket"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Storage Class</div></td>
+            <td><div id ="comboS3StorageClass"></div></td>
+          </tr>
+          <tr>
+            <td><div>Folder</div></td>
+            <td><div><input type="text" id="inptInternetFolder"/></div></td>
+           </tr>
+        
+          <tr>
+             <td><div>Access ID (Login):</div></td>
+             <td><div><input type="text" id="AmazonS3_access_id"/></div></td>
+          </tr>
+          <tr>  
+             <td><div>Secret Key</div></td>
+             <td><div><input type="password" id="inptPassword"/></div></td>
+          </tr>
+          <tr>
+             <td><div>Allow IPV6</div></td>
+             <td><div id="cballow_ipv6"></div></td>
+          </tr>  
+        </table>
+                                                                                                    
+        
+      </div>      
+   </div>
+   <div><br/>Advanced<br/></div>    
+   <div>     
+     <div style='margin-left: 5px;'>     
+       <!--Advanced -->
+       <table>
+         <tr>
+           <td><div>Character Set:</div></td>
+           <td></td>
+         </tr>              
+         <tr>
+           <td><div>Replace Characters...</div></td>
+           <td><div id="cbadv_replace_characters"></div></td>
+         </tr>
+         <tr>
+           <td><div>Make Uploaded Files Publicly Available</div></td> 
+           <td><div id="cbAmazonS3_make_uploaded_files_pub_available"></div></td>
+         </tr>   
+         <tr>                                                                                                          
+            <td><div>Recursive Listing</div></td>                
+            <td><div id="cbrecursive_listing"></div></td>
+         </tr>
+         <tr>
+            <td><div>Use Server-Side Encryption</div></td>         
+            <td><div id="cbAmazonS3_use_server_side_encryption"></div></td>
+         </tr>
+         <tr>
+           <td><div>Use Transfer Acceleration</div></td>           
+           <td><div id="cbAmazonS3_use_transfer_acceleration"></div></td>
+         </tr>
+         <tr>         
+           <td><div>Retries</div></td>
+           <td><div><input type="text" id="adv_retries"/></div></td>
+         </tr>
+       </table> 
+                   
+      </div>
+    </div>    
+    <div><br/>Proxy Settings<br/></div>    
+    <div>     
+      <div style='margin-left: 5px;'>     
+      <!--Proxy Settings-->
+        <table>
+          <tr>
+             <td><div>Proxy Type</div></td>
+             <td><div id ="comboproxy_type"></div></td>
+          </tr>
+          <tr>
+            <td><div>Proxy Host:</div></td>
+            <td><div><input type="text" id="proxy_host"/></div></td>
+          </tr>
+          <tr>
+            <td><div>Port:</div><div></td>
+            <td><input type="text" id="proxy_port"/></div></td>
+          </tr>  
+          <tr>
+            <td><div>User ID (Login):</div></td>
+            <td><div><input type="text" id="proxy_login"/></div></td>
+          </tr>  
+          <tr>
+            <td><div>Password:</div></td>
+            <td><div><input type="password" id="proxy_password"/></div></td>
+          </tr>  
+        </table>
+      </div>
+    </div>  
+</div>    
+

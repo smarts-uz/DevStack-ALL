@@ -1,0 +1,107 @@
+               <div id="jqxInternetProtSettingsTabs">
+                <ul>
+                    <li>Settings</li>
+                    <li>Advanced</li>
+                    <li>Proxy Settings</li>          
+                    <li>Security</li> 
+                </ul>
+                <div style="margin-left: 10px;"> 
+                    <br/>          
+                    <!--Settings-->                                                                                           
+                    <div>Library</div><div id="jqxLibraryCombo" style="float: left;"></div><br/><br/>                
+                    <div>URL</div><div><input type="text" id="SSH_url"/></div>
+                    <div>Port</div><div id="SSH_port"><input type="text"/></div>
+                    <div>Folder</div><div><input type="text" id="inptInternetFolder"/>
+
+                    <button id="FTPBrowseButton">...</button>
+
+                    </div>
+                    <div>start absolute paths with / (otherwise relative to home dir)</div>
+                    <br/>
+                    <div>User ID (Login):</div><div><input type="text" id="SSH_login"/></div>
+                    <div>Password</div><div><input type="password" id="inptPassword"/></div>
+                    
+                    <br/>
+
+                    <table style="width:400px">
+                    <tr>
+                      <td><div id="cbSSH_usePutty">Use TGPuttyLib SFTP Implementation</div></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                      <td><div id="cballow_ipv6">Allow IPV6</div></td>
+                    </tr>  
+                    </table>
+
+                    <br/><br/>                                          
+                </div>                  
+                <div style="margin-left: 10px;">
+                    <br/> 
+                    <!--Advanced-->
+                    <div>Character Set:</div><div id ="comboSSH_adv_Charset" style="float: left;"></div><br/><br/>
+
+                    <div id="cbadv_replace_characters">Replace characters...</div>
+                    <br>
+                    <div id="cbrecursive_listing">Recursive listing (supported only by some servers)</div>
+                    <br>
+                    <div id="cbSSH_adv_verify_destination_file">Verify destination file size after transfer</div>
+                    <br>
+                    <table>
+                    <tr>
+                      <td style="width:15%"><div>Time Zone:</div></td>
+                      <td style="width:10%"><div><div id="cbSSH_autozone"/>Auto</div></td>
+                      <td style="width:10%"><div><div id="cbSSH_UTC"/>UTC</div></td>
+                      <td style="width:15%"><div>Offsets: List: </div></td>
+                      <td style="width:10%"><div id="SSH_adv_list"><input type="text"/></div></td>
+                      <td style="width:13%"><div>&nbsp;&nbsp;&nbsp;Upload:</div></td>
+                      <td style="width:10%"><div id="SSH_adv_upload_min"><input type="text"/></div></td>
+                      <td style="width:17%"><div>(Minutes)</div></td>
+                    </tr>
+                    </table>
+
+                    <br>
+                    <table>
+                    <tr>
+                    <td><div>Timeout</div></td><td><div id="adv_timeout"><input type="text"/></div></td><td><div>seconds.</div></td>
+                    </tr>
+                    <tr>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                    <td><div>Retries: &nbsp;</div></td><td><div id="adv_retries"><input type="text"/></div></td><td></td>
+                    </tr>
+                    </table>
+
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <!--Proxy Settings-->
+                    <div>Proxy Type</div><div id ="comboproxy_type" style="float: left;"></div><br/><br/>
+                    <div>Proxy Host:</div><div><input type="text" id="proxy_host"/></div>
+                    <div>Port:</div><div id="proxy_port"><input type="text"/></div>
+
+                    <div>User ID (login):</div><div><input type="text" id="proxy_login"/></div>
+                    <div>Password:</div><div><input type="password" id="proxy_password"/></div>
+    <div style="margin-top:10px">If a proxy login is needed, it must be specified here and will be stored permamently (encrypted)</div>
+                </div>
+                <div style="margin-left: 10px;">
+                    <br/>
+                    <div>Secure Transfer Settings</div>
+                    <br/>
+                    <button id="btnSSH_Security_Advanced_SSH">&nbsp; Advanced SSH Settings... &nbsp;</button>
+                    <br/>
+                    <div>&nbsp;</div>
+                    <br/>
+                    <div>Authentication Methods for SSH</div>
+                    <div id="cbSSH_Security_username_password">User Name / Password</div>
+                    <div id="cbSSH_Security_keyboard">Keyboard</div>
+                    <div id="cbSSH_Security_certificate">Certificate / Public Key</div>
+                    <br/>
+                    <div>Private Key for User Authentication</div>
+                    <div id ="comboSSH_security_Certificate" style="float: left;"></div><br/><br/>
+                    <div>Certificate Password:</div><div><input type="password" id="SSH_security_CertificatePassword"/></div>
+                    <div id="cbSSH_security_nopassword">No password needed</div>
+                </div>
+             </div>
+    
+   
