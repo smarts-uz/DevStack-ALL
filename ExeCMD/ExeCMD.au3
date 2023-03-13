@@ -59,5 +59,3 @@ CmdRead($cmdFull)
 If Not isParentProcessSelf() And @Compiled Then
     Sleep($sleepTime)
 EndIf
-
-Sleep(15000)
