@@ -35,8 +35,9 @@ Global $UDFName = 'ExeCMD.au3'
 
 #ce	=========================================================
 
+ Global $window = @SW_HIDE
 
-If $CmdLineRaw = '' Then ExitBox('CmdLine is null', True)
+If $CmdLine[0] > 0 Then 
 
 $parts = StringSplit($CmdLineRaw, '|')
 If Not IsArray($parts) Then ExitBox('parts is Not Array', True)
@@ -63,12 +64,20 @@ If $parts[0] = 3 Then
         Case 'hide'
             $window = @SW_HIDE
 
-        Case Else
-            $window = @SW_HIDE
-
     EndSwitch
 
 EndIf
+
+Else
+	
+$app = ''
+_Log($app, 'app')
+
+$cmd =  _FZ_FileRead('d:\Develop\Projects\ALL\AppCmd\Testing\App.test')
+_Log($cmd, 'cmd')
+Endif
+
+
 
 $cmdParse = cmdParser($cmd, @WorkingDir, True)
 _Log($cmdParse, 'cmdParse')

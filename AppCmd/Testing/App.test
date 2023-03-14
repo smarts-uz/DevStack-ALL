@@ -1,0 +1,1 @@
+/wait /b /base:"[FileOpenDialog('Choose existing Last Backup File', '', 'TBI Backups (*.TBI)', $FD_FILEMUSTEXIST)]" /f:"[FileSelectFolder('Choose folder to save Full backup', 'E:')]\Inc-$~YYYY$-$~MM$-$~DD$-$~HHMM$" /pw:"[Inbox('Add Password')]" /max:"[Inbox('Add Size in MB', 2000)]MiB" /hash /enc:1
