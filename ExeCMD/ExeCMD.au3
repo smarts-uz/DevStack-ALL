@@ -35,7 +35,7 @@ Global $UDFName = 'ExeCMD.au3'
 
 #ce	=========================================================
 
- Global $window = @SW_HIDE
+ Global $window = @SW_SHOWDEFAULT
 
 If $CmdLine[0] > 0 Then 
 
@@ -61,6 +61,9 @@ If $parts[0] = 3 Then
         Case 'def'
             $window = @SW_SHOWDEFAULT
 
+        Case 'norm'
+            $window = @SW_SHOWDEFAULT
+
         Case 'hide'
             $window = @SW_HIDE
 
@@ -82,17 +85,17 @@ Endif
 $cmdParse = cmdParser($cmd, @WorkingDir, True)
 _Log($cmdParse, 'cmdParse')
 
-$cmdFull = '"' & $app & '" ' & $cmdParse
-_Log($cmdFull, 'cmdFull')
+; $debug = _FZ_FileRead(@ScriptDir & '\debug.txt')
 
-$debug = _FZ_FileRead(@ScriptDir & '\debug.txt')
+$cmdFull = $app & ' ' & $cmdParse
 
 ; If Int($debug) = 1 Then
 ;     Inbox('CmdLine', $cmdFull)
 ; EndIf
 
 If MboxQ ($cmdFull, 'Confirm Execute') Then
-    CmdRead($cmdFull, $window)
+    ; CmdRead($cmdFull, $window)
+	ShellExecute($app, $cmdParse, '', '', $window)
 EndIf
 
 If Not isParentProcessSelf() And @Compiled Then
