@@ -47,7 +47,6 @@ $appFile = 'd:\Develop\Projects\ALL\AppCmd\ALL.appcmd'
 $appFile = 'd:\Develop\Projects\FileApp\Backups\R-Drive Image\Portable\ALL.appcmd'
 $appFile = 'd:\Develop\Projects\ALL\AppCmd\Test2.appcmd'
 $appFile = 'd:\Develop\Projects\FileApp\Backups\R-Drive Image\Portable\RDR.appcmd'
-$appFile = 'd:\Develop\Projects\FileApp\Backups\TeraByte Image\Portable\ALL.appcmd'
 cmdshell($ext, $appFile, True, False)
 
 
@@ -100,7 +99,6 @@ Func app($file, $clean = False)
         _Log('Processing Path: ' & $path)
 
         $name = ''
-        $windowIn = 'hide'
         $cmd = '"%1"'
 
         If StringInStr($path, '|') >= 1 Then
@@ -108,23 +106,22 @@ Func app($file, $clean = False)
             _Log('If StringInStr($path, |) >= 1 Then')
 
             $aSplit = StringSplit($path, '|')
-			
-			_Log($aSplit, 'aSplit')
-			
             $path = $aSplit[1]
             $name = $aSplit[2]
 
-            If $aSplit[0] >= 3 Then
+            If $aSplit[0] = 3 Then
                 $cmd = $aSplit[3]
                 _Log($cmd, 'cmd ')
                 $cmd = cmdParser($cmd, $parentFolder)
                 _Log($cmd, 'cmd Parsed:')
+                
             EndIf
 
-            If $aSplit[0] >= 4 Then
+If $aSplit[0] = 4 Then
                 $windowIn = $aSplit[4]
+
             EndIf
-            
+			
         EndIf
 
         $app = hybridPath($path, $parentFolder)
@@ -140,8 +137,8 @@ Func app($file, $clean = False)
 
         _Log('app: ' & $app)
 
-        $cmdFull = $app & '|' & $cmd & '|' & $windowIn
-
+        $cmdFull = $app & '|' & $cmd & '|' & $windowIn 
+        
         _Log('cmdFull: ' & $cmdFull)
 
         Switch $title
