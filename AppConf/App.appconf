@@ -13,7 +13,8 @@ Set configFile=
 
 Set configPerUser=c:\AsrorZ\config\{userName}
 
-Set regLocation=HKEY_LOCAL_MACHINE\SOFTWARE\Division-M\Drive Bender
+REM Set regLocation=HKEY_LOCAL_MACHINE\SOFTWARE\Division-M\Drive Bender
+Set regLocation=
 
 Set addGit=True
 
@@ -23,7 +24,7 @@ Set perUser=False
 
 Set regJump=False
 
-REM killProcess=notepad~calc
+REM killProcess=notepad.exe~calc.exe
 Set killProcess=
 
 REM runProcess=\..\Portable\ALL.cmd\PhraseExpander.exe~%ProgramFiles(x86)%\R-Drive Image\Keygen.exe
