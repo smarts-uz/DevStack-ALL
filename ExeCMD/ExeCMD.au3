@@ -48,13 +48,37 @@ _Log($app, 'app')
 $cmd = $parts[2]
 _Log($cmd, 'cmd')
 
+If $parts[0] = 3 Then
+    $windowIn = $parts[3]
+    Switch $windowIn
+        Case 'min'
+            $window = @SW_MINIMIZE
+
+        Case 'max'
+            $window = @SW_MAXIMIZE
+
+        Case 'def'
+            $window = @SW_SHOWDEFAULT
+
+        Case Else
+            $window = @SW_HIDE
+
+    EndSwitch
+
+EndIf
+
 $cmdParse = cmdParser($cmd, @WorkingDir, True)
 _Log($cmdParse, 'cmdParse')
 
 $cmdFull = '"' & $app & '" ' & $cmdParse
 _Log($cmdFull, 'cmdFull')
-; Mbox($cmdFull)
-CmdRead($cmdFull)
+
+$debug = _FZ_FileRead(@ScriptDir & '\debug.txt')
+
+If Int($debug) = 1 Then
+    Inbox('CmdLine', $cmdFull)
+EndIf
+CmdRead($cmdFull, $window)
 
 If Not isParentProcessSelf() And @Compiled Then
     Sleep($sleepTime)
