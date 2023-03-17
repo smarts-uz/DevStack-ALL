@@ -13,7 +13,7 @@ Set configFile=
 
 Set configPerUser=c:\AsrorZ\config\{userName}
 
-REM Set regLocation=HKEY_LOCAL_MACHINE\SOFTWARE\Division-M\Drive Bender
+REM regLocation=HKEY_LOCAL_MACHINE\SOFTWARE\Division-M\Drive Bender
 Set regLocation=
 
 Set addGit=True
