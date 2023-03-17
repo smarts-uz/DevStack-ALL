@@ -7,7 +7,9 @@ chcp 65001
 %cd%\AppALL\AppALL.exe %cd%\TotalCN\ALL.appall
 %cd%\AppALL\AppALL.exe %cd%\FreeFileSync\ALL.appall
 %cd%\AppALL\AppALL.exe %cd%\LockHunter\ALL.appall
+%cd%\AppALL\AppALL.exe %cd%\PowerShell\ALL.appall
 %cd%\AppALL\AppALL.exe %cd%\NSSMs\ALL.appall
 %cd%\AppALL\AppALL.exe %cd%\Rclone\ALL.appall
+%cd%\AppALL\AppALL.exe %cd%\Syncovery\ALL.appall
 
 %cd%\TotalCN\Portable\TotalCMD.exe

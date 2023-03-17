@@ -46,6 +46,7 @@ $ext = 'envpathall'
 
 
 $appFile = 'd:\Develop\Projects\ALL\LockHunter\Portable\ALL.envpathall'
+$appFile = 'd:\Develop\Projects\ALL\CmdApp\Develop\ALL.envpathall'
 cmdshell($ext, $appFile, False, False)
 
 
