@@ -85,7 +85,6 @@ Func app($file, $clean = False)
     _ArrayDelete($paths, 0)
 
     $fullPath = pathTitle($paths[0], $parentFolder)
-	$folderName = _FZ_Name($fullPath, $eFZN_ParentDirName)
     _Log('fullPath: ' & $fullPath)
 
     _ArrayDelete($paths, 0)
@@ -94,9 +93,11 @@ Func app($file, $clean = False)
 
         _Log($path, 'path: ')
 
-        Local $dest = $path
+        Local $dest = ''
         Local $type = ''
-        
+
+		$dest = $path
+		
         If StringInStr($path, '|') >= 1 Then
 
             _Log('If StringInStr($path, |) >= 1 Then')
@@ -105,7 +106,7 @@ Func app($file, $clean = False)
 
             $dest = $aSplit[1]
             _Log($dest, 'dest Virgin: ')
-            
+			
             $dest = hybridPath($dest, $parentFolder)
             _Log($dest, 'dest hybridPath: ')
 
@@ -113,16 +114,13 @@ Func app($file, $clean = False)
             If $aSplit[0] = 2 Then
                 $type = $aSplit[2]
             EndIf
+            
 
         EndIf
-        
-        _Log($dest, 'dest: ')
-        _Log($type, 'type: ')
-
-		If _StringEndsWith($dest, '\') Then
-			$dest = $dest & $folderName
-		Endif
 		
+		  _Log($dest, 'dest: ')
+		_Log($type, 'type: ')
+
         Switch True
             Case $type = 'H'
                 _Log("$type = 'H'")

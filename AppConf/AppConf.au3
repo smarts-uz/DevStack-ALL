@@ -40,10 +40,11 @@ $ext = 'appconf'
 
 
 $appFile = 'd:\Develop\Projects\DevApp\Versions\PhraseExpander\Settings\ALL.appconf'
-$appFile = 'd:\Develop\Projects\DevApp\Controls\WorkPace\Settings\ALL.appconf'
 $appFile = 'd:\FSystem\ALL\Security\Protects\Navicat Premium\Settings\ALL.appconf'
 $appFile = 'd:\FSystem\ALL\Humans\Message\iMe\Settings\ALL.appconf'
 $appFile = 'd:\Develop\Projects\NetApp\Browsers\Chrome Browser\Settings\Vivaldi\ALL.appconf'
+$appFile = 'd:\Develop\Projects\DevApp\Controls\WorkPace\Settings\ALL.appconf'
+$appFile = 'd:\Develop\Projects\FileApp\Archiver\WinRAR\Settings\ALL.appconf'
 cmdshell($ext, $appFile, False, False)
 
 

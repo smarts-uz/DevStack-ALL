@@ -9,7 +9,6 @@
 #include <MyUDFs\FileZ.au3>
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
-#include <MyUDFs\MkLink.au3>
 
 #include <MyUDFs\FileAssociation.au3>
 #include <String.au3>
@@ -85,7 +84,6 @@ Func app($file, $clean = False)
     _ArrayDelete($paths, 0)
 
     $fullPath = pathTitle($paths[0], $parentFolder)
-	$folderName = _FZ_Name($fullPath, $eFZN_ParentDirName)
     _Log('fullPath: ' & $fullPath)
 
     _ArrayDelete($paths, 0)
@@ -94,9 +92,9 @@ Func app($file, $clean = False)
 
         _Log($path, 'path: ')
 
-        Local $dest = $path
-        Local $type = ''
-        
+       Local $dest = ''
+       Local $type = ''
+
         If StringInStr($path, '|') >= 1 Then
 
             _Log('If StringInStr($path, |) >= 1 Then')
@@ -104,8 +102,8 @@ Func app($file, $clean = False)
             $aSplit = StringSplit($path, '|')
 
             $dest = $aSplit[1]
-            _Log($dest, 'dest Virgin: ')
-            
+            _Log($dest, 'dest: ')
+
             $dest = hybridPath($dest, $parentFolder)
             _Log($dest, 'dest hybridPath: ')
 
@@ -113,16 +111,10 @@ Func app($file, $clean = False)
             If $aSplit[0] = 2 Then
                 $type = $aSplit[2]
             EndIf
+            _Log($type, 'type: ')
 
         EndIf
-        
-        _Log($dest, 'dest: ')
-        _Log($type, 'type: ')
 
-		If _StringEndsWith($dest, '\') Then
-			$dest = $dest & $folderName
-		Endif
-		
         Switch True
             Case $type = 'H'
                 _Log("$type = 'H'")

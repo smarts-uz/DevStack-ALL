@@ -3,7 +3,7 @@
 #include <MyUDFs\Log.au3>
 
 
-Global $UDFName = 'Config Linker'
+Global $UDFName = 'Config Linker.au3'
 
 
 #cs | CURRENT | =============================================
@@ -14,11 +14,11 @@ Global $UDFName = 'Config Linker'
 
 #Region Example
 
-    If @ScriptName = $UDFName & ".au3" Then 
+	If @ScriptName = $UDFName & ".au3" Then 
 
 		Tapp()
 
-    EndIf                          
+	EndIf                          
 
 #EndRegion Example
 
@@ -41,6 +41,7 @@ Global $UDFName = 'Config Linker'
 
 
 
+
 Switch $CmdLine[0]
 	Case 1
 	    Local $file = $CmdLine[1]
@@ -50,13 +51,12 @@ Switch $CmdLine[0]
 
 	Case Else
 
-
 	    If @ScriptName = $UDFName And $debug Then
-
-	        $file = $appFile
-
-	        app($file)
-
+	        
+			Inits()
+			
+			; $file = $appFile
+	        ; app($file)
 	    Else
 			Inits()
 	    EndIf
