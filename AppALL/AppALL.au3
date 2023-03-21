@@ -63,7 +63,7 @@ cmdshell($ext, $appFile, True, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
+    If Not FileExists($file) Then Return _Box($file & ' not exists!')
 
     _Log($file, 'file')
     _Log($clean, 'clean')
@@ -126,7 +126,7 @@ EndFunc   ;==>app
 Func runsLocal($file, $clean = False)
 
     Local $extsStr = 'appshell'
-    Local $extsStr = 'envvarsall,envvars,envpathall,envpath,appassoc,appshell,appshellvar,appmany,appprot,appexe,appserv,apphost,appconf,applnk,autorun'
+    Local $extsStr = 'envvarsall,envvars,envpathall,envpath,appassoc,appshell,appshellvar,appmany,applink,appprot,appexe,appserv,apphost,appconf,applnk,autorun'
 
     Local $exts = StringSplit($extsStr, ',')
     _ArrayDelete($exts, 0)

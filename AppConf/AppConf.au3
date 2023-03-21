@@ -43,6 +43,7 @@ $appFile = 'd:\Develop\Projects\DevApp\Versions\PhraseExpander\Settings\ALL.appc
 $appFile = 'd:\Develop\Projects\DevApp\Controls\WorkPace\Settings\ALL.appconf'
 $appFile = 'd:\FSystem\ALL\Security\Protects\Navicat Premium\Settings\ALL.appconf'
 $appFile = 'd:\FSystem\ALL\Humans\Message\iMe\Settings\ALL.appconf'
+$appFile = 'd:\Develop\Projects\NetApp\Browsers\Chrome Browser\Settings\Vivaldi\ALL.appconf'
 cmdshell($ext, $appFile, False, False)
 
 
@@ -58,7 +59,7 @@ cmdshell($ext, $appFile, False, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
+    If Not FileExists($file) Then Return _Box($file & ' not exists!')
 
     $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
 

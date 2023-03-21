@@ -1,6 +1,6 @@
 #include-once
 #include 'ALL.au3'
-#include <MyUDFs\Exit.au3>
+#include <MyUDFs\Log.au3>
 
 
 Global $UDFName = 'Config Linker'

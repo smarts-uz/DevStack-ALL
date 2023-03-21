@@ -64,7 +64,7 @@ cmdshell($ext, $appFile, True, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
+    If Not FileExists($file) Then Return _Box($file & ' not exists!')
 
     $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
 

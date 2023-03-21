@@ -103,7 +103,7 @@ Func app($filePath)
 	_Log('WcxFTPs: ' & $WcxFTPs)
 	
 	If Not FileExists($fullPath) Then
-	ExitBox('File ' & $fullPath & 'Not Exists')
+	_Box('File ' & $fullPath & 'Not Exists')
 	EndIf
 
 	_Log('CmdLine')

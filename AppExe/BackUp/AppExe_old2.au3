@@ -62,7 +62,7 @@ cmdshell($ext, $appFile, False, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-  If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
+  If Not FileExists($file) Then Return _Box($file & ' not exists!')
 
     Local $noWait
 

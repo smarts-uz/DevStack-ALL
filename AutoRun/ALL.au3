@@ -7,7 +7,7 @@
 #include <Misc.au3>
 
 #include <MyUDFs\Startup.au3>
-#include <MyUDFs\Exit.au3>
+#include <MyUDFs\Log.au3>
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 #include <MyUDFs\FileZ.au3>

@@ -59,7 +59,7 @@ cmdshell($ext, $appFile, True, True)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
+    If Not FileExists($file) Then Return _Box($file & ' not exists!')
 
     _Log($file, 'file')
     _Log($clean, 'clean')

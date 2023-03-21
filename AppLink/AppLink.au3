@@ -14,12 +14,12 @@
 #include <String.au3>
 
 
-Global $UDFName = 'AppExe.au3'
+Global $UDFName = 'AppLink.au3'
 
 
-$ext = 'appexe'
+$ext = 'applink'
 
-#pragma compile(FileDescription, 'Execute Apps in the folder by provided list of extensions')
+#pragma compile(FileDescription, 'Create Symlink or Hardlink from source to several destinations')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 

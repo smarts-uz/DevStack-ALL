@@ -99,7 +99,7 @@ Func app($file, $clean = False)
 
     Local $replace = FileOpenDialog('Choose replacement file', @ScriptDir & "\", "ALL files (*.*)", $FD_FILEMUSTEXIST)
     
-	If @error Then Return ExitBox('No file is selected')
+	If @error Then Return _Box('No file is selected')
 
     $data = _ParseCSV($file)
     _Log($data)

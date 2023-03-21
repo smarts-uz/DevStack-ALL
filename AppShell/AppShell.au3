@@ -46,6 +46,7 @@ $appFile = 'd:\Develop\Projects\ALL\AppShell\Testing\App\ALL.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\AutoIT\Portable\au3.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\Power\Compile\ALL.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\IDEApp\PowerGUI\Portable\ALL.appshell'
+$appFile = 'd:\Develop\Projects\FileApp\Extracts\Bioruebe Uniextract2\Portable\EXE.appshell'
 cmdshell($ext, $appFile, True, False)
 
 
@@ -64,7 +65,7 @@ cmdshell($ext, $appFile, True, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return ExitBox($file & ' not exists!')
+    If Not FileExists($file) Then Return _Box($file & ' not exists!')
 
     $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
 

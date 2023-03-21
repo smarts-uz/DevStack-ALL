@@ -36,11 +36,11 @@ Global $UDFName = 'ExeCMD.au3'
 #ce	=========================================================
 
 
-If $CmdLineRaw = '' Then ExitBox('CmdLine is null', True)
+If $CmdLineRaw = '' Then _Box('CmdLine is null', True)
 
 $parts = StringSplit($CmdLineRaw, '|')
-If Not IsArray($parts) Then ExitBox('parts is Not Array', True)
-If Not $parts[0] = 2 Then ExitBox('Parts Not $parts[0] = 2', True)
+If Not IsArray($parts) Then _Box('parts is Not Array', True)
+If Not $parts[0] = 2 Then _Box('Parts Not $parts[0] = 2', True)
 
 $app = $parts[1]
 _Log($app, 'app')

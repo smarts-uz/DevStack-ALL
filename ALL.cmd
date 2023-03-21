@@ -7,6 +7,7 @@ chcp 65001
 %cd%\AppExe\AppExe.exe
 %cd%\AppGo\AppGo.exe
 %cd%\AppHost\AppHost.exe
+%cd%\AppLink\AppLink.exe
 %cd%\AppLNK\AppLNK.exe
 %cd%\AppMany\AppMany.exe
 %cd%\AppProt\AppProt.exe
