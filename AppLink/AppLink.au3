@@ -10,6 +10,7 @@
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 #include <MyUDFs\MkLink.au3>
+#include <MyUDFs\TC.au3>
 
 #include <MyUDFs\FileAssociation.au3>
 #include <String.au3>
@@ -85,7 +86,7 @@ Func app($file, $clean = False)
     _ArrayDelete($paths, 0)
 
     $fullPath = pathTitle($paths[0], $parentFolder)
-	$folderName = _FZ_Name($fullPath, $eFZN_ParentDirName)
+	$folderName = _FZ_Name($file, $eFZN_ParentDirName)
     _Log('fullPath: ' & $fullPath)
 
     _ArrayDelete($paths, 0)
@@ -150,6 +151,8 @@ Func app($file, $clean = False)
 
         EndSwitch
 
+		_TC_GoTo_Dir($dest, False)
+		
         _Log($result, 'result')
 
     Next
