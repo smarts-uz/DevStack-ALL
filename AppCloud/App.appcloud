@@ -1,0 +1,23 @@
+
+Set configFolder=%APPDATA%\Wellnomics\WorkPace
+
+Set configFolderDrop=True
+
+Set useFFS=True
+
+
+[Drive]
+type = drive
+client_id = 650786807875-rovsl82nfg0giirm5r7jqarmiplhcm6n.apps.googleusercontent.com
+client_secret = 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
+scope = drive
+token = {"access_token":"ya29.a0AVvZVsr2_p0Yy_ctGqqnhiAXaFeiSqscMnEEYOf7EIcOJ6ombF4o_Gzgw7iAWlvcze4X57duOOzN6mgYAI8vSQV0yfPliKzj-PYRIOkJKD7EGUY01SmLis4q99uGIEJC3BQd97-5gGZB8Zp09crP_25kAwkDBEGIaCgYKAdASARISFQGbdwaITCD0Q5YrC7VF-FFmqscrXA0167","token_type":"Bearer","refresh_token":"1//0c3EO8XZUdozWCgYIARAAGAwSNwF-L9Ir7uQMLBeO1Z5h_PvfsM0h_Sst3LZt99elmxOwj72Lr6tlaQIcCQY1A7k7QARuVw8TjR4","expiry":"2023-03-22T19:03:52.4141528+05:00"}
+team_drive = 
+
+[Union]
+type = union
+upstreams = Drive:smm0:nc Drive:smm1:nc Drive:smm2 Drive:smm3:nc Drive:smm4:nc Drive:smm5:nc Drive:smm6:nc Drive:smm7:nc Drive:smm8:nc Drive:smm9:nc
+create_policy = epall
+action_policy = epall
+search_policy = ff
+

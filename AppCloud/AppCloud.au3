@@ -18,14 +18,14 @@
 #include <String.au3>
 
 
-#pragma compile(FileDescription, 'Manage Windows Service configuration')
+#pragma compile(FileDescription, 'Cloud file providers manager')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 
-Global $UDFName = 'AppServ.au3'
+Global $UDFName = 'AppCloud.au3'
 
 
-$ext = 'appserv'
+$ext = 'appcloud'
 
 
 #cs | INDEX | ===============================================
@@ -44,12 +44,7 @@ $ext = 'appserv'
 
 
 
-
-
-
-
-
-$appFile = 'd:\Develop\Projects\FileApp\Mounter\TrueApps\ALL.appserv'
+$appFile = 'd:\FSystem\Hosting\ALL\Merges\Rclone\Projects\SMM-App\App.appcloud'
 cmdshell($ext, $appFile, True, False)
 
 
