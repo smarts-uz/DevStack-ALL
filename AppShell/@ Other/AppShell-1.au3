@@ -51,7 +51,7 @@ Switch $CmdLine[0]
         app($file)
 
         If Not isParentProcessSelf() Then
-            Sleep(2000)
+            Sleep($sleepTime)
         EndIf
 
 

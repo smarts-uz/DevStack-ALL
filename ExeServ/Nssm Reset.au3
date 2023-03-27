@@ -10,7 +10,7 @@ Switch $CmdLine[0]
         Local $file = $CmdLine[1]
         app($file)
 
-        Sleep(2000)
+        Sleep($sleepTime)
 
     Case Else
 	

@@ -1,7 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'Cmd Init.au3'
+Global $UDFName = 'Close Native.au3'
 
 
 

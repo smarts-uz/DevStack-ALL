@@ -13,6 +13,7 @@
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 #include <MyUDFs\Settings.au3>
+#include <MyUDFs\Rclone.au3>
 
 #include <MyUDFs\FileAssociation.au3>
 #include <String.au3>
@@ -25,8 +26,10 @@
 Global $UDFName = 'AppCloud.au3'
 
 
+
 $ext = 'appcloud'
 
+WinSetTitle ( "", "", "newtitle" )
 
 #cs | INDEX | ===============================================
 
@@ -69,14 +72,11 @@ Func app($file, $clean = False)
         Return False
     EndIf
 
-    Nssm_ALL($file)
-    
     If Not $clean Then
-        Nssm_Start()
+       Rc_Mount($file, True)
     Else
-        Nssm_Delete()
+       Rc_Clean($file)
     EndIf
-    
 
     If Not isParentProcessSelf() And @Compiled Then
         Sleep($sleepTime)
