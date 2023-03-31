@@ -70,10 +70,10 @@ Func app($file, $clean = False)
     EndIf
 
     If Not $clean Then
-        Rc_Decs($file)
-        Rc_Mount($file)
+		Rc_Decs($file)
+		Rc_Mount($file)
     Else
-        Rc_Clean($file)
+       Rc_Clean($file)
     EndIf
 
     If Not isParentProcessSelf() And @Compiled Then
