@@ -25,11 +25,8 @@
 
 Global $UDFName = 'AppCloud.au3'
 
-
-
 $ext = 'appcloud'
 
-WinSetTitle ( "", "", "newtitle" )
 
 #cs | INDEX | ===============================================
 
@@ -47,7 +44,7 @@ WinSetTitle ( "", "", "newtitle" )
 
 
 
-$appFile = 'd:\FSystem\Hosting\ALL\Merges\Rclone\Projects\SMM-App\App.appcloud'
+$appFile = 'd:\Develop\Projects\ALL\AppCloud\SMM-App\App.appcloud'
 cmdshell($ext, $appFile, True, False)
 
 
@@ -73,7 +70,8 @@ Func app($file, $clean = False)
     EndIf
 
     If Not $clean Then
-       Rc_Mount($file, True)
+		Rc_Decs($file)
+		Rc_Mount($file)
     Else
        Rc_Clean($file)
     EndIf

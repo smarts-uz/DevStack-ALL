@@ -20,10 +20,9 @@
 
 #pragma compile(FileDescription, 'Cloud file providers Get password')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
-#pragma compile(Out, "d:\Develop\Projects\ALL\AppCloud\AppCloudPass.exe")
 
-Global $UDFName = 'AppCloudCheck.au3'
+Global $UDFName = 'Password.au3'
 
-    $logToCmd = False
+$logToCmd = False
 	
-Rc_Pass()
+Rc_Pass_Cmd()

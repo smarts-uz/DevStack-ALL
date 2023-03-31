@@ -23,7 +23,7 @@
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 
-Global $UDFName = 'AppCloudCheck.au3'
+Global $UDFName = 'Mounters.au3'
 
 
 If $CmdLine[0] = 0 Then
@@ -32,8 +32,6 @@ If $CmdLine[0] = 0 Then
 EndIf
 
 $file = $CmdLine[1]
-$union = $CmdLine[2]
 
-
-$result = Rc_Active($file, $union)
+$result = Rc_Mount($file)
 _Log($result)

@@ -1,7 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'Cmd Init.au3'
+Global $UDFName = 'Decrypt Config.au3'
 
 
 
@@ -38,9 +38,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    Nssm_ALL($file)
-
-    Nssm_Cmd_Init()
+	Rc_GUI($file)
 
 EndFunc   ;==>app
 
