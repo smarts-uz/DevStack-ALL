@@ -38,8 +38,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 	
-	Rc_ALL($file)
-    Auth_Logout()
+	Rc_Login_Exit($file)
 
 EndFunc   ;==>app
 

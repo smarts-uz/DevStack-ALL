@@ -38,7 +38,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 	
-    Auth_Gens()
+    Rc_Login_Gen($file)
 
 EndFunc   ;==>app
 
