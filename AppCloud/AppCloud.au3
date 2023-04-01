@@ -71,7 +71,7 @@ Func app($file, $clean = False)
 
     If Not $clean Then
         Rc_Decs($file)
-        Rc_Mount($file)
+        Rc_Active($file)
     Else
         Rc_Clean($file)
     EndIf

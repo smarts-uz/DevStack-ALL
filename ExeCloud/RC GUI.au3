@@ -1,7 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'Decrypt Config.au3'
+Global $UDFName = 'RC GUI.au3'
 
 
 

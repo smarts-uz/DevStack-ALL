@@ -1,7 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'RC About ALL.au3'
+Global $UDFName = 'Auth Logouts.au3'
 
 
 
@@ -37,8 +37,9 @@ EndSwitch
 
 #ce	=========================================================
 Func app($file, $clean = False)
-
-	Rc_About_ALL($file)
+	
+	Rc_ALL($file)
+    Auth_Logout()
 
 EndFunc   ;==>app
 

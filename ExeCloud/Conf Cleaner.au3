@@ -1,7 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'Cleaner Config.au3'
+Global $UDFName = 'Conf Cleaner.au3'
 
 
 

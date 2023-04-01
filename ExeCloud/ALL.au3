@@ -22,7 +22,7 @@
 Global $debug = True
 Global $exts
 Global $ext = 'appcloud'
-Global $appFile = 'd:\FSystem\Hosting\ALL\Merges\Rclone\Projects\SMM-App\App.appcloud'
+Global $appFile = 'd:\Develop\Projects\ALL\AppCloud\SMM-App\App.appcloud'
 
 
 #cs | FUNCTION | ============================================

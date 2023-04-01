@@ -1,7 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'Cmd Init.au3'
+Global $UDFName = 'RC Active.au3'
 
 
 
@@ -38,7 +38,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    Rc_Pass_Gen()
+	Rc_Active($file)
 
 EndFunc   ;==>app
 
