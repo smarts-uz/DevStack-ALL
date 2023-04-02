@@ -1,7 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'RC Clean.au3'
+Global $UDFName = 'Auth GetPass.au3'
 
 
 
@@ -37,8 +37,10 @@ EndSwitch
 
 #ce	=========================================================
 Func app($file, $clean = False)
-
-	Rc_Clean($file)
+	
+	If Not $isAsrorPC Then Return _Log('Not isAsrorPC')
+	
+    configEncryptGUI()
 
 EndFunc   ;==>app
 

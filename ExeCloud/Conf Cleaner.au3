@@ -38,7 +38,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    Rc_Clean($file)
+    Rc_Clean($file, True)
 
 EndFunc   ;==>app
 
