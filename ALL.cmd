@@ -2,6 +2,7 @@ chcp 65001
 
 
 %cd%\AppALL\AppALL.exe
+%cd%\AppCloud\AppCloud.exe
 %cd%\AppAsso\AppAssoc.exe
 %cd%\AppConf\AppConf.exe
 %cd%\AppExe\AppExe.exe

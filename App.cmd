@@ -1,8 +1,9 @@
 chcp 65001
 
-%cd%\AppALL\AppALL.exe %cd%\ExeConf\ALL.appexe
-%cd%\AppALL\AppALL.exe %cd%\ExeEFU\ALL.appexe
-%cd%\AppALL\AppALL.exe %cd%\ExeServ\ALL.appexe
+%cd%\AppExe\AppExe.exe %cd%\ExeCloud\ALL.appexe
+%cd%\AppExe\AppExe.exe %cd%\ExeConf\ALL.appexe
+%cd%\AppExe\AppExe.exe %cd%\ExeEFU\ALL.appexe
+%cd%\AppExe\AppExe.exe %cd%\ExeServ\ALL.appexe
 
 %cd%\AppALL\AppALL.exe %cd%\TotalCN\ALL.appall
 %cd%\AppALL\AppALL.exe %cd%\FreeFileSync\ALL.appall
