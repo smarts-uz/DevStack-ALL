@@ -70,7 +70,6 @@ Func app($file, $clean = False)
     EndIf
 
     If Not $clean Then
-        Rc_Decs($file)
         Rc_Active($file)
     Else
         Rc_Clean($file)
