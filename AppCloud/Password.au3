@@ -13,7 +13,7 @@
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 #include <MyUDFs\Settings.au3>
-#include <MyUDFs\Rclone.au3>
+#include <MyUDFs\RcloneUDF.au3>
 
 #include <MyUDFs\FileAssociation.au3>
 #include <String.au3>
@@ -22,7 +22,5 @@
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 Global $UDFName = 'Password.au3'
-
-$logToCmd = False
 	
 Rc_Pass_Cmd()

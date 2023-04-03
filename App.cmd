@@ -1,5 +1,9 @@
 chcp 65001
 
+%cd%\AutoRun\ALL.exe
+
+%cd%\EnvPath\EnvPath.exe %cd%\AppCloud\ALL.envpath
+
 %cd%\AppExe\AppExe.exe %cd%\ExeCloud\ALL.appexe
 %cd%\AppExe\AppExe.exe %cd%\ExeConf\ALL.appexe
 %cd%\AppExe\AppExe.exe %cd%\ExeEFU\ALL.appexe

@@ -16,7 +16,7 @@
 #include <MyUDFs\Dialogs.au3>
 #include <MyUDFs\_ParseCSV.au3>
 #include <MyUDFs\FileAssociation.au3>
-#include <MyUDFs\Rclone.au3>
+#include <MyUDFs\RcloneUDF.au3>
 
 
 Global $debug = True

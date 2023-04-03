@@ -15,7 +15,6 @@ chcp 65001
 %cd%\AppServ\AppServ.exe
 %cd%\AppShell\AppShell.exe
 %cd%\AutoRun\AutoRun.exe
-%cd%\AutoRun\ALL.exe
 
 %cd%\EnvPath\EnvPath.exe
 %cd%\EnvPathALL\EnvPathALL.exe

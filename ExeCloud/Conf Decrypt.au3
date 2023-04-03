@@ -1,7 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'RC GoTo.au3'
+Global $UDFName = 'Conf Decrypt.au3'
 
 
 
@@ -37,9 +37,8 @@ EndSwitch
 
 #ce	=========================================================
 Func app($file, $clean = False)
-	
-	Rc_ALL($file, True)
-	Rc_GoTo($file)
+
+    Rc_ALL($file)
 
 EndFunc   ;==>app
 
