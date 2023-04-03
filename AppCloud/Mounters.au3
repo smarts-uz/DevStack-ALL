@@ -33,5 +33,8 @@ EndIf
 
 $file = $CmdLine[1]
 
+$title = $file & ' | ' & @ScriptName
+
 $result = Rc_Mount($file)
 _Log($result)
+

@@ -45,7 +45,7 @@ $ext = 'appcloud'
 
 
 $appFile = 'd:\Develop\Projects\ALL\AppCloud\SMM-App\App.appcloud'
-cmdshell($ext, $appFile, True, False)
+cmdshell($ext, $appFile, True, False, False)
 
 
 #cs | FUNCTION | ============================================
@@ -70,7 +70,7 @@ Func app($file, $clean = False)
     EndIf
 
     If Not $clean Then
-        Rc_Active($file)
+        Rc_App($file)
     Else
         Rc_Clean($file)
     EndIf
