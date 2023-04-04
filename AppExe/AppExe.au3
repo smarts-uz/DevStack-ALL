@@ -47,6 +47,7 @@ $appFile = 'd:\Develop\Projects\DevApp\Controls\Control Viewer\ALL.appexe'
 $appFile = 'd:\Develop\Projects\Devops\Hyper-V\Uninstall-WindowsFeature\ALL.appexe'
 $appFile = 'd:\Develop\Projects\DevApp\Versions\TortoiseGit\Installer\ALL.appexe'
 $appFile = 'd:\Develop\Projects\Devops\Windows\Set-VMHost\ALL.appexe'
+$appFile = 'd:\Develop\Projects\ALL\Rclone\Mounter\Installer\ALL.appexe'
 cmdshell($ext, $appFile, False, False)
 
 
