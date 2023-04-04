@@ -95,7 +95,6 @@ Func app($file, $clean = False)
         $cmd = '/clean'
     EndIf
 
-	
     executer($parentFolder, 'appall', True, @SW_SHOWDEFAULT, True, $file, $cmd)
     
     For $ext In $exts

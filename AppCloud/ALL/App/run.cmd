@@ -1,0 +1,3 @@
+chcp 65001
+
+rclone mount Union: X: -vv --verbose --drive-client-id="650786807875-rovsl82nfg0giirm5r7jqarmiplhcm6n.apps.googleusercontent.com" --drive-client-secret="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" --drive-scope="drive" --config="c:\Cloud\Drive\Configs.conf" --progress --cache-dir="c:\Cloud\Drive" --cache-tmp-upload-path="c:\Cloud\Drive\Tmp" --allow-other  --use-mmap --use-server-modtime --union-cache-time=1 --vfs-cache-mode=off --vfs-cache-max-age=1h0m0s --vfs-cache-max-size=256G --vfs-case-insensitive --transfers=2 --checkers=2 --attr-timeout=10s --dir-cache-time=240h --poll-interval=15s --buffer-size=0 --rc --rc-no-auth --rc-addr=localhost:8602 --volname=Union-Drive-X --union-upstreams "Smm0:/:ro Smm1:/:ro Smm2:/:ro Smm3:/:ro "

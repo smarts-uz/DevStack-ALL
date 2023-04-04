@@ -1,0 +1,76 @@
+REM https://rclone.org/commands/rclone_mount/
+
+REM https://rclone.org/docs/#transfers-n
+Set transfers=2
+
+REM https://rclone.org/docs/#checkers-n
+Set checkers=2
+
+REM https://rclone.org/docs/#v-vv-verbose
+Set verbose=True
+
+REM https://rclone.org/commands/rclone_mount/#vfs-directory-cache
+Set dirCacheTime=240h
+
+REM https://rclone.org/commands/rclone_mount/#vfs-directory-cache
+Set pollInterval=15s
+
+REM https://rclone.org/commands/rclone_mount/#vfs-case-sensitivity
+Set vfsCaseInsensitive=True
+
+REM https://rclone.org/commands/rclone_mount/#vfs-file-caching
+Set vfsCacheMaxSize=256G
+
+REM https://rclone.org/commands/rclone_mount/#vfs-cache-mode-minimal
+REM off|minimal|writes|full
+Set vfsCacheMode=full
+
+REM https://rclone.org/commands/rclone_mount/#vfs-file-caching
+REM https://forum.rclone.org/t/vfs-max-cache-size-vs-vfs-cache-max-age/26285/7
+Set vfsCacheMaxAge=1h0m0s
+
+REM https://rclone.org/union/#union-cache-time
+Set unionCacheTime=1
+
+REM https://rclone.org/union/#union-min-free-space
+Set unionMinFreeSpace=14643
+
+REM https://rclone.org/docs/#use-mmap
+Set useMmap=True
+
+REM https://rclone.org/docs/#u-update
+Set useServerModtime=True
+
+REM https://rclone.org/docs/#fast-list
+Set fastList=True
+
+REM https://forum.rclone.org/t/what-does-allow-other-do/12366
+Set allowOther=True
+
+REM https://rclone.org/docs/#buffer-size-size
+Set bufferSize=0
+
+REM https://rclone.org/commands/rclone_mount/#attribute-caching
+Set attrTimeout=10s
+
+REM Mount point or drives for Union
+Set mount=Z
+
+REM Google OAuth2 clientId & clientSecret
+REM https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid
+Set clientId=650786807875-rovsl82nfg0giirm5r7jqarmiplhcm6n.apps.googleusercontent.com
+Set clientSecret=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
+
+REM https://developers.google.com/identity/protocols/oauth2/scopes
+Set driveScope=drive
+Set driveState=48F6YExfXjhf/sh6zGvKkjokR6GU6sxV6TuU6Y8C/4s=
+
+REM Google Refresh Token
+Set token=ywIoLh1iB9Ur2LYxP3K5wzaVaYADlX+3ui505vdX34Y=
+
+
+
+# Encrypted rclone configuration File
+
+RCLONE_ENCRYPT_V0:
+Ne+S55Vp5U0t+n5qNi86Wqn/RXfU1Myr75F9Q45wYRNx8eAYyWwMRgATjMfzQCYND8Mf3NOV5PgSrqA6BToCY/xi0Ncf0vXHQu0wWAqZbuIkObAEdGArVVPF01IJ9GY76vcomxtKfOJfW5TYhi2eQq6mY5BW9rPX5kt3MPJe8yMYqWpSrg44N2FJ9EBOLrWBn84VJ+JS+x5NxF03WjIfgr5YbkHq1Ipw9rV31Qkz4b6QdPN78Iv9Qa+jienvbLxO0P/IgA9cEedeVWRZ2xVewaEq1WlZOMOBSXTFiliAz1iW8erJP41JQ9+cSBXfumVdKD+R3UBRXa3Tx2DvKJi36+WAUWpu/NT5LCfpSB6o5Xl553l09zva/3IBcvFm60YPg4zEmwPOg9GqBfBfWlE8tulW/hmp96OXEjkH7fKXXV8N9qs4c1Q+zALpJqgth6BaHZ1Fbu23DtYBCPhXthI3dDMeZjXRLb6racgDBztzh7y92eNRjZ0AM/5myzaF56Phk+mjV75pPP6F6DxDArFw1dX8MzfoG1zHqK0k/CeQM9kPn2OegegbNE+X2idy2GXREvsDY+hWyTJSUrB+2aqq3CTtEe07pdzZbqMwNIw+CpZazAp57pBdj6Xj5qQ8GdOX5FPvs9qw7yeG6M7ZO0aPZT2SWIoiL46ucU5xHaw/rKFhkFs0P5ffnDdhnBsfFpx3/CTApFChUkl80dGBTuVEP3Rip045NioEaA3B6iAFfP7PmsVLCLsWZ1MhwwVoHMVw7lMfyauIhqORF3PDSyyKnl3DShWWj2h7S/h7Ez+Yap9ZwP6GyEK7grV8cSOA2uah8Xb//khtgTqCBEuq9E9UzBB791z17/VpUKzfsxoWkiCDwTL4QgRSSqcywpQI7J3ddVJ4hhh5hguJM3Lgb91xlZmkdBMchC89Ubj6SpkX5uq8O2sAqf8JwjDwPOtKEXuQpRcj4qCvu8ltvreJ1uL/fRL5AAVm6/sueHxhqDN9ehyU/jf7xbxTC11J7TrN4yz8sGW6PUR95+VATyypsr6muIBYv5WjEkgsnOkpYDHlgJ25Uj4ViTqkGpmaKtE9gB7KtBC4UXfB6Or8n3wJ36h9XVqmHuCw+tK1o+n7ljkRZc2mMwPYn2H6un8lkoK2Sw2pP1rgXiSbCg8WM3hOYLNVpgNZ04SQNUY0b6MYsijQ9NKO9mGPgYtuN4ruiBHzdPUm7LhtKbR1gjPfqq5P8Pithr7uGJM3EKfQgNHzRq7tJzdECQxrKTzB7ngPQhcoosXhqKb54xyVuEjseLOgrKY8RWErZXvh+C+8GuCftTBs20JIGXP2Hk1ybKA9Q59UtzPoiuP5ds133/luuP4NKNCkzzuGKhJYSYWOWe4Bs42ceexrr1k=
