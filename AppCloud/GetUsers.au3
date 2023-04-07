@@ -19,10 +19,10 @@
 #include <String.au3>
 
 
-#pragma compile(FileDescription, 'Cloud file providers size checker')
+#pragma compile(FileDescription, 'GetUsers state monitor')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 
-Global $UDFName = 'Mounters.au3'
+Global $UDFName = 'GetUsers.au3'
 
 Rc_Mount_Cmd()

@@ -37,9 +37,7 @@ $ext = 'appcmd'
 
 
 
-Global $cmdExec = $parentDir & '\ExeCMD\ExeCMD.exe'
-
-
+Global $cmdExec = @ScriptDir & '\ExeCMD.exe'
 
 
 $appFile = 'd:\Develop\Projects\ALL\AppShell\Testing\App\ALL.appshell'

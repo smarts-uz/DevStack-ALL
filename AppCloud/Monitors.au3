@@ -19,10 +19,10 @@
 #include <String.au3>
 
 
-#pragma compile(FileDescription, 'Cloud file providers size checker')
+#pragma compile(FileDescription, 'Monitoring mounted file path for file changes')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 
-Global $UDFName = 'Mounters.au3'
+Global $UDFName = 'Monitors.au3'
 
 Rc_Mount_Cmd()
