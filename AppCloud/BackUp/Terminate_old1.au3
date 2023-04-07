@@ -24,7 +24,7 @@
 Global $UDFName = 'Terminate.au3'
 	
 	If $CmdLine[0] < 1 Then
-    _Box('CmdLine[0] < 1', '', True)
+    _LogBox('CmdLine[0] < 1', '', True)
     $folder = 'z:'
 Else
     $folder = $CmdLine[1]

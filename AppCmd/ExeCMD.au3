@@ -40,8 +40,8 @@ Global $UDFName = 'ExeCMD.au3'
 If $CmdLine[0] > 0 Then 
 
 $parts = StringSplit($CmdLineRaw, '|')
-If Not IsArray($parts) Then _Box('parts is Not Array', True)
-If Not $parts[0] = 2 Then _Box('Parts Not $parts[0] = 2', True)
+If Not IsArray($parts) Then _LogBox('parts is Not Array', True)
+If Not $parts[0] = 2 Then _LogBox('Parts Not $parts[0] = 2', True)
 
 $app = $parts[1]
 _Log($app, 'app')

@@ -122,7 +122,7 @@ $fullPath = envExpand('%Home_ALL_TotalCN_Bin%\Totalcmd64.exe')
     _Log('WcxFTPs: ' & $WcxFTPs)
     
     If Not FileExists($fullPath) Then
-        _Box('File ' & $fullPath & 'Not Exists')
+        _LogBox('File ' & $fullPath & 'Not Exists')
     EndIf
 
     _Log('CmdLine')
