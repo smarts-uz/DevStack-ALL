@@ -53,7 +53,7 @@ If $CmdLine[0] > 0 Then
     _ArrayDelete($exts, 0)
 
 
-    $folder = _FZ_Name($file, $eFZN_ParentDir)
+    $folder = _FZ_Name($file, $fzParentDir)
 
     For $ext In $exts
         _Log('Executing Ext: ' & $ext)

@@ -65,7 +65,7 @@ Func app($file, $clean = False)
 
     Local $noWait
 
-    $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
+    $parentFolder = _FZ_Name($file, $fzParentDir)
 
     If FileGetSize($file) = 0 Then
         _Log('FileGetSize($file) = 0')
@@ -86,7 +86,7 @@ Func app($file, $clean = False)
     _ArrayDelete($paths, 0)
 
     $fullPath = pathTitle($paths[0], $parentFolder)
-	$folderName = _FZ_Name($file, $eFZN_ParentDirName)
+	$folderName = _FZ_Name($file, $fzParentDirName)
     _Log('fullPath: ' & $fullPath)
 
     _ArrayDelete($paths, 0)

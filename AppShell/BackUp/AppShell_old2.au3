@@ -64,7 +64,7 @@ Func app($file, $clean = False)
 
     If Not FileExists($file) Then Return _LogBox($file & ' not exists!')
 
-    $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
+    $parentFolder = _FZ_Name($file, $fzParentDir)
 
     If FileGetSize($file) = 0 Then
         _Log('FileGetSize($file) = 0')
@@ -112,7 +112,7 @@ Func app($file, $clean = False)
         $app = hybridPath($path, $parentFolder)
 
 		If $name = '' Then
-        $name = _FZ_Name($app, $eFZN_FilenameNoExt)
+        $name = _FZ_Name($app, $fzFilenameNoExt)
 		Endif
 		
         _Log('title: ' & $title)

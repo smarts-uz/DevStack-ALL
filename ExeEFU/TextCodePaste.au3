@@ -95,7 +95,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
+    $parentFolder = _FZ_Name($file, $fzParentDir)
 
     $replace = Inbox ('Paste Text', '')
 

@@ -113,7 +113,7 @@ Func app($file, $clean = False)
 
     If Not FileExists($file) Then Return _LogBox($file & ' not exists!')
 
-    $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
+    $parentFolder = _FZ_Name($file, $fzParentDir)
 
     If FileGetSize($file) = 0 Then
 

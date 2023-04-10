@@ -100,7 +100,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    $parentFolder = _FZ_Name($file, $eFZN_ParentDir)
+    $parentFolder = _FZ_Name($file, $fzParentDir)
 
     If FileGetSize($file) = 0 Then
 
