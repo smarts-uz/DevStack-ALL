@@ -35,50 +35,50 @@ Global $UDFName = 'ExeCMD.au3'
 
 #ce	=========================================================
 
- Global $window = @SW_SHOWDEFAULT
+Global $window = @SW_SHOWDEFAULT
 
-If $CmdLine[0] > 0 Then 
+If $CmdLine[0] > 0 Then
 
-$parts = StringSplit($CmdLineRaw, '|')
-If Not IsArray($parts) Then _LogBox('parts is Not Array', True)
-If Not $parts[0] = 2 Then _LogBox('Parts Not $parts[0] = 2', True)
+    $parts = StringSplit($CmdLineRaw, '|')
+    If Not IsArray($parts) Then _LogBox('parts is Not Array', True)
+    If Not $parts[0] = 2 Then _LogBox('Parts Not $parts[0] = 2', True)
 
-$app = $parts[1]
-_Log($app, 'app')
+    $app = $parts[1]
+    _Log($app, 'app')
 
-$cmd = $parts[2]
-_Log($cmd, 'cmd')
+    $cmd = $parts[2]
+    _Log($cmd, 'cmd')
 
-If $parts[0] = 3 Then
-    $windowIn = $parts[3]
-    Switch $windowIn
-        Case 'min'
-            $window = @SW_MINIMIZE
+    If $parts[0] = 3 Then
+        $windowIn = $parts[3]
+        Switch $windowIn
+            Case 'min'
+                $window = @SW_MINIMIZE
 
-        Case 'max'
-            $window = @SW_MAXIMIZE
+            Case 'max'
+                $window = @SW_MAXIMIZE
 
-        Case 'def'
-            $window = @SW_SHOWDEFAULT
+            Case 'def'
+                $window = @SW_SHOWDEFAULT
 
-        Case 'norm'
-            $window = @SW_SHOWDEFAULT
+            Case 'norm'
+                $window = @SW_SHOWDEFAULT
 
-        Case 'hide'
-            $window = @SW_HIDE
+            Case 'hide'
+                $window = @SW_HIDE
 
-    EndSwitch
+        EndSwitch
 
-EndIf
+    EndIf
 
 Else
-	
-$app = ''
-_Log($app, 'app')
+    
+    $app = ''
+    _Log($app, 'app')
 
-$cmd =  _FZ_FileRead('d:\Develop\Projects\ALL\AppCmd\Testing\App.test')
-_Log($cmd, 'cmd')
-Endif
+    $cmd =  _FZ_FileRead('d:\Develop\Projects\ALL\AppCmd\Testing\App.test')
+    _Log($cmd, 'cmd')
+EndIf
 
 
 
@@ -95,7 +95,7 @@ $cmdFull = $app & ' ' & $cmdParse
 
 If MboxQ ($cmdFull, 'Confirm Execute') Then
     ; CmdRead($cmdFull, $window)
-	ShellExecute($app, $cmdParse, '', '', $window)
+    ShellExecute($app, $cmdParse, '', '', $window)
 EndIf
 
 If Not isParentProcessSelf() And @Compiled Then

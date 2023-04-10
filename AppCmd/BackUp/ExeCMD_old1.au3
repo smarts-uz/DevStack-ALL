@@ -60,11 +60,14 @@ If $parts[0] = 3 Then
         Case 'def'
             $window = @SW_SHOWDEFAULT
 
+        Case 'hide'
+            $window = @SW_HIDE
+
         Case Else
             $window = @SW_HIDE
 
     EndSwitch
-    
+
 EndIf
 
 $cmdParse = cmdParser($cmd, @WorkingDir, True)
@@ -75,10 +78,13 @@ _Log($cmdFull, 'cmdFull')
 
 $debug = _FZ_FileRead(@ScriptDir & '\debug.txt')
 
-If Int($debug) = 1 Then
-Inbox($cmdFull)
-Endif
+; If Int($debug) = 1 Then
+;     Inbox('CmdLine', $cmdFull)
+; EndIf
+
+If MboxQ ($cmdFull, 'Confirm Execute') Then
 CmdRead($cmdFull, $window)
+Endif
 
 If Not isParentProcessSelf() And @Compiled Then
     Sleep($sleepTime)
