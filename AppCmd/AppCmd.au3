@@ -99,7 +99,7 @@ Func app($file, $clean = False)
         _Log('Processing Path: ' & $path)
 
         $name = ''
-        $windowIn = 'hide'
+        $windowIn = 'norm'
         $cmd = '"%1"'
 
         If StringInStr($path, '|') >= 1 Then
@@ -131,7 +131,6 @@ Func app($file, $clean = False)
         If $name = '' Then
             $name = _FZ_Name($app, $fzFilenameNoExt)
         EndIf
-
 
         _Log('title: ' & $title)
         _Log('path: ' & $path)

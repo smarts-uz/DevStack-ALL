@@ -3,7 +3,6 @@
 #include <MyUDFs\ShellOpen.au3>
 #include <MyUDFs\ShellAll.au3>
 #include <MyUDFs\Es2.au3>
-
 #include <MyUDFs\Log.au3>
 #include <MyUDFs\Env.au3>
 #include <MyUDFs\Lnk.au3>
@@ -20,6 +19,10 @@
 
 
 Global $UDFName = 'ExeCMD.au3'
+
+
+; $data = Inbox('', $CmdLineRaw)
+; Exit
 
 #cs | INDEX | ===============================================
 
@@ -44,10 +47,7 @@ If $CmdLine[0] > 0 Then
     If Not $parts[0] = 2 Then _LogBox('Parts Not $parts[0] = 2', True)
 
     $app = $parts[1]
-    _Log($app, 'app')
-
     $cmd = $parts[2]
-    _Log($cmd, 'cmd')
 
     If $parts[0] = 3 Then
         $windowIn = $parts[3]
@@ -72,15 +72,15 @@ If $CmdLine[0] > 0 Then
     EndIf
 
 Else
-    
-    $app = ''
-    _Log($app, 'app')
 
+    $app = ''
     $cmd =  _FZ_FileRead('d:\Develop\Projects\ALL\AppCmd\Testing\App.test')
-    _Log($cmd, 'cmd')
+    
 EndIf
 
-
+_Log($app, '$app')
+_Log($cmd, '$cmd')
+_Log($windowIn, '$windowIn')
 
 $cmdParse = cmdParser($cmd, @WorkingDir, True)
 _Log($cmdParse, 'cmdParse')
@@ -88,6 +88,7 @@ _Log($cmdParse, 'cmdParse')
 ; $debug = _FZ_FileRead(@ScriptDir & '\debug.txt')
 
 $cmdFull = $app & ' ' & $cmdParse
+_Log($cmdFull, 'cmdFull')
 
 ; If Int($debug) = 1 Then
 ;     Inbox('CmdLine', $cmdFull)
@@ -95,7 +96,10 @@ $cmdFull = $app & ' ' & $cmdParse
 
 If MboxQ ($cmdFull, 'Confirm Execute') Then
     ; CmdRead($cmdFull, $window)
-    ShellExecute($app, $cmdParse, '', '', $window)
+    ; _Log($cmdFull, 'cmdFull')
+    $PID = ShellExecute($app, $cmdParse, '', '', $window)
+    _Log($PID, 'PID')
+    
 EndIf
 
 If Not isParentProcessSelf() And @Compiled Then

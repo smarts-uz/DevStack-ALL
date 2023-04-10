@@ -35,8 +35,9 @@ Global $UDFName = 'ExeCMD.au3'
 
 #ce	=========================================================
 
+ Global $window = @SW_SHOWDEFAULT
 
-If $CmdLineRaw = '' Then _LogBox('CmdLine is null', True)
+If $CmdLine[0] > 0 Then 
 
 $parts = StringSplit($CmdLineRaw, '|')
 If Not IsArray($parts) Then _LogBox('parts is Not Array', True)
@@ -60,31 +61,42 @@ If $parts[0] = 3 Then
         Case 'def'
             $window = @SW_SHOWDEFAULT
 
-        Case 'hide'
-            $window = @SW_HIDE
+        Case 'norm'
+            $window = @SW_SHOWDEFAULT
 
-        Case Else
+        Case 'hide'
             $window = @SW_HIDE
 
     EndSwitch
 
 EndIf
 
+Else
+	
+$app = ''
+_Log($app, 'app')
+
+$cmd =  _FZ_FileRead('d:\Develop\Projects\ALL\AppCmd\Testing\App.test')
+_Log($cmd, 'cmd')
+Endif
+
+
+
 $cmdParse = cmdParser($cmd, @WorkingDir, True)
 _Log($cmdParse, 'cmdParse')
 
-$cmdFull = '"' & $app & '" ' & $cmdParse
-_Log($cmdFull, 'cmdFull')
+; $debug = _FZ_FileRead(@ScriptDir & '\debug.txt')
 
-$debug = _FZ_FileRead(@ScriptDir & '\debug.txt')
+$cmdFull = $app & ' ' & $cmdParse
 
 ; If Int($debug) = 1 Then
 ;     Inbox('CmdLine', $cmdFull)
 ; EndIf
 
 If MboxQ ($cmdFull, 'Confirm Execute') Then
-CmdRead($cmdFull, $window)
-Endif
+    ; CmdRead($cmdFull, $window)
+	ShellExecute($app, $cmdParse, '', '', $window)
+EndIf
 
 If Not isParentProcessSelf() And @Compiled Then
     Sleep($sleepTime)
