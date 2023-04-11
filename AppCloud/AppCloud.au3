@@ -45,6 +45,7 @@ $ext = 'appcloud'
 
 
 $appFile = 'd:\Develop\Projects\ALL\AppCloud\SMM-App\App.appcloud'
+$appFile = 'd:\Develop\Projects\ALL\AppCloud\App\SMM.appcloud'
 cmdshell($ext, $appFile, True, False, False)
 
 

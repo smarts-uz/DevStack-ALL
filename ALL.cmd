@@ -16,6 +16,9 @@ chcp 65001
 %cd%\AppShell\AppShell.exe
 %cd%\AutoRun\AutoRun.exe
 
+%cd%\CloudApp\CloudApp.exe
+%cd%\CloudApp\CloudFile.exe
+
 %cd%\EnvPath\EnvPath.exe
 %cd%\EnvPathALL\EnvPathALL.exe
 %cd%\EnvVars\EnvVars.exe
