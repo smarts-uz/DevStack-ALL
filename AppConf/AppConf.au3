@@ -72,8 +72,5 @@ Func app($file, $clean = False)
 
     Setting_Import($file)
 
-    If Not isParentProcessSelf() And @Compiled Then
-        Sleep($sleepTime)
-    EndIf
-
+    If _Win_IsVisibleByPID() And @Compiled Then Sleep($sleepTime)
 EndFunc   ;==>app

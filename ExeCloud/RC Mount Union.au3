@@ -38,7 +38,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 
-	Rc_Mount($file)
+	Rc_Mount($file, 'Union')
 
 EndFunc   ;==>app
 

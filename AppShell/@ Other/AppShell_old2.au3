@@ -217,10 +217,7 @@ EndSwitch
     Next
     
     
-    If Not isParentProcessSelf() And @Compiled Then
-        Sleep($sleepTime)
-    EndIf
-
+    If _Win_IsVisibleByPID() And @Compiled Then Sleep($sleepTime)
 EndFunc   ;==>app
 
 

@@ -1,3 +1,4 @@
 chcp 65001
 
-Monitors "d:\Develop\Projects\ALL\AppCloud\App\SMM.appcloud" "z:"
+REM Monitors "d:\Develop\Projects\ALL\AppCloud\App\SMM.appcloud" "z:"
+Monitors "d:\Develop\Projects\ALL\AppCloud\App\SMM.appcloud" "Y:"

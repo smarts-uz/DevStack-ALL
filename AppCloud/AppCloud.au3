@@ -71,15 +71,12 @@ Func app($file, $clean = False)
     EndIf
 
     If Not $clean Then
-        Rc_App($file)
+        Rc_Active($file)
     Else
         Rc_Clean($file)
     EndIf
 
-    If Not isParentProcessSelf() And @Compiled Then
-        Sleep($sleepTime)
-    EndIf
-
+    If _Win_IsVisibleByPID() And @Compiled Then Sleep($sleepTime)
 EndFunc   ;==>app
 
 

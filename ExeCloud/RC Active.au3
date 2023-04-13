@@ -38,7 +38,7 @@ EndSwitch
 #ce	=========================================================
 Func app($file, $clean = False)
 
-	Rc_Active($file)
+	Rc_Active($file, '')
 
 EndFunc   ;==>app
 

@@ -37,7 +37,7 @@ Global $appFile = 'd:\Develop\Projects\FileApp\Mounter\TrueApps\ALL.appserv'
 Func Inits()
 
     If FileType_Add($ext) Then
-        Mbox(@ScriptName & ' FileType Add ' & $ext)
+        _Log(@ScriptName & ' FileType Add ' & $ext)
     Else
         Mbox(@ScriptName & ' Error with FileType_Add $ext ' & $ext)
     EndIf
