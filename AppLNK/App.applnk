@@ -1,3 +1,5 @@
-Searcher
-\ALL.cmd\Everything.exe|Everything Search
+DevApp\Context
+\ALL.cmd\Right Click Enhancer\RightClickEnhancerProPortable.exe|Right Click Enhancer
 \ALL.cmd\Everything.exe|Everything Search|/aaa /in "%1"
+
+

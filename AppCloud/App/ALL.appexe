@@ -1,6 +1,0 @@
-\ALL.cmd
-exe|nw|min
-exe|wait|max
-exe|wait|hide
-exe|wait|show
-reg
