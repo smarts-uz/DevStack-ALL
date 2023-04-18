@@ -8,6 +8,9 @@
 #pragma compile(LegalTrademarks, 'AsrorZ Business Solutions')
 #pragma compile(CompanyName, 'AsrorZ Business Solutions')
 
+#compileGUI
+#compileNoStart
+
 autorunExec()
 
 
