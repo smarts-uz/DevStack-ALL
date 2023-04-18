@@ -64,41 +64,5 @@ cmdshell($ext, $appFile, False, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return _LogBox($file & ' not exists!')
-
-    $parentFolder = _FZ_Name($file, $fzParentDir)
-
-    If FileGetSize($file) = 0 Then
-        _Log('FileGetSize($file) = 0')
-        runs($file, $clean)
-        Return False
-    EndIf
-
-    _FileReadToArray($file, $paths)
-    ; _ArrayDisplay($paths)
-
-
-
-    _Log('paths')
-
-    If Not IsArray($paths) Then
-        Mbox('_FileReadToArray($file, $paths)')
-        Exit
-    EndIf
-
-    _ArrayDelete($paths, 0)
-
-    $title = 'Path_' & $paths[0]
-    _ArrayDelete($paths, 0)
-
-
-    For $path In $paths
-        _Log('Processing Name: ' & $path)
-
-        $pathFull = hybridPath($path, $parentFolder)
-        envToPath($title, $pathFull)
-    Next
-
-
-    If Not isParentProcessSelf() And _Win_IsVisibleByPID() And @Compiled Then Sleep($sleepTime)
+envPath($file, $clean)
 EndFunc   ;==>app

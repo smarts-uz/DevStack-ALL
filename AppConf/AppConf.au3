@@ -60,17 +60,6 @@ cmdshell($ext, $appFile, False, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return _LogBox($file & ' not exists!')
+appConf($file, $clean)
 
-    $parentFolder = _FZ_Name($file, $fzParentDir)
-
-    If FileGetSize($file) = 0 Then
-        _Log('FileGetSize($file) = 0')
-        runs($file, $clean)
-        Return False
-    EndIf
-
-    Setting_Import($file)
-
-    If Not isParentProcessSelf() And _Win_IsVisibleByPID() And @Compiled Then Sleep($sleepTime)
 EndFunc   ;==>app

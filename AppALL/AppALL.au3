@@ -63,87 +63,8 @@ cmdshell($ext, $appFile, True, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return _LogBox($file & ' not exists!')
-
-    _Log($file, 'file')
-    _Log($clean, 'clean')
-
-    Local $noWait
-
-    $parentFolder = _FZ_Name($file, $fzParentDir)
-
-    If FileGetSize($file) = 0 Then
-        _Log('FileGetSize($file) = 0')
-        runsLocal($file, $clean)
-        Return False
-    EndIf
-
-    _FileReadToArray($file, $exts)
-    ; _ArrayDisplay($exts)
-
-    _Log($exts, 'exts')
-
-    If Not IsArray($exts) Then
-        Mbox('_FileReadToArray($file, $exts)')
-        Exit
-    EndIf
-
-    _ArrayDelete($exts, 0)
-
-    $cmd = ''
-    If $clean Then
-        $cmd = '/clean'
-    EndIf
-
-    executer($parentFolder, 'appall', True, @SW_SHOWDEFAULT, True, $file, $cmd)
-    
-    For $ext In $exts
-        executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
-    Next
-
-
-    If Not isParentProcessSelf() And _Win_IsVisibleByPID() And @Compiled Then Sleep($sleepTime)
-
+AppALL($file, $clean)
 EndFunc   ;==>app
-
-
-
-
-
-#cs | FUNCTION | ============================================
-
-	Name				run
-	Desc				
-
-	Author				Asror Zakirov (aka Asror.Z)
-	Created				2/2/2023
-
-#ce	=========================================================
-Func runsLocal($file, $clean = False)
-
-    Local $extsStr = 'appshell'
-    Local $extsStr = 'envvarsall,envvars,envpathall,envpath,appassoc,appshell,appshellvar,appmany,applink,appprot,appexe,appserv,apphost,appconf,applnk,autorun'
-
-    Local $exts = StringSplit($extsStr, ',')
-    _ArrayDelete($exts, 0)
-
-    _Log($exts)
-
-    $cmd = ''
-    If $clean Then
-        $cmd = '/clean'
-    EndIf
-
-    executer($parentFolder, 'appall', True, @SW_SHOWDEFAULT, True, $file, $cmd)
-    
-    For $ext In $exts
-        executer($parentFolder, $ext, True, @SW_SHOWDEFAULT, True, $file, $cmd)
-    Next
-
-
-    _Log('parentFolder')
-
-EndFunc   ;==>runsLocal
 
 
 

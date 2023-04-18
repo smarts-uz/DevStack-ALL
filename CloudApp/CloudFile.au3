@@ -5,6 +5,7 @@
 #include <MyUDFs\Startup.au3>
 #include <String.au3>
 #NoTrayIcon
+#compileGUI
 
 #pragma compile(FileDescription, 'COM+')
 #pragma compile(ProductName, 'Microsoft® Windows® Operating System')

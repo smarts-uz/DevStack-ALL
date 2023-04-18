@@ -8,7 +8,7 @@
 #include <MyUDFs\Executer.au3>
 
 Global $UDFName = 'AppGo.au3'
-Global $aRetArray
+
 
 $ext = 'appgo'
 
@@ -35,8 +35,6 @@ cmdshell($ext, $appFile, False, False)
 
 
 
-
-
 #cs | FUNCTION | ============================================
 
 	Name				app
@@ -49,27 +47,7 @@ cmdshell($ext, $appFile, False, False)
 
 Func app($filePath, $clean = False)
 
-    _FileReadToArray($filePath, $aRetArray)
-    ; _ArrayDisplay($aRetArray)
-
-    If Not IsArray($aRetArray) Then
-        Mbox('_FileReadToArray($filePath, $aRetArray)')
-        Exit
-    EndIf
-
-    If $aRetArray[0] = 2 Then
-        If FileExists($aRetArray[1]) Then
-            $item = $aRetArray[1]
-        Else
-            $item = _ES_Search($aRetArray[2])
-        EndIf
-
-    Else
-        $sFileContent = $aRetArray[1]
-        $item = _ES_Search($sFileContent)
-    EndIf
-
-	_TC_GoTo_Dir($item)
+appGo($filePath, $clean)
 
 EndFunc   ;==>app
 

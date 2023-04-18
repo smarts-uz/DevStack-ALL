@@ -65,81 +65,8 @@ cmdshell($ext, $appFile, True, False)
 
 #ce	=========================================================
 Func app($file, $clean = False)
+appProt($file, $clean)
 
-    If Not FileExists($file) Then Return _LogBox($file & ' not exists!')
-
-    $parentFolder = _FZ_Name($file, $fzParentDir)
-
-    If FileGetSize($file) = 0 Then
-        _Log('FileGetSize($file) = 0')
-        runs($file, $clean)
-        Return False
-    EndIf
-
-    _FileReadToArray($file, $paths)
-    ; _ArrayDisplay($paths)
-
-
-    _Log('paths')
-
-    If Not IsArray($paths) Then
-        Mbox('_FileReadToArray($file, $paths)')
-        Exit
-    EndIf
-
-    _ArrayDelete($paths, 0)
-
-    For $path In $paths
-        _Log('Processing Path: ' & $path)
-
-        $name = ''
-        $cmd = '"%1"'
-
-        If StringInStr($path, '|') >= 1 Then
-
-            _Log('If StringInStr($path, |) >= 1 Then')
-
-            $aSplit = StringSplit($path, '|')
-            $path = $aSplit[1]
-            $name = $aSplit[2]
-
-            If $aSplit[0] = 3 Then
-                $cmd = $aSplit[3]
-                $cmd = cmdParser($cmd, $parentFolder)
-            EndIf
-
-            $app = hybridPath($path, $parentFolder)
-            $appName = _FZ_Name($app, $fzFilenameNoExt)
-
-            _Log('path: ' & $path)
-            _Log('name: ' & $name)
-            _Log('cmd: ' & $cmd)
-            _Log('app: ' & $app)
-            _Log('appName: ' & $appName)
-
-            If Not $clean Then
-
-                If ShellProtocol_Install($name, $app, $cmd) Then
-                    _Log('ShellProtocol Install ' & $name)
-                Else
-                    _Log('Error with ShellProtocol Install for ' & $name)
-                EndIf
-
-            Else
-
-                If ShellProtocol_Uninstall($name) Then
-                    _Log('ShellProtocol Uninstall for ' & $name)
-                Else
-                    _Log('Error with ShellProtocol Uninstall for ' & $name)
-                EndIf
-
-            EndIf
-        EndIf
-
-    Next
-    
-    
-    If Not isParentProcessSelf() And _Win_IsVisibleByPID() And @Compiled Then Sleep($sleepTime)
 EndFunc   ;==>app
 
 

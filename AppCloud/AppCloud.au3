@@ -60,23 +60,8 @@ cmdshell($ext, $appFile, True, False, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-    If Not FileExists($file) Then Return _LogBox($file & ' not exists!')
+appCloud($file, $clean)
 
-    $parentFolder = _FZ_Name($file, $fzParentDir)
-
-    If FileGetSize($file) = 0 Then
-        _Log('FileGetSize($file) = 0')
-        runs($file, $clean)
-        Return False
-    EndIf
-
-    If Not $clean Then
-        Rc_Active($file)
-    Else
-        Rc_Clean($file)
-    EndIf
-
-    If Not isParentProcessSelf() And _Win_IsVisibleByPID() And @Compiled Then Sleep($sleepTime)
 EndFunc   ;==>app
 
 
