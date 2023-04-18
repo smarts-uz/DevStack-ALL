@@ -28,6 +28,7 @@ $type = 'appcloud'
 
 $appFile = 'd:\Develop\Projects\ALL\AppCloud\SMM-App\App.appcloud'
 $appFile = 'd:\Develop\Projects\ALL\AppCloud\App\SMM.appcloud'
+$appFile = 'd:\FSystem\Hosting\ALL\Merges\Rclone\Projects\SMM.appcloud'
 cmdshell($type, $appFile, True, False, False)
 
 

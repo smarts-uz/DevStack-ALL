@@ -1,6 +1,6 @@
 #include <MyUDFs\EfuSDK.au3>
 
-regExpCmd()
+runCmd()
 
 Func app($file, $clean = False)
 regExp($file, $clean)

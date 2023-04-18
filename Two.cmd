@@ -3,10 +3,10 @@ chcp 65001
 %cd%\AutoRun\ALL.exe
 
 %cd%\EnvPath\EnvPath.exe %cd%\AppCloud\ALL.envpath
-%cd%\EnvPath\EnvPathALL.exe %cd%\AppCloud\ALL.envpathall
+%cd%\EnvPathALL\EnvPathALL.exe %cd%\AppCloud\ALL.envpathall
 
 %cd%\EnvPath\EnvPath.exe %cd%\CloudApp\ALL.envpath
-%cd%\EnvPath\EnvPathALL.exe %cd%\CloudApp\ALL.envpathall
+%cd%\EnvPathALL\EnvPathALL.exe %cd%\CloudApp\ALL.envpathall
 
 %cd%\AppExe\AppExe.exe %cd%\ExeCloud\ALL.appexe
 %cd%\AppExe\AppExe.exe %cd%\ExeConf\ALL.appexe

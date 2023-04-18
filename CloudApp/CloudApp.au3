@@ -1,6 +1,6 @@
-#include <MyUDFs\Log.au3>
 #NoTrayIcon
 #compileGUI
+#include <MyUDFs\Log.au3>
 
 Global $UDFName = 'CloudApp.au3'
 
