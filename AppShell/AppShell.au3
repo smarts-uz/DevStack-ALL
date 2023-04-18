@@ -7,7 +7,8 @@
 
 Global $UDFName = 'AppShell.au3'
 
-$ext = 'appshell'
+$type = 'appshell'
+
 
 #cs | INDEX | ===============================================
 
@@ -30,7 +31,8 @@ $appFile = 'd:\Develop\Projects\DevApp\Execute\Power\Compile\ALL.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\IDEApp\PowerGUI\Portable\ALL.appshell'
 $appFile = 'd:\Develop\Projects\FileApp\Extracts\Bioruebe Uniextract2\Portable\EXE.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\AutoIT\Compiler\au3.appshell'
-cmdshell($ext, $appFile, True, False)
+$appFile = 'd:\Develop\Projects\DevApp\Execute\AutoIT\Compiler\Folder.appshell'
+cmdshell($type, $appFile, True, False)
 
 
 

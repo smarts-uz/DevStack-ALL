@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
-#include <MyUDFs\ShellAll.au3>
+
+
 #include <MyUDFs\Config.au3>
 #include <MyUDFs\Es2.au3>
 #include <MyUDFs\Log.au3>
@@ -17,7 +17,7 @@
 
 Global $UDFName = 'AppALL.au3'
 
-$ext = 'appall'
+$type = 'appall'
 Global $exts
 
 #cs | INDEX | ===============================================
@@ -45,7 +45,7 @@ $appFile = 'd:\Develop\Projects\ALL\AppALL\Testing\ALL.appall'
 $appFile = 'd:\Develop\Projects\ALL\AppALL\Testing\1\11\111\ALL.appall'
 $appFile = 'd:\Develop\Projects\DevApp\IDEApp\JB-Rider\ALL.appall'
 
-cmdshell($ext, $appFile, True, False)
+cmdshell($type, $appFile, True, False)
 
 
 

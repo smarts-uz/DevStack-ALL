@@ -9,7 +9,7 @@
 Global $UDFName = 'AppServ.au3'
 
 
-$ext = 'appserv'
+$type = 'appserv'
 
 
 #cs | INDEX | ===============================================
@@ -34,7 +34,7 @@ $ext = 'appserv'
 
 
 $appFile = 'd:\Develop\Projects\FileApp\Mounter\TrueApps\ALL.appserv'
-cmdshell($ext, $appFile, True, False)
+cmdshell($type, $appFile, True, False)
 
 
 #cs | FUNCTION | ============================================

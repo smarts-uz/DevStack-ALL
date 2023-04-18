@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
-#include <MyUDFs\ShellAll.au3>
+
+
 #include <MyUDFs\Es2.au3>
 #include <MyUDFs\Log.au3>
 #include <MyUDFs\Env.au3>
@@ -19,7 +19,7 @@
 
 Global $UDFName = 'AppCmd.au3'
 
-$ext = 'appcmd'
+$type = 'appcmd'
 
 #cs | INDEX | ===============================================
 
@@ -47,7 +47,7 @@ $appFile = 'd:\Develop\Projects\ALL\AppCmd\Test2.appcmd'
 $appFile = 'd:\Develop\Projects\FileApp\Backups\R-Drive Image\Portable\RDR.appcmd'
 $appFile = 'd:\Develop\Projects\FileApp\Backups\TeraByte Image\Portable\ALL.appcmd'
 $appFile = 'd:\Develop\Projects\DevApp\Versions\Git Shell\ALL.appcmd'
-cmdshell($ext, $appFile, True, False)
+cmdshell($type, $appFile, True, False)
 
 
 

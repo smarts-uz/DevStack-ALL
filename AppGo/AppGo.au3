@@ -1,6 +1,6 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
+
 #include <MyUDFs\Es2.au3>
 #include <MyUDFs\Config.au3>
 #include <MyUDFs\Log.au3>
@@ -10,7 +10,7 @@
 Global $UDFName = 'AppGo.au3'
 
 
-$ext = 'appgo'
+$type = 'appgo'
 
 #cs | INDEX | ===============================================
 
@@ -30,7 +30,7 @@ $ext = 'appgo'
 
 $appFile = 'd:\Develop\IDEApps\WebIDE\Sources Microsoft Vscode Develop.appgo'
 
-cmdshell($ext, $appFile, False, False)
+cmdshell($type, $appFile, False, False)
 
 
 

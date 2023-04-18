@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
-#include <MyUDFs\ShellAll.au3>
+
+
 #include <MyUDFs\Es2.au3>
 
 #include <MyUDFs\Log.au3>
@@ -22,7 +22,7 @@
 Global $UDFName = 'AppMany.au3'
 
 
-$ext = 'appmany'
+$type = 'appmany'
 
 #cs | INDEX | ===============================================
 
@@ -45,7 +45,7 @@ $ext = 'appmany'
 
 
 $appFile = 'd:\Develop\Projects\DevApp\Versions\Araxis Merge\Portable\ALL.appmany'
-cmdshell($ext, $appFile, True, False)
+cmdshell($type, $appFile, True, False)
 
 
 

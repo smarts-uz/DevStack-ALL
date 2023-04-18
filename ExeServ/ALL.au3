@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
 #include <Array.au3>
-#include <MyUDFs\ShellOpen.au3>
+#compileSkip
 #include <MyUDFs\Es2.au3>
 
 #include <MyUDFs\Log.au3>
@@ -15,13 +15,12 @@
 #include <String.au3>
 #include <MyUDFs\Dialogs.au3>
 #include <MyUDFs\_ParseCSV.au3>
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <MyUDFs\Nssm.au3>
-
 
 Global $debug = True
 Global $exts
-Global $ext = 'appserv'
+Global $type = 'appserv'
 Global $appFile = 'd:\Develop\Projects\FileApp\Mounter\TrueApps\ALL.appserv'
 
 
@@ -36,10 +35,10 @@ Global $appFile = 'd:\Develop\Projects\FileApp\Mounter\TrueApps\ALL.appserv'
 #ce	=========================================================
 Func Inits()
 
-    If FileType_Add($ext) Then
-        _Log(@ScriptName & ' FileType Add ' & $ext)
+    If FT_MenuCreate($type, @ScriptName) Then
+        _Log(@ScriptName & ' FileType Add ' & $type)
     Else
-        Mbox(@ScriptName & ' Error with FileType_Add $ext ' & $ext)
+        Mbox(@ScriptName & ' Error with FileType_Add type ' & $type)
     EndIf
 
 EndFunc   ;==>Inits

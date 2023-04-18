@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
-#include <MyUDFs\ShellAll.au3>
+
+
 #include <MyUDFs\Es2.au3>
 
 #include <MyUDFs\Log.au3>
@@ -12,7 +12,7 @@
 #include <MyUDFs\Process.au3>
 #include <MyUDFs\Config.au3>
 #include <MyUDFs\_HostFile.au3>
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <String.au3>
 
 #pragma compile(FileDescription, 'Adding entries to Windows Hosts file')
@@ -24,7 +24,7 @@ Global $UDFName = 'AppHost.au3'
 
 
 
-$ext = 'apphost'
+$type = 'apphost'
 
 #cs | INDEX | ===============================================
 
@@ -46,7 +46,7 @@ $ext = 'apphost'
 
 
 $appFile = 'd:\Develop\Projects\ALL\AppHost\App.apphost'
-cmdshell($ext, $appFile, True, False)
+cmdshell($type, $appFile, True, False)
 
 
 

@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
-#include <MyUDFs\ShellAll.au3>
+
+
 #include <MyUDFs\Es2.au3>
 
 #include <MyUDFs\Log.au3>
@@ -12,7 +12,7 @@
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <String.au3>
 
 
@@ -23,7 +23,7 @@
 
 Global $UDFName = 'EnvPathALL.au3'
 
-$ext = 'envpathall'
+$type = 'envpathall'
 
 
 #cs | INDEX | ===============================================
@@ -47,7 +47,7 @@ $ext = 'envpathall'
 
 $appFile = 'd:\Develop\Projects\ALL\LockHunter\Portable\ALL.envpathall'
 $appFile = 'd:\Develop\Projects\ALL\CmdApp\Develop\ALL.envpathall'
-cmdshell($ext, $appFile, False, False)
+cmdshell($type, $appFile, False, False)
 
 
 

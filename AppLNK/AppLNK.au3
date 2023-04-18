@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
-#include <MyUDFs\ShellAll.au3>
+
+
 #include <MyUDFs\Es2.au3>
 
 #include <MyUDFs\Log.au3>
@@ -12,7 +12,7 @@
 #include <MyUDFs\FileZ.au3>
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <String.au3>
 #include <MyUDFs\Config.au3>
 
@@ -24,7 +24,7 @@
 Global $UDFName = 'AppLnk.au3'
 
 
-$ext = 'applnk'
+$type = 'applnk'
 
 #cs | INDEX | ===============================================
 
@@ -43,7 +43,7 @@ $ext = 'applnk'
 
 $appFile = 'd:\Develop\Projects\FileApp\Searchs\Everything\Portable\ALL.applnk'
 
-cmdshell($ext, $appFile, True, False)
+cmdshell($type, $appFile, True, False)
 
 
 

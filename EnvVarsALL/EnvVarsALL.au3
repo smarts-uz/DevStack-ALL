@@ -1,6 +1,6 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
+
 #include <MyUDFs\Es2.au3>
 
 #include <MyUDFs\Env.au3>
@@ -11,7 +11,7 @@
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 #include <MyUDFs\Config.au3>
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <String.au3>
 
 #pragma compile(FileDescription, 'Create User Environment Variables not included in Path')
@@ -22,7 +22,7 @@ Global $UDFName = 'EnvVarsALL.au3'
 
 
 
-$ext = 'envvarsall'
+$type = 'envvarsall'
 
 #cs | INDEX | ===============================================
 
@@ -44,7 +44,7 @@ $ext = 'envvarsall'
 
 
 $appFile = 'd:\Develop\Projects\ALL\LockHunter\Portable\ALL.envpathall'
-cmdshell($ext, $appFile, False, False)
+cmdshell($type, $appFile, False, False)
 
 
 

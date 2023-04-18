@@ -1,6 +1,6 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
+
 #include <MyUDFs\Es2.au3>
 #include <MyUDFs\TC.au3>
 #include <MyUDFs\Log.au3>
@@ -10,7 +10,7 @@
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 #include <MyUDFs\Settings.au3>
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <String.au3>
 
 
@@ -21,7 +21,7 @@
 Global $UDFName = 'AppConf.au3'
 
 
-$ext = 'appconf'
+$type = 'appconf'
 
 
 #cs | INDEX | ===============================================
@@ -45,7 +45,7 @@ $appFile = 'd:\FSystem\ALL\Humans\Message\iMe\Settings\ALL.appconf'
 $appFile = 'd:\Develop\Projects\NetApp\Browsers\Chrome Browser\Settings\Vivaldi\ALL.appconf'
 $appFile = 'd:\Develop\Projects\DevApp\Controls\WorkPace\Settings\ALL.appconf'
 $appFile = 'd:\Develop\Projects\FileApp\Archiver\WinRAR\Settings\ALL.appconf'
-cmdshell($ext, $appFile, False, False)
+cmdshell($type, $appFile, False, False)
 
 
 

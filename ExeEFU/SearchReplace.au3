@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
 #include <Array.au3>
-#include <MyUDFs\ShellOpen.au3>
+
 #include <MyUDFs\Es2.au3>
 
 #include <MyUDFs\Log.au3>
@@ -12,17 +12,17 @@
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <String.au3>
 #include <MyUDFs\Dialogs.au3>
 #include <MyUDFs\_ParseCSV.au3>
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 
 
 Global $UDFName = 'SearchReplace.au3'
 
 
-$ext = 'efu'
+$type = 'efu'
 
 
 #cs | INDEX | ===============================================
@@ -66,10 +66,10 @@ Switch $CmdLine[0]
 
         Else
 
-            If FileType_Add($ext) Then
-                Mbox('FileType Add   ' & $ext)
+            If FT_MenuCreate($type, @ScriptName) Then
+                Mbox('FileType Add   ' & $type)
             Else
-                Mbox('Error with FileType_Add($ext)  ' & $ext)
+                Mbox('Error with FT_MenuCreate($type, @ScriptName)  ' & $type)
             EndIf
 
         EndIf

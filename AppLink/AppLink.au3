@@ -1,7 +1,7 @@
 #include-once
 #RequireAdmin
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
+
 #include <MyUDFs\Es2.au3>
 #include <MyUDFs\Log.au3>
 #include <MyUDFs\Env.au3>
@@ -12,14 +12,14 @@
 #include <MyUDFs\MkLink.au3>
 #include <MyUDFs\TC.au3>
 
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <String.au3>
 
 
 Global $UDFName = 'AppLink.au3'
 
 
-$ext = 'applink'
+$type = 'applink'
 
 #pragma compile(FileDescription, 'Create Symlink or Hardlink from source to several destinations')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
@@ -46,7 +46,7 @@ Global $paths
 
 
 $appFile = 'd:\Humans\Company-IT\ALL.applink'
-cmdshell($ext, $appFile, False, False)
+cmdshell($type, $appFile, False, False)
 
 
 

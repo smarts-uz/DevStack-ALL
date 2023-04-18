@@ -1,7 +1,7 @@
 #include-once
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
-#include <MyUDFs\ShellAll.au3>
+
+
 #include <MyUDFs\Es2.au3>
 #include <MyUDFs\Log.au3>
 #include <MyUDFs\Env.au3>
@@ -12,7 +12,7 @@
 #include <MyUDFs\Process.au3>
 #include <String.au3>
 #include <MyUDFs\Config.au3>
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 
 #pragma compile(FileDescription, 'File associations for provided list of extensions')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
@@ -22,7 +22,7 @@ Global $UDFName = 'AppAssoc.au3'
 
 
 
-$ext = 'appassoc'
+$type = 'appassoc'
 
 #cs | INDEX | ===============================================
 
@@ -44,7 +44,7 @@ $ext = 'appassoc'
 
 
 $appFile = 'd:\Develop\Projects\DevApp\Execute\AutoIT\Portable\ALL.appassoc'
-cmdshell($ext, $appFile, True, True)
+cmdshell($type, $appFile, True, True)
 
 
 

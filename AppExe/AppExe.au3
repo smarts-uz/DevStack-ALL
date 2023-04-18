@@ -1,7 +1,7 @@
 #include-once
 #RequireAdmin
 #include <GUIConstantsEx.au3>
-#include <MyUDFs\ShellOpen.au3>
+
 #include <MyUDFs\Es2.au3>
 #include <MyUDFs\Log.au3>
 #include <MyUDFs\Env.au3>
@@ -10,14 +10,14 @@
 #include <MyUDFs\Executer.au3>
 #include <MyUDFs\Process.au3>
 
-#include <MyUDFs\FileAssociation.au3>
+#include <MyUDFs\FileType.au3>
 #include <String.au3>
 
 
 Global $UDFName = 'AppExe.au3'
 
 
-$ext = 'appexe'
+$type = 'appexe'
 
 #pragma compile(FileDescription, 'Execute Apps in the folder by provided list of extensions')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
@@ -48,7 +48,7 @@ $appFile = 'd:\Develop\Projects\Devops\Hyper-V\Uninstall-WindowsFeature\ALL.appe
 $appFile = 'd:\Develop\Projects\DevApp\Versions\TortoiseGit\Installer\ALL.appexe'
 $appFile = 'd:\Develop\Projects\Devops\Windows\Set-VMHost\ALL.appexe'
 $appFile = 'd:\Develop\Projects\ALL\Rclone\Mounter\Installer\ALL.appexe'
-cmdshell($ext, $appFile, False, False)
+cmdshell($type, $appFile, False, False)
 
 
 
