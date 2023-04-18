@@ -1,27 +1,7 @@
 #include-once
 #include 'ALL.au3'
 
-Global $UDFName = 'RC Mount.au3'
-
-
-
-Switch $CmdLine[0]
-    Case 1
-        Local $file = $CmdLine[1]
-        app($file)
-
-        Sleep($sleepTime)
-
-    Case Else
-        
-        If @ScriptName = $UDFName And $debug Then
-            $file = $appFile
-            app($file)
-        Else
-            Inits()
-        EndIf
-EndSwitch
-
+exeCmd()
 
 
 

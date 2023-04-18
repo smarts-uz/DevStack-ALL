@@ -1,20 +1,6 @@
-#include-once
-#include <GUIConstantsEx.au3>
+#include <MyUDFs\AppDev.au3>
 
 
-#include <MyUDFs\Es2.au3>
-
-#include <MyUDFs\Log.au3>
-#include <MyUDFs\Env.au3>
-#include <MyUDFs\Config.au3>
-
-#include <MyUDFs\Lnk.au3>
-#include <MyUDFs\FileZ.au3>
-#include <MyUDFs\Executer.au3>
-#include <MyUDFs\Process.au3>
-#include <MyUDFs\FileType.au3>
-#include <String.au3>
-#include <MyUDFs\Config.au3>
 
 
 #pragma compile(FileDescription, 'Create LNK shortcuts for provided list of apps')

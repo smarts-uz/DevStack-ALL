@@ -1,11 +1,5 @@
-#include-once
-#include <GUIConstantsEx.au3>
+#include <MyUDFs\AppDev.au3>
 
-#include <MyUDFs\Es2.au3>
-#include <MyUDFs\Config.au3>
-#include <MyUDFs\Log.au3>
-#include <MyUDFs\TC.au3>
-#include <MyUDFs\Executer.au3>
 
 Global $UDFName = 'AppGo.au3'
 

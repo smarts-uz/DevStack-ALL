@@ -1,6 +1,4 @@
-#include-once
-#include <MyUDFs\Nssm.au3>
-
+#include <MyUDFs\AppDev.au3>
 
 #pragma compile(FileDescription, 'Manage Windows Service configuration')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
