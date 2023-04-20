@@ -17,7 +17,7 @@ exeCmd()
 #ce	=========================================================
 Func app($file, $clean = False)
 	Rc_ALL($file, True)
-    Rc_Clean($file, True)
+    Rc_Clean($file)
 
 EndFunc   ;==>app
 
