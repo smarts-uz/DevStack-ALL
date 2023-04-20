@@ -1,0 +1,1 @@
+NEW file management for given file type

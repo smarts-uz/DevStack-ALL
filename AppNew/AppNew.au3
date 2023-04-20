@@ -1,15 +1,15 @@
 #include <MyUDFs\AppDev.au3>
 
 
-#pragma compile(FileDescription, 'File associations for provided list of extensions')
+#pragma compile(FileDescription, 'NEW file management for given file type')
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 
-Global $UDFName = 'appAssoc.au3'
+Global $UDFName = 'AppNew.au3'
 
 
 
-$type = 'appassoc'
+$type = 'appnew'
 
 #cs | INDEX | ===============================================
 
@@ -48,5 +48,5 @@ cmdshell($type, $appFile, True, True)
 
 #ce	=========================================================
 Func app($file, $clean = False)
-appAssoc($file, $clean)
+appNew($file, $clean)
 EndFunc   ;==>app

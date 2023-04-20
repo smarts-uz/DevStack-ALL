@@ -4,9 +4,11 @@ chcp 65001
 START /min %cd%\CloudApp\CloudApp.exe
 START /min %cd%\CloudApp\CloudFile.exe
 
+ping -n 3 127.0.0.1 > nul
+
 START /min %cd%\AppALL\AppALL.exe
 START /min %cd%\AppCloud\AppCloud.exe
-START /min %cd%\AppAsso\AppAssoc.exe
+START /min %cd%\AppAsso\appAssoc.exe
 START /min %cd%\AppConf\AppConf.exe
 START /min %cd%\AppExe\AppExe.exe
 START /min %cd%\AppGo\AppGo.exe
@@ -23,6 +25,3 @@ START /min %cd%\EnvPath\EnvPath.exe
 START /min %cd%\EnvPathALL\EnvPathALL.exe
 START /min %cd%\EnvVars\EnvVars.exe
 START /min %cd%\EnvVarsALL\EnvVarsALL.exe
-
-
-

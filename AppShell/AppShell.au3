@@ -5,7 +5,7 @@
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 
-Global $UDFName = 'AppShell.au3'
+Global $UDFName = 'appShell.au3'
 
 $type = 'appshell'
 
@@ -25,7 +25,7 @@ $type = 'appshell'
 #ce	=========================================================
 
 
-$appFile = 'd:\Develop\Projects\ALL\AppShell\Testing\App\ALL.appshell'
+$appFile = 'd:\Develop\Projects\ALL\appShell\Testing\App\ALL.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\AutoIT\Portable\au3.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\Power\Compile\ALL.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\IDEApp\PowerGUI\Portable\ALL.appshell'
@@ -50,6 +50,6 @@ cmdshell($type, $appFile, True, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 	
-	AppShell($file, $clean)
+	appShell($file, $clean)
   
 EndFunc   ;==>app
