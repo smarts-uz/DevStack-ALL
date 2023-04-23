@@ -13,21 +13,6 @@ Global $UDFName = 'EnvVars.au3'
 
 $type = 'envvars'
 
-#cs | INDEX | ===============================================
-
-	Title				EsGo
-	Description	 		EsGo
-
-	Type				UDF
-	AutoIt Version		3.3.14.0
-
-	Author				Asror Zakirov (aka Asror.Z)
-	E-Mail			 	Asror.ZK@gmail.com
-	Created				03.03.2017
-
-#ce	=========================================================
-
-
 
 
 
@@ -35,7 +20,7 @@ $type = 'envvars'
 $appFile = 'd:\Develop\Projects\ALL\Rclone\ALL.envvars'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\AutoIT\ALL.envvars'
 
-cmdshell($type, $appFile, False, False)
+cmdshell($type, $appFile, True, False)
 
 
 

@@ -10,28 +10,13 @@ $type = 'applink'
 #pragma compile(CompanyName, 'Smart Software Uzbekistan')
 
 
-#cs | INDEX | ===============================================
-
-	Title				EsGo
-	Description	 		EsGo
-
-	Type				UDF
-	AutoIt Version		3.3.14.0
-
-	Author				Asror Zakirov (aka Asror.Z)
-	E-Mail			 	Asror.ZK@gmail.com
-	Created				03.03.2017
-
-#ce	=========================================================
-
-
 
 
 Global $paths
 
 
 $appFile = 'd:\Humans\Company-IT\ALL.applink'
-cmdshell($type, $appFile, False, False)
+cmdshell($type, $appFile, True, False)
 
 
 
@@ -46,7 +31,7 @@ cmdshell($type, $appFile, False, False)
 #ce	=========================================================
 Func app($file, $clean = False)
 
-appLink($file, $clean)
+	appLink($file, $clean)
 
 EndFunc   ;==>app
 

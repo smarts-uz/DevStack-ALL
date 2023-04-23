@@ -1,3 +1,5 @@
+$noCollect = True
+
 #include <MyUDFs\RcloneUDF.au3>
 
 #pragma compile(FileDescription, 'Cloud file providers Get password')

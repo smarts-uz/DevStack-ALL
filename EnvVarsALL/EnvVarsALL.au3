@@ -12,27 +12,12 @@ Global $UDFName = 'EnvVarsALL.au3'
 
 $type = 'envvarsall'
 
-#cs | INDEX | ===============================================
-
-	Title				EsGo
-	Description	 		EsGo
-
-	Type				UDF
-	AutoIt Version		3.3.14.0
-
-	Author				Asror Zakirov (aka Asror.Z)
-	E-Mail			 	Asror.ZK@gmail.com
-	Created				03.03.2017
-
-#ce	=========================================================
-
-
 
 
 
 
 $appFile = 'd:\Develop\Projects\ALL\LockHunter\Portable\ALL.envpathall'
-cmdshell($type, $appFile, False, False)
+cmdshell($type, $appFile, True, False)
 
 
 

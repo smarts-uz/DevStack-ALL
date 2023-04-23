@@ -10,21 +10,6 @@ Global $UDFName = 'appShell.au3'
 $type = 'appshell'
 
 
-#cs | INDEX | ===============================================
-
-	Title				EsGo
-	Description	 		EsGo
-
-	Type				UDF
-	AutoIt Version		3.3.14.0
-
-	Author				Asror Zakirov (aka Asror.Z)
-	E-Mail			 	Asror.ZK@gmail.com
-	Created				03.03.2017
-
-#ce	=========================================================
-
-
 $appFile = 'd:\Develop\Projects\ALL\appShell\Testing\App\ALL.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\AutoIT\Portable\au3.appshell'
 $appFile = 'd:\Develop\Projects\DevApp\Execute\Power\Compile\ALL.appshell'

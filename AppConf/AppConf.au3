@@ -11,21 +11,6 @@ Global $UDFName = 'AppConf.au3'
 $type = 'appconf'
 
 
-#cs | INDEX | ===============================================
-
-	Title				EsGo
-	Description	 		EsGo
-
-	Type				UDF
-	AutoIt Version		3.3.14.0
-
-	Author				Asror Zakirov (aka Asror.Z)
-	E-Mail			 	Asror.ZK@gmail.com
-	Created				03.03.2017
-
-#ce	=========================================================
-
-
 $appFile = 'd:\Develop\Projects\DevApp\Versions\PhraseExpander\Settings\ALL.appconf'
 $appFile = 'd:\FSystem\ALL\Security\Protects\Navicat Premium\Settings\ALL.appconf'
 $appFile = 'd:\FSystem\ALL\Humans\Message\iMe\Settings\ALL.appconf'
